@@ -1,0 +1,65 @@
+#root {
+    
+    place-items: center;
+    max-height: 100vh;
+    padding: 0;
+    text-align: unset;
+    margin: 0;
+  }
+
+ html, body{
+    margin: 0px;
+    height: 100vh;
+    padding: 0px;
+    justify-content: space-around;
+ } 
+
+.Sightings{
+
+    background-color: #fff;
+    color: #000;
+}
+
+.Sightings h1{
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.Sightings-para{
+    text-align: center;
+}
+
+.Sightings-map{
+    padding: 50px;
+}
+
+.Sightings-bgImg {
+    /*display: flex;*/
+    background-image: url('/src/assets/orca.jpeg');
+    flex-direction: column;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #000;
+    position: relative;
+    min-height: 25rem;
+    height: auto;
+    width: 100%;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .Sightings-post {
+    text-align: left;
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  .Sightings-blurb p {
+    margin-left: 50px;
+  }
+
+  .Sightings-bottom-padding{
+    padding: 25px;
+  }
