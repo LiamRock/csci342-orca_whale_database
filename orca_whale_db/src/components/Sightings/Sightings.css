@@ -1,4 +1,4 @@
-#root {
+.Sightings #root {
     max-width: unset;
     position: relative;
     place-items: center;
@@ -8,7 +8,7 @@
     
   }
 
- html, body{
+.Sightings html, .Sightings body{
     display: unset;
     margin: 0px;
     height: auto;
@@ -28,6 +28,13 @@
     text-align: center;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 150%;
+    /* or 75px */
+    text-align: center;
+    
 }
 
 .Sightings-para{
@@ -85,6 +92,10 @@
 
   .btn1 h3{
     position: relative;
+  }
+
+  .btn1 p{
+    color: #fff;
   }
 
 

@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react'
-import './Sightings.css'
+import React, {useState, useEffect} from 'react';
+import './Sightings.css';
 import OrcaInfo from '../OrcaInfo/OrcaInfo';
 import MapComponent from '../MapComponent/MapComponent';
 
