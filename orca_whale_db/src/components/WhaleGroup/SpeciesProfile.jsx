@@ -15,9 +15,7 @@ function SpeciesProfile(props) {
           width: "100%", // Ensure the image takes up the full width of the container
         }}
       />
-
-      <br />
-
+      <p className='card-description'>{props.description}</p>
       <button className='button'>Learn More</button>
       {/* Add other content as needed */}
     </div>

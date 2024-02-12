@@ -13,7 +13,7 @@
   
   .card-text {
     color: #DCF2F1;
-    font-family: Lato;
+    font-family: sans-serif;
     font-size: 24px;
     text-align: center;
     margin: 0 0 10px;
@@ -27,6 +27,14 @@
   
   .card-button {
     /* Add button styling here */
+  }
+
+  .card-description {
+    color: #DCF2F1;
+    font-size: 14px; /* Adjusted font size for the description */
+    text-align: center;
+    margin-top: 10px; /* Added margin at the top for better spacing */
+    font-family: sans-serif;
   }
 
   
