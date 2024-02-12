@@ -15,8 +15,8 @@
 }
 
 header{
-    position: fixed; /* Make the header fixed */
-    top: 50px; /* Position it at the top of the page */
+    position: absolute; /* Make the header fixed */
+    top: 30px; /* Position it at the top of the page */
     left: 15%;
     display: flex;
     align-items: center;
