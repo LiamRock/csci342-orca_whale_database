@@ -1,0 +1,35 @@
+/* SpeciesProfile.css */
+.card-container {
+    background-color: #0F1035;
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
+  }
+  
+  .card-text {
+    color: #DCF2F1;
+    font-family: Lato;
+    font-size: 24px;
+    text-align: center;
+    margin: 0 0 10px;
+  }
+  
+  .card-image {
+    object-fit: cover;
+    height: 200px;
+    width: 100%;
+  }
+  
+  .card-button {
+    /* Add button styling here */
+  }
+
+  
+  
+  /* Add more styles as needed */
+  

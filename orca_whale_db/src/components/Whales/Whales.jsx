@@ -1,5 +1,7 @@
+/* Whales.js */
 import React from 'react';
 import SpeciesProfile from '../WhaleGroup/SpeciesProfile';
+import './Whales.css';
 
 const whaleDataAPI = [
   {
@@ -28,14 +30,16 @@ function Whales() {
   };
 
   return (
-    <>
-      <h1>Whales of the Pacific Northwest!</h1>
+    <div className="page-container">
+      <br />
+      <h1 className="page-header">Whales of the Pacific Northwest!</h1>
+      <br />
       <div style={cardStyle}>
         {whaleDataAPI.map((whale) => (
           <SpeciesProfile key={whale.id} img={whale.img} name={whale.name} />
         ))}
       </div>
-    </>
+    </div>
   );
 }
 

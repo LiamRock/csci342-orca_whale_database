@@ -25,6 +25,7 @@ function GroupCard(props) {
               width: "100%", // Ensure the image takes up the full width of the container
             }}
           />
+
           <a href={props.Link}>{props.LinkText}</a>
         </div>
       </>
