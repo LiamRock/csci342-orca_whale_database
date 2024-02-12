@@ -12,6 +12,11 @@ const whaleDataAPI = [
     img: 'https://www.fisheries.noaa.gov/s3/dam-migration/2160x1440_humpbackwhale_noaa.jpg',
     name: 'Humpback Whale',
   },
+  {
+    id: 3,
+    img: 'https://cdn.theatlantic.com/thumbor/ydanvjFnPfr7mUXDeAJFBw_oMH4=/0x214:4114x2528/960x540/media/img/mt/2019/04/shutterstock_554899423_1/original.jpg',
+    name: 'Orca',
+  },
 ];
 
 function Whales() {
