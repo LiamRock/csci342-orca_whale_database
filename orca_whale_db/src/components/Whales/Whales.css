@@ -6,3 +6,22 @@
     margin: 0;
     font-weight: bold;
   }
+/* Whales.css */
+.page-container {
+  padding: 20px; /* Add some padding to the page container */
+}
+/* Whales.css */
+.img-body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.whale-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center top;
+  top: -50px;
+}

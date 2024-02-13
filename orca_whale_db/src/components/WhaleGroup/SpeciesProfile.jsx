@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import '../button.css'
 import './SpeciesProfile.css'
+import { Link, Outlet } from 'react-router-dom';
 
 function SpeciesProfile(props) {
   return (
@@ -16,8 +17,9 @@ function SpeciesProfile(props) {
         }}
       />
       <p className='card-description'>{props.description}</p>
-      <button className='button'>Learn More</button>
+      <Link className="rounded-button" to={props.bioLink}>Learn More</Link>
       {/* Add other content as needed */}
+      <Outlet />
     </div>
   );
 }
