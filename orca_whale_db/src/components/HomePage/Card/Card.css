@@ -1,0 +1,51 @@
+.card{
+    position: absolute;
+    top: 768px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 800px;
+    padding: 0;
+}
+.card img{
+    width: 100%;
+    height: 100%;
+}
+.card-content {
+    position: relative;
+    top: -50%;
+    left: 50%;
+    flex-direction: row;
+    transform: translate(-50%, -50%);
+    display: flex; /* Use flexbox to arrange content */
+    justify-content: space-between; /* Ensure space between elements */
+    align-items: center; /* Align items vertically */
+    width: 100%;
+    height: 100%;
+    padding: 20px; /* Add padding for spacing */
+  }
+.card-content img{
+    width: 500px;
+    height: 500px;
+    margin-right: 50px;
+}
+.text {
+    color: white;
+}
+.text h1{
+    margin-bottom: 20px;
+}
+.text p{
+    margin-right: 100px;
+    margin-left: 100px;
+}
+.button {
+    position: relative; /* Change the button's position to relative */
+    top: 30px;
+    font-size: 16px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+  }
