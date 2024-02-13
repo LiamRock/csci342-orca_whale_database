@@ -1,10 +1,13 @@
 import { useState } from 'react'
 import reactLogo from '/src/assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
 import '../../input.css'
+import './App.css'
 import Sightings from '../Sightings/Sightings.jsx';
 import CreateDiscussion from '../CreateDiscussion/CreateDiscussion.jsx';
+import Banner from '../HomePage/Banner/Banner.jsx'
+import NavBar from '../HomePage/NavBar/NavBar.jsx'
+import Footer from '../HomePage/Footer/Footer.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -13,7 +16,11 @@ function App() {
     <>
       <div className = "App">
         {/*<Sightings />*/}
-        <CreateDiscussion />
+        <NavBar/>
+        <Banner/>
+        <Sightings />
+        <CreateDiscussion/>
+        <Footer/>
       </div>
     </>
   )

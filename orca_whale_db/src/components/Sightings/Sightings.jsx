@@ -18,7 +18,7 @@ const Sightings = () => {
 
     return (
         <div className = "Sightings">
-            <div className = "Sightings-bgImg"></div>
+            
             <h1>Reported Sightings!</h1>
             
             <div className = 'Sightings-map'>
