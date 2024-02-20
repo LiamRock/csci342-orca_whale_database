@@ -23,9 +23,11 @@
 }
 .links{
     margin-top: 20px;
+    text-align: center;
 }
 
 .links a{
     color: black;
     padding: 20px;
+    
 }
