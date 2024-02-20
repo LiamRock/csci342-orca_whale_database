@@ -25,8 +25,20 @@
     width: 100%;
   }
   
-  .card-button {
-    /* Add button styling here */
+  .rounded-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #7FC7D9;
+    color: #DCF2F1;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .rounded-button:hover {
+    background-color: #6DAEBF;
   }
 
   .card-description {
