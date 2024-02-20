@@ -13,14 +13,14 @@ import Account from './components/Account/Account.jsx'
 
 
 const router = createBrowserRouter([
-  {path:"/",element:<App />, children:[ // Replace App with hompage
-    {index:true, element: <Home />},
-    {path:"*", element: <NotFoundPage />},
-    {path:"whales", element: <Whales />},
-    {path:"whales/orcas", element: <OrcaBio />},
-    {path:"whales/grays", element: <GrayBio />},
-    {path:"whales/humpbacks", element: <HumpbackBio />},
-    {path:"account", element: <Account />},
+  {path:"/", element:<App/>, children: [ // Replace App with homepage
+    {index:true, element: <Home/>},
+    {path:"*", element: <NotFoundPage/>},
+    {path:"/whales", element: <Whales/>},
+    {path:"/whales/orcas", element: <OrcaBio/>},
+    {path:"/whales/grays", element: <GrayBio/>},
+    {path:"/whales/humpbacks", element: <HumpbackBio/>},
+    {path:"/account", element: <Account/>},
   ]}
 ]);
 
