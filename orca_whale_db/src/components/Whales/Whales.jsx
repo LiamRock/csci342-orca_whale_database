@@ -38,14 +38,18 @@ function Whales() {
   return (
     <div className="page-container">
       <br />
-      <h1 className="page-header">Whales of the Pacific Northwest!</h1>
-      <div className='img-body'>
-        <img className='whale-img' src="https://www.celebritycruises.com/blog/content/uploads/2020/05/best-place-to-see-orcas-vancouver-canada-1920x890.jpg" />
+      
+      <div className='header-container'>
+        <h1 className="white-text">Whales of the Pacific Northwest!</h1>
       </div>
-      <div style={cardStyle}>
-        {whaleDataAPI.map((whale) => (
-          <SpeciesProfile key={whale.id} img={whale.img} name={whale.name} description={whale.description} bioLink={whale.bioLink} />
-        ))}
+
+
+      <div className='cards-container'>
+        <div style={cardStyle}>
+          {whaleDataAPI.map((whale) => (
+            <SpeciesProfile key={whale.id} img={whale.img} name={whale.name} description={whale.description} bioLink={whale.bioLink} />
+          ))}
+        </div>
       </div>
     </div>
   );
