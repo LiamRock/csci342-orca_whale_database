@@ -10,6 +10,7 @@ import GrayBio from './components/WhaleBios/GrayBio/GrayBio.jsx'
 import HumpbackBio from './components/WhaleBios/HumpbackBio/HumpbackBio.jsx'
 import Account from './components/Account/Account.jsx'
 import HomePage from './components/HomePage/main/HomePage.jsx'
+import AboutUs from './components/AboutUs/AboutUs.jsx'
 
 
 const router = createBrowserRouter([
