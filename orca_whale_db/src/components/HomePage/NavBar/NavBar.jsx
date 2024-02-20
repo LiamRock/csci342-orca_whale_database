@@ -15,7 +15,7 @@ const showNavbar = () =>{
                 <img src="./src/assets/orcaLogo.png" className="logo-image"></img>
             </Link>
                 <nav ref={navRef}>
-                    <Link to="/">Home</Link>
+                    <Link to="/whales">Species</Link>
                     <Link to="/">About Us</Link>
                     <Link to="/account" className="last-nav-a">Account</Link>
                     <button className="nav-btn nav-close-btn" onClick={showNavbar}>

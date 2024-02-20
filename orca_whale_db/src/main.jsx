@@ -10,11 +10,12 @@ import OrcaBio from './components/WhaleBios/OrcaBio/OrcaBio.jsx'
 import GrayBio from './components/WhaleBios/GrayBio/GrayBio.jsx'
 import HumpbackBio from './components/WhaleBios/HumpbackBio/HumpbackBio.jsx'
 import Account from './components/Account/Account.jsx'
+import HomePage from './components/HomePage/main/HomePage.jsx'
 
 
 const router = createBrowserRouter([
   {path:"/", element:<App/>, children: [ // Replace App with homepage
-    {index:true, element: <Home/>},
+    {index:true, element: <HomePage/>},
     {path:"*", element: <NotFoundPage/>},
     {path:"/whales", element: <Whales/>},
     {path:"/whales/orcas", element: <OrcaBio/>},

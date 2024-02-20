@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+import CreateDiscussion from '../CreateDiscussion/CreateDiscussion';
 
 import profile from '../../assets/profile-circle.svg';
 import editIco from '../../assets/edit-pen.svg';
 import confirm from '../../assets/checkmark.png';
 import cancel from '../../assets/cancel.png';
-
 import './Account.css';
-import { Link } from 'react-router-dom';
 
 const Account = () => {
     const [username, setUsername] = useState('Me');
@@ -43,14 +44,17 @@ const Account = () => {
     }
 
     return (
-        <div>
+        <>
+        <div className='page'>
             {/* Following div contains profile picture and heading. Clicking on profile picture
                 allows user to modify their profile picture. */}
             <div className='Account'>
+                <div className='whitespace'/>
                 <div className='whitespace'>
                     <img className='profile-picture' src={profile} onClick={changePicture}/>
                 </div>   
                 <p className='page-header'>Account</p>
+                <div className='whitespace'/>
                 <div className='whitespace'/>
             </div>
             {/* Following form contains elements to edit the user's username using states. */}
@@ -70,9 +74,12 @@ const Account = () => {
             </form>
 
             <Link className='logout' to='/'>LOG OUT</Link>
-
-            {/* Insert Discussions Component Here */}
+            <br/><br/><br/>
         </div>
+        <div className='discussion'>
+            <CreateDiscussion/>
+        </div>
+        </>
     )
 }
 

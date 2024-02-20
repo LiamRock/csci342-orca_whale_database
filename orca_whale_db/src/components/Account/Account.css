@@ -1,12 +1,14 @@
+.page {
+    background-color: #dcdcdc;
+}
+
 .Account {
     margin: 0;
-    margin-top: 80px;
+    margin-top: 150px;
     height: 250px;
-    width: 80vw;
     font-weight: bold;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: row;   
 }
 
 .whitespace {
@@ -78,7 +80,7 @@
 
 .logout {
     position: absolute;
-    top: 10%;
+    top: 5%;
     right: 2%;
     background: #1E1E1E;
     border: 2px solid #181818;
@@ -92,4 +94,13 @@
     text-align: center;
     letter-spacing: -0.011em;
     color: #FFFFFF;
+}
+
+.discussion {
+    margin-top: 50px;
+    background-color: #cad6e7;
+    padding: 20px;
+    border-radius: 20%;
+    width: 45%;
+    place-self: center;
 }
