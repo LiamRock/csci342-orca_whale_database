@@ -1,0 +1,21 @@
+.page-container{
+    /* margin-top: 4rem; */
+    background-image: url("../../../assets/orcaBioBackground.jpg");
+    background-size: cover; /* Cover the entire container */
+    background-attachment: fixed; /* Fixed background position as the user scrolls */
+    background-position-y: -20px;
+  }
+
+  
+  .header-container {
+    text-align: center;
+    padding: 2rem; /* Add padding to provide space for the header text */
+  }
+  
+  .header-text {
+    color: white;
+  }
+
+.description-container {
+
+}
