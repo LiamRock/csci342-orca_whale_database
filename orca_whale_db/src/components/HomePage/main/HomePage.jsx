@@ -1,17 +1,13 @@
 
 import Banner from "../Banner/Banner"
 import Card from "../Card/Card"
-import Footer from "../Footer/Footer"
-import Navbar from "../NavBar/NavBar"
 
 function HomePage() {
   
     return (
       <>
-        <Navbar/>
-        <Banner/>
+        <Banner title={"Welcome to our Website"} backgroundImage={"./src/assets/banner.jpg"}/>
         <Card/>
-        <Footer/>
       </>
     )
   }
