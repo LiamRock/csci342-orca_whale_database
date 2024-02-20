@@ -1,4 +1,4 @@
-// import {FaBars, FaTimes} from "react-icons/fa";
+import {FaBars, FaTimes} from "react-icons/fa";
 import { useRef } from "react";
 import "./NavBar.css"
 import { Link } from 'react-router-dom'
@@ -26,9 +26,9 @@ const showNavbar = () =>{
                 </nav>
                 
                 <button className="nav-btn nav-close-btn" onClick={showNavbar}>
-                    {/* <FaBars>
+                    <FaBars>
 
-                    </FaBars> */}
+                    </FaBars>
                 </button>
         </header>
          
