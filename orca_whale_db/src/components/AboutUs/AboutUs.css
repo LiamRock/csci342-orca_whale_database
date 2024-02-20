@@ -1,0 +1,15 @@
+.content{
+    position: relative;
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Arrange children vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    height: 80vh; /* Set the container height to fill the viewport */
+}
+.content h1{
+    padding-top: 20px;
+    text-align: center; /* Align text center */
+}
+.content p{
+    padding: 20px;
+}

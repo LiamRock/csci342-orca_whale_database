@@ -5,13 +5,15 @@ import './index.css'
 import {RouterProvider, createBrowserRouter} from 'react-router-dom'
 import Whales from './components/Whales/Whales'
 import NotFoundPage from './components/NotFound/NotFoundPage'
-import Home from './components/Home/Home.jsx'
+import HomePage from './components/HomePage/main/HomePage'
+import AboutUs from './components/AboutUs/AboutUs'
 
 
 const router = createBrowserRouter([
   {path:"/",element:<App />, children:[ // Replace App with hompage
-    {index:true, element: <Home />},
+    {index:true, element: <HomePage />},
     {path:"whales", element: <Whales />},
+    {path:"aboutus", element: <AboutUs />},
     {path:"*", element: <NotFoundPage />}
   ]}
 ]);

@@ -1,12 +1,11 @@
 import './Banner.css';
-function Banner() {
+function Banner({title, backgroundImage}) {
   
     return (
-        <div>
-            <img src="./src/assets/banner.jpg" className="banner"/>
+        <div className="banner-container" style={{backgroundImage : `url(${backgroundImage})`}}>
             <div className='banner-content'>
                 <div className='banner-text'>
-                    <h1>Welcome to Our Website</h1>
+                    <h1>{title}</h1>
                 </div>
                 <button className="banner-button">Learn More</button>
             </div>

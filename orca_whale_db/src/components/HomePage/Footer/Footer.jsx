@@ -16,7 +16,6 @@ function Footer() {
             <a href="/">About Us</a>
             <a href="/">Account</a>
         </div>
-        
     </footer>
     )
 }
