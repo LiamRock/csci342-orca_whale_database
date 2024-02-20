@@ -1,7 +1,7 @@
-import { FaBars, FaTimes } from "react-icons/fa";
-import { Link } from "react-router-dom";
+// import {FaBars, FaTimes} from "react-icons/fa";
 import { useRef } from "react";
-import "./NavBar.css"
+import "./Navbar.css"
+import { Link } from 'react-router-dom'
 
 function Navbar(){
 const navRef = useRef();
@@ -16,19 +16,19 @@ const showNavbar = () =>{
             </Link>
                 <nav ref={navRef}>
                     <Link to="/whales">Species</Link>
-                    <Link to="/">About Us</Link>
+                    <Link to="/aboutus">About Us</Link>
                     <Link to="/account" className="last-nav-a">Account</Link>
                     <button className="nav-btn nav-close-btn" onClick={showNavbar}>
-                        <FaTimes>
+                        {/* <FaTimes>
 
-                        </FaTimes>
+                        </FaTimes> */}
                     </button>
                 </nav>
                 
                 <button className="nav-btn nav-close-btn" onClick={showNavbar}>
-                    <FaBars>
+                    {/* <FaBars>
 
-                    </FaBars>
+                    </FaBars> */}
                 </button>
         </header>
          

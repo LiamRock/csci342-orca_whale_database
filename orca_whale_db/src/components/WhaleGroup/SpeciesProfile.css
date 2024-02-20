@@ -1,55 +1,49 @@
-/* SpeciesProfile.css */
+.parent-container {
+  display: flex;
+  flex-direction: column;
+  /* Add other styles as needed */
+}
+
 .card-container {
-    background-color: #0F1035;
-    padding: 20px;
-    margin: 10px;
-    width: 300px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
-  }
-  
-  .card-text {
-    color: #DCF2F1;
-    font-family: sans-serif;
-    font-size: 24px;
-    text-align: center;
-    margin: 0 0 10px;
-  }
-  
-  .card-image {
-    object-fit: cover;
-    height: 200px;
-    width: 100%;
-  }
-  
-  .rounded-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #7FC7D9;
-    color: #DCF2F1;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    border-radius: 10px;
-    cursor: pointer;
-  }
+  background-color: #0F1035;
+  padding: 20px;
+  margin: 10px;
+  width: 300px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
+  position: relative;
+  margin-bottom: 80px;
+  border-radius: 10px;
+}
 
-  .rounded-button:hover {
-    background-color: #6DAEBF;
-  }
+.card-text {
+  color: #DCF2F1;
+  font-family: sans-serif;
+  font-size: 24px;
+  text-align: center;
+  margin: 0 0 10px;
+}
 
-  .card-description {
-    color: #DCF2F1;
-    font-size: 14px; /* Adjusted font size for the description */
-    text-align: center;
-    margin-top: 10px; /* Added margin at the top for better spacing */
-    font-family: sans-serif;
-  }
+.card-image {
+  object-fit: cover;
+  height: 200px;
+  width: 100%;
+}
 
+.card-description {
+  color: #DCF2F1;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
+  font-family: sans-serif;
+}
+
+.button-container {
+  position: relative; /* Change to relative to allow button container to flow within card container */
+  margin-top: auto; /* Push the button container to the bottom */
+  padding-top: 15px;
   
-  
-  /* Add more styles as needed */
-  
+}

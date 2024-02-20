@@ -5,7 +5,6 @@ import './index.css'
 import {RouterProvider, createBrowserRouter} from 'react-router-dom'
 import Whales from './components/Whales/Whales'
 import NotFoundPage from './components/NotFound/NotFoundPage'
-import Home from './components/Home/Home.jsx'
 import OrcaBio from './components/WhaleBios/OrcaBio/OrcaBio.jsx'
 import GrayBio from './components/WhaleBios/GrayBio/GrayBio.jsx'
 import HumpbackBio from './components/WhaleBios/HumpbackBio/HumpbackBio.jsx'
@@ -22,6 +21,7 @@ const router = createBrowserRouter([
     {path:"/whales/grays", element: <GrayBio/>},
     {path:"/whales/humpbacks", element: <HumpbackBio/>},
     {path:"/account", element: <Account/>},
+    {path:"/aboutus", element: <AboutUs/>},
   ]}
 ]);
 

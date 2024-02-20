@@ -1,27 +1,18 @@
-.page-header {
-    color: #0F1035;
-    font-family: 'Lato', sans-serif;
-    font-size: 42px;
-    text-align: center;
-    margin: 0;
-    font-weight: bold;
-  }
-/* Whales.css */
-.page-container {
-  padding: 20px; /* Add some padding to the page container */
-}
-/* Whales.css */
-.img-body {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  position: relative;
+.page-container{
+  /* margin-top: 4rem; */
+  background-image: url("../../assets/orcaWallpaper.jpg");
+  background-size: cover; /* Cover the entire container */
+  background-attachment: fixed; /* Fixed background position as the user scrolls */
+  background-position-y: -20px;
 }
 
-.whale-img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  object-position: center top;
-  top: -50px;
+.header-container {
+  margin-top: 30px;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center content horizontally */
+  margin-top: 100px; /* Adjust margin as needed */
 }

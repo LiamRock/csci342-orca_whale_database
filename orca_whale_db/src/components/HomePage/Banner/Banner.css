@@ -1,20 +1,21 @@
-.banner{
-    top: 0;
-    left: 0;
-    position: relative;
+.banner-container{
+    background-image: url("./src/assets/banner.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 45rem;
     width: 100%;
-    height: 800px;
-}
+  }
 .banner-content {
-    position: absolute;
+    position: relative;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
     bottom: 50%;
   }
-.banner-text {
-    position: absolute;
-    top: 50px;
+.banner-text { 
+    position: relative;
+    top: 15vh;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -27,7 +28,8 @@
   }
   .banner-button {
     position: relative; /* Change the button's position to relative */
-    top: 100px;
+    top: 15vh;
+    left: 45%;
     font-size: 18px;
     background-color: white;
     color: black;
