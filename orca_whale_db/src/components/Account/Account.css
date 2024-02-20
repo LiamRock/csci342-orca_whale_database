@@ -1,0 +1,95 @@
+.Account {
+    margin: 0;
+    margin-top: 80px;
+    height: 250px;
+    width: 80vw;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.whitespace {
+    flex: 1;
+    align-self: center;
+}
+
+.Account .page-header {
+    color: #0F1035;
+    font-family: 'Lato', sans-serif;
+    font-size: 42px;
+    text-align: center;
+    font-weight: bold;
+    align-self:flex-end;
+    margin-bottom: 25px;
+    flex: 1;
+}
+
+.Account .profile-picture {
+    width: 256px;
+    min-width: 0;
+    border-radius: 100%;
+    padding: 0;
+    cursor: pointer;
+}
+
+.edit-username {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 150%;
+    letter-spacing: -0.011em;
+
+    color: #000000;
+}
+
+.edit-username input {
+    width: 30rem;
+    height: 3rem;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: -0.011em;
+    text-align: center;
+
+    color: #292929;
+}
+
+.edit-username button {
+    padding: 0px 10px;
+    margin: 8px;
+    margin-right: 0px;
+    border-radius: 100%;
+    border: none;
+    align-self: center;
+    background-color: transparent;
+}
+
+.edit-username img {
+    width: 20px;
+    height: 20px;
+}
+
+.logout {
+    position: absolute;
+    top: 10%;
+    right: 2%;
+    background: #1E1E1E;
+    border: 2px solid #181818;
+    border-radius: 6px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 100%;
+    padding: 8px;
+    text-align: center;
+    letter-spacing: -0.011em;
+    color: #FFFFFF;
+}

@@ -1,5 +1,5 @@
 #root {
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -39,4 +39,52 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* App.css */
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #0F1035;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  z-index: 2;
+}
+
+.site-name,
+.nav-links {
+  color: #DCF2F1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.site-name {
+  margin-right: auto; /* Push the site name to the left, making links appear on the right */
+}
+
+.nav-links {
+  margin-right: 20px; /* Adjust margin as needed */
+}
+
+.page-container {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
 }
