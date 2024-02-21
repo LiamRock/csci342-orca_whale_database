@@ -1,5 +1,20 @@
 .page {
-    background-color: #dcdcdc;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+}
+
+.background {
+    width: 100vw;
+    height: 30rem;
+    position: absolute;
+    background-image: url(https://www.celebritycruises.com/blog/content/uploads/2020/05/best-place-to-see-orcas-vancouver-canada.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+    opacity: 0.7;
+    z-index: 0;
 }
 
 .Account {
@@ -9,6 +24,7 @@
     font-weight: bold;
     display: flex;
     flex-direction: row;   
+    z-index: 1;
 }
 
 .whitespace {
@@ -45,21 +61,19 @@
     font-size: 30px;
     line-height: 150%;
     letter-spacing: -0.011em;
-
+    z-index: 1;
     color: #000000;
 }
 
 .edit-username input {
     width: 30rem;
     height: 3rem;
-
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
     letter-spacing: -0.011em;
     text-align: center;
-
     color: #292929;
 }
 
@@ -71,6 +85,13 @@
     border: none;
     align-self: center;
     background-color: transparent;
+}
+
+.edit-username .blank {
+    width: 40px;
+    height: 20px;
+    margin: 8px;
+    margin-right: 0px;
 }
 
 .edit-username img {
@@ -94,13 +115,4 @@
     text-align: center;
     letter-spacing: -0.011em;
     color: #FFFFFF;
-}
-
-.discussion {
-    margin-top: 50px;
-    background-color: #cad6e7;
-    padding: 20px;
-    border-radius: 20%;
-    width: 45%;
-    place-self: center;
 }

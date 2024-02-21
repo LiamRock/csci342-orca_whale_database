@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import CreateDiscussion from '../CreateDiscussion/CreateDiscussion';
@@ -45,6 +45,7 @@ const Account = () => {
 
     return (
         <>
+        <div className='background'/>
         <div className='page'>
             {/* Following div contains profile picture and heading. Clicking on profile picture
                 allows user to modify their profile picture. */}
@@ -64,6 +65,7 @@ const Account = () => {
                 />
                 {showEdit ? <>
                 <button onClick={editUsername}><img src={editIco} alt='Edit username'/></button>
+                <div className='blank'/>
                 </>
                 : null}
                 {showSave ? <>
@@ -76,7 +78,7 @@ const Account = () => {
             <Link className='logout' to='/'>LOG OUT</Link>
             <br/><br/>
         </div>
-        <div className='discussion'>
+        <div className='mb-[30px]'>
             <CreateDiscussion/>
         </div>
         </>

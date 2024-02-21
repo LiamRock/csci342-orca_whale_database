@@ -1,7 +1,7 @@
-import CreateDiscussion from "../../CreateDiscussion/CreateDiscussion"
-import Sightings from "../../Sightings/Sightings"
-import Banner from "../Banner/Banner"
-import Card from "../Card/Card"
+import CreateDiscussion from "../../CreateDiscussion/CreateDiscussion";
+import Sightings from "../../Sightings/Sightings";
+import Banner from "../Banner/Banner";
+import Card from "../Card/Card";
 
 function HomePage() {
     return (
@@ -10,8 +10,9 @@ function HomePage() {
         <Card/>
         <Sightings/>
         <CreateDiscussion/>
+        <br/>
       </>
     )
   }
   
-  export default HomePage
+  export default HomePage;

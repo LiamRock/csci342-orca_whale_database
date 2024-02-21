@@ -1,6 +1,5 @@
 import './Banner.css';
 function Banner({title, backgroundImage}) {
-  
     return (
         <div className="banner-container" style={{backgroundImage : `url(${backgroundImage})`}}>
             <div className='banner-content'>
@@ -11,6 +10,6 @@ function Banner({title, backgroundImage}) {
             </div>
         </div>
     )
-  }
+}
   
   export default Banner
