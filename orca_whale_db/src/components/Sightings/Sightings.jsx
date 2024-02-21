@@ -17,7 +17,7 @@ const Sightings = () => {
     */
 
     return (
-        <div className = "Sightings">
+        <div className = "Sightings p-[20px]">
             
             <h1>Reported Sightings!</h1>
             
@@ -28,6 +28,7 @@ const Sightings = () => {
             {/* Here, we may want to consider filling contents with fields connected to a GET request from a database, depending on what was clicked -> dynamically add discussions since there's a view more button?*/}
             
             {/* BUG: IF ORCAINFO DOES NOT LOAD, THE PAGE WILL SNAP TO A SMALL WIDTH BECAUSE OF THE FLEX ELEMENT */}
+            <br/>
             <OrcaInfo/>
 
             <div className = 'buttonContainer'>

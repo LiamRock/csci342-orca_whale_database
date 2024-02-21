@@ -19,9 +19,9 @@ const showNavbar = () =>{
                     <Link to="/aboutus">About Us</Link>
                     <Link to="/account" className="last-nav-a">Account</Link>
                     <button className="nav-btn nav-close-btn" onClick={showNavbar}>
-                        {/* <FaTimes>
+                        <FaTimes>
 
-                        </FaTimes> */}
+                        </FaTimes>
                     </button>
                 </nav>
                 

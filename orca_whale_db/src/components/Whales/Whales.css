@@ -4,6 +4,7 @@
   background-size: cover; /* Cover the entire container */
   background-attachment: fixed; /* Fixed background position as the user scrolls */
   background-position-y: -20px;
+  width: 100vw;
 }
 
 .header-container {

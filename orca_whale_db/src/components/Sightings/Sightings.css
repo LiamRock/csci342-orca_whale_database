@@ -41,10 +41,6 @@
     text-align: center;
 }
 
-.Sightings-map{
-    padding: 50px;
-}
-
 .Sightings-bgImg {
     /*display: flex;*/
     background-image: url('/src/assets/orca.jpeg');
@@ -96,9 +92,4 @@
 
   .btn1 p{
     color: #fff;
-  }
-
-
-  .Sightings-bottom-padding{
-    padding: 25px;
   }
