@@ -17,7 +17,7 @@ const showNavbar = () =>{
                 <nav ref={navRef}>
                     <Link to="/whales">Species</Link>
                     <Link to="/aboutus">About Us</Link>
-                    <Link to="/account" className="last-nav-a">Account</Link>
+                    <Link to="/login" className="last-nav-a">Sign in</Link>
                     <button className="nav-btn nav-close-btn" onClick={showNavbar}>
                         <FaTimes>
 
