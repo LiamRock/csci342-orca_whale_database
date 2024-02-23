@@ -11,6 +11,8 @@ import HumpbackBio from './components/WhaleBios/HumpbackBio/HumpbackBio.jsx'
 import Account from './components/Account/Account.jsx'
 import HomePage from './components/HomePage/main/HomePage.jsx'
 import AboutUs from './components/AboutUs/AboutUs.jsx'
+import Login from './components/Forms/Login.jsx'
+import Signup from './components/Forms/Signup.jsx'
 
 
 const router = createBrowserRouter([
@@ -23,6 +25,8 @@ const router = createBrowserRouter([
     {path:"/whales/humpbacks", element: <HumpbackBio/>},
     {path:"/account", element: <Account/>},
     {path:"/aboutus", element: <AboutUs/>},
+    {path:"/login", element: <Login/>},
+    {path:"./signup", element: <Signup/>},
   ]}
 ]);
 
