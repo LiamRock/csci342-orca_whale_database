@@ -19,7 +19,7 @@ function MapComponent() {
 
   return (
     <Fragment>
-      <div className=" flex justify-center items-center">
+      <div className="flex justify-center items-center max-w-[95vw]">
         {isLoaded ? (
           <GoogleMap
             center={center}
