@@ -1,5 +1,4 @@
 .Sightings #root {
-    max-width: unset;
     position: relative;
     place-items: center;
     padding: 0;
@@ -12,7 +11,7 @@
     display: unset;
     margin: 0px;
     height: auto;
-    width: 100%;
+    width: 100vw;
     padding: 0px;
     justify-content: space-around;
     background-color: #dcdcdc;
@@ -52,7 +51,7 @@
     position: relative;
     min-height: 35rem;
     height: auto;
-    width: 100%;
+    width: 100vw;
     margin-top: 0;
     padding-top: 0;
   }

@@ -38,7 +38,7 @@ class MapComponent extends Component {
   };
 
   render() {
-    return <div ref={this.mapRef} style={{
+    return <div className='max-w-[90vw]' ref={this.mapRef} style={{
         margin: '0 auto',
         width: '60rem',
         height: '30rem' 

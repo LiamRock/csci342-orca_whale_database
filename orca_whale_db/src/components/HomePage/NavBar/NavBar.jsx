@@ -25,9 +25,13 @@ function Navbar(){
                     {user.email ? (
                     <>
                         <Link to="/whales">Species</Link>
+                        <div className="border h-8 border-black border-l-0"></div>
                         <Link to="/aboutus">About Us</Link>
+                        <div className="border h-8 border-black border-l-0"></div>
                         <Link to="/account">Account</Link>
-                        <button className="last-nav-a bg-inherit" onClick={logoutHandler}>Log out</button >
+                        <div className="border h-8 border-black border-l-0"></div>
+                        <button className="bg-inherit hover:text-[var(--secondaryColor)]
+                        border-none m-[30px] p-0" onClick={logoutHandler}>Log out</button>
 
                         <button className="nav-btn nav-close-btn" onClick={showNavbar}>
                             <FaTimes>
@@ -38,8 +42,10 @@ function Navbar(){
                     ) : (
                         <>
                             <Link to="/whales">Species</Link>
+                            <div className="border h-8 border-black border-l-0"></div>
                             <Link to="/aboutus">About Us</Link>
-                            <Link to="/login" className="last-nav-a">Sign in</Link>
+                            <div className="border h-8 border-black border-l-0"></div>
+                            <Link to="/login">Sign in</Link>
                             <button className="nav-btn nav-close-btn" onClick={showNavbar}>
                                 <FaTimes>
 

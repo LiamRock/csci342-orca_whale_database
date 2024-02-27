@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import CreateDiscussion from '../CreateDiscussion/CreateDiscussion';
 
@@ -10,7 +10,9 @@ import cancel from '../../assets/cancel.png';
 import './Account.css';
 
 const Account = () => {
-    const [username, setUsername] = useState('Me');
+    const { user } = useSelector((state) => state.auth);
+
+    const [username, setUsername] = useState('');
     const [disabled, setDisabled] = useState(true);
     const [showEdit, setShowEdit] = useState(true);
     const [showSave, setShowSave] = useState(false);
@@ -19,6 +21,11 @@ const Account = () => {
     const changePicture = () => {
         console.log('Changing profile picture...');
     }
+
+    useEffect(() => {
+        setUsername(user.userName);
+        setInitial(user.userName);
+    }, [user]);
 
     const editUsername = () => {
         setInitial(username);
@@ -61,7 +68,7 @@ const Account = () => {
             {/* Following form contains elements to edit the user's username using states. */}
             <form className='edit-username' onSubmit={handleSubmit}>
                 Username:&nbsp;<input className='bg-[#f2f6fa]' value={username} disabled={disabled} 
-                onChange={(event) => {setUsername(event.target.value)}}
+                onChange={(event) => setUsername(event.target.value)}
                 />
                 {showEdit ? <>
                 <button onClick={editUsername}><img src={editIco} alt='Edit username'/></button>
