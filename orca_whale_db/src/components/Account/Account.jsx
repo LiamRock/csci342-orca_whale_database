@@ -75,7 +75,7 @@ const Account = () => {
                 : null}
             </form>
 
-            <Link className='logout' to='/'>LOG OUT</Link>
+            
             <br/><br/>
         </div>
         <div className='mb-[30px]'>
