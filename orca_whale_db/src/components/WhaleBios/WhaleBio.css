@@ -1,5 +1,8 @@
 .bio-page-container {
     height: 100vh;
+    min-height: 150vh; /* Set a minimum height of the viewport height */
+    display: flex;
+    flex-direction: column;
     margin: 0;
     padding: 0;
     background-image: url("../../../assets/orcaBioBackground.jpg");
