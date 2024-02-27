@@ -8,6 +8,11 @@ import NotFoundPage from './components/NotFound/NotFoundPage'
 import HomePage from './components/HomePage/main/HomePage'
 import AboutUs from './components/AboutUs/AboutUs'
 import OrcaBio from './components/WhaleBios/OrcaBio/OrcaBio'
+import BlueBio from './components/WhaleBios/BlueBio/BlueBio'
+import HumpbackBio from './components/WhaleBios/HumpbackBio/HumpbackBio'
+import MinkeBio from './components/WhaleBios/MinkeBio/MinkeBio'
+import FinBio from './components/WhaleBios/FinBio/FinBio'
+import GrayBio from './components/WhaleBios/GrayBio/GrayBio'
 
 
 const router = createBrowserRouter([
@@ -15,6 +20,11 @@ const router = createBrowserRouter([
     {index:true, element: <HomePage />},
     {path:"whales", element: <Whales />},
     {path:"whales/orcas", element: <OrcaBio />},
+    {path:"whales/blues", element: <BlueBio />},
+    {path:"whales/humpbacks", element: <HumpbackBio />},
+    {path:"whales/fins", element: <FinBio />},
+    {path:"whales/minkes", element: <MinkeBio />},
+    {path:"whales/grays", element: <GrayBio />},
     {path:"aboutus", element: <AboutUs />},
     {path:"*", element: <NotFoundPage />}
   ]}
