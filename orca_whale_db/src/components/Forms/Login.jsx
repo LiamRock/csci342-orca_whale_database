@@ -52,10 +52,13 @@ function Login() {
             <h2 className='text-5xl text-center py-10'>Welcome Back!</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="flex flex-col items-center">
-                    <input className='box-border rounded-lg pt-2 pr-40 pl-2 pb-2 mt-0 mb-3.5 text-white' type="text" placeholder="Email" name="email" {...register("email")}/>
-                    <input className='box-border rounded-lg pt-2 pr-40 pl-2 pb-2 mt-0 mb-3.5 text-white' type="password" placeholder="Password" name="password" {...register("password")}/>
-                    <button className="text-white pt-2 pr-2 pl-2 pb-2 mt-0 mb-3.5">Sign in</button>
+                    <input className='box-border rounded-lg border-2 border-black text-black bg-white pt-2 pr-40 pl-2 pb-2 mt-0 mb-3.5 ' type="text" placeholder="Email" name="email" {...register("email")}/>
+                    <input className='box-border rounded-lg border-2 border-black text-black bg-white pt-2 pr-40 pl-2 pb-2 mt-0 mb-3.5 ' type="password" placeholder="Password" name="password" {...register("password")}/>
+                    <p><Link to="/forgotpassword">Forgot my password?</Link></p>
+                    <br />
+                    <button className="text-black bg-slate-100 pt-2 pr-2 pl-2 pb-2 mt-0 mb-3.5">Sign in</button>
                     <p className="">Dont have an account? <Link to="/signup">Sign up</Link></p>
+                    
                 </div>
                 <br />
             </form>

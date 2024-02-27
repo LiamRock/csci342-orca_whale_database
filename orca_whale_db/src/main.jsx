@@ -15,6 +15,7 @@ import Login from './components/Forms/Login.jsx'
 import Signup from './components/Forms/Signup.jsx'
 import store from './store/store.jsx';
 import {Provider} from 'react-redux';
+import ForgotPassword from './components/Forms/ForgetPassword.jsx'
 
 const router = createBrowserRouter([
   {path:"/", element:<App/>, children: [ // Replace App with homepage
@@ -28,6 +29,7 @@ const router = createBrowserRouter([
     {path:"/aboutus", element: <AboutUs/>},
     {path:"/login", element: <Login/>},
     {path:"/signup", element: <Signup/>},
+    {path:"/forgotpassword", element: <ForgotPassword/>},
   ]}
 ]);
 

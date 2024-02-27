@@ -49,14 +49,14 @@ function Signup() {
         <div className='text-black'>
             <br />
             <h2 className='text-7xl text-center pt-20'>PNW TRACKER</h2>
-            <h2 className='text-5xl text-center py-10'>Welcome Back!</h2>
+            <h2 className='text-5xl text-center py-10'>Sign up</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="flex flex-col items-center">
-                    <input className='box-border rounded-lg pt-2 pr-40 pl-2 pb-2 mt-0 mb-3.5 text-white' type="text" placeholder="Username" name="userName" {...register("userName")}/>
-                    <input className='box-border rounded-lg pt-2 pr-40 pl-2 pb-2 mt-0 mb-3.5 text-white' type="text" placeholder="Email" name="email" {...register("email")}/>
-                    <input className='box-border rounded-lg pt-2 pr-40 pl-2 pb-2 mt-0 mb-3.5 text-white' type="password" placeholder="Password" name="password" {...register("password")} />
-                    <input className='box-border rounded-lg pt-2 pr-40 pl-2 pb-2 mt-0 mb-3.5 text-white' type="password" placeholder="confirmPassword" name="confirmPassword" {...register("confirmPassword")} />
-                    <button className="text-white pt-2 pr-2 pl-2 pb-2 mt-0 mb-3.5">Register</button>
+                    <input className='box-border rounded-lg border-2 border-black text-black bg-white pt-2 pr-40 pl-2 pb-2 mt-0 mb-3.5 ' type="text" placeholder="Username" name="userName" {...register("userName")}/>
+                    <input className='box-border rounded-lg border-2 border-black text-black bg-white pt-2 pr-40 pl-2 pb-2 mt-0 mb-3.5 ' type="text" placeholder="Email" name="email" {...register("email")}/>
+                    <input className='box-border rounded-lg border-2 border-black text-black bg-white pt-2 pr-40 pl-2 pb-2 mt-0 mb-3.5 ' type="password" placeholder="Password" name="password" {...register("password")} />
+                    <input className='box-border rounded-lg border-2 border-black text-black bg-white pt-2 pr-40 pl-2 pb-2 mt-0 mb-3.5 ' type="password" placeholder="confirmPassword" name="confirmPassword" {...register("confirmPassword")} />
+                    <button className=" bg-slate-100 pt-2 pr-2 pl-2 pb-2 mt-0 mb-3.5">Register</button>
                     <p className="">Already have an account? <Link to="/login">Log in</Link></p>
                 </div>
                 <br />
