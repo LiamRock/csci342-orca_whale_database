@@ -1,49 +1,38 @@
-import React, { Component } from 'react';
-//import './MapComponent.css';
+import { Fragment } from "react";
+import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
 
-/* NOTE:
-    This google maps embed is temporary; I don't know if we're even using google maps, or if it functions for what we need.  
-*/
+const containerStyle = {
+  width: "80rem",
+  height: "40rem",
+};
 
-class MapComponent extends Component {
-  constructor(props) {
-    super(props);
-    this.mapRef = React.createRef();
-  }
+const center = {
+  lat: 48.749997,
+  lng: -122.4833314,
+};
 
-  componentDidMount() {
-    // Load the Google Maps JavaScript API script
-    const script = document.createElement('script');
-    const apiKey = "insert API key here";
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap`;
-    script.defer = true;
-    script.async = true;
-    script.onload = this.initMap;
-    document.head.appendChild(script);
-  }
+function MapComponent() {
+  const { isLoaded } = useJsApiLoader({
+    id: "google-map-script",
+    googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAP_API_KEY,
+  });
 
-  initMap = () => {
-    // Initialize the map
-    const map = new window.google.maps.Map(this.mapRef.current, {
-      center: { lat: 48.7697688, lng: -122.485886 },
-      zoom: 9
-    });
-
-    // This code adds a marker on the map
-    const marker = new window.google.maps.Marker({
-      position: { lat: 48.769768, lng: -122.485886 },
-      map: map,
-      title: 'Bellingham'
-    });
-  };
-
-  render() {
-    return <div ref={this.mapRef} style={{
-        margin: '0 auto',
-        width: '60rem',
-        height: '30rem' 
-    }} />;
-  }
+  return (
+    <Fragment>
+      <div className=" flex justify-center items-center">
+        {isLoaded ? (
+          <GoogleMap
+            center={center}
+            zoom={10}
+            mapContainerStyle={containerStyle}
+            mapId={"3878aad1a59aef57"}
+          >
+            {/* Markers here */}
+          </GoogleMap>
+        ) : null}
+      </div>
+    </Fragment>
+  );
 }
 
 export default MapComponent;
