@@ -46,8 +46,8 @@ function ForgetPassword() {
         <p className='text-center pb-5'>Please enter the email address you'd like your password reset information sent to</p>
         <form onSubmit={handleSubmit(onSubmit)}>
             <div className="flex flex-col items-center">
-                <input className='box-border rounded-lg pt-2 pr-40 pl-2 pb-2 mt-0 mb-3.5 text-white' type="text" placeholder="Email" name="email" {...register("email")}/>
-                <button className="text-white pt-2 pr-2 pl-2 pb-2 mt-0 mb-3.5">Submit</button>
+                <input className='box-border rounded-lg border-2 border-black text-black bg-white pt-2 pr-40 pl-2 pb-2 mt-0 mb-3.5  ' type="text" placeholder="Email" name="email" {...register("email")}/>
+                <button className="bg-slate-100 pt-2 pr-2 pl-2 pb-2 mt-0 mb-3.5">Submit</button>
             </div>
             <br />
         </form>
