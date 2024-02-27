@@ -43,6 +43,7 @@ nav a{
     color: var(--textColor);
     text-decoration: none;
     position: relative;
+    text-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
 }
 /*line border*/
 nav a::after{

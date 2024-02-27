@@ -60,7 +60,7 @@ const Account = () => {
             </div>
             {/* Following form contains elements to edit the user's username using states. */}
             <form className='edit-username' onSubmit={handleSubmit}>
-                Username:&nbsp;<input value={username} disabled={disabled} 
+                Username:&nbsp;<input className='bg-[#f2f6fa]' value={username} disabled={disabled} 
                 onChange={(event) => {setUsername(event.target.value)}}
                 />
                 {showEdit ? <>
