@@ -1,21 +1,26 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './components/App/App'
-import './index.css'
-import {RouterProvider, createBrowserRouter} from 'react-router-dom'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import store from './store/store.jsx';
+import { Provider } from 'react-redux';
+
 import Whales from './components/Whales/Whales'
-import NotFoundPage from './components/NotFound/NotFoundPage'
 import OrcaBio from './components/WhaleBios/OrcaBio/OrcaBio.jsx'
-import GrayBio from './components/WhaleBios/GrayBio/GrayBio.jsx'
+import BlueBio from './components/WhaleBios/BlueBio/BlueBio'
 import HumpbackBio from './components/WhaleBios/HumpbackBio/HumpbackBio.jsx'
+import MinkeBio from './components/WhaleBios/MinkeBio/MinkeBio'
+import FinBio from './components/WhaleBios/FinBio/FinBio'
+import GrayBio from './components/WhaleBios/GrayBio/GrayBio.jsx'
 import Account from './components/Account/Account.jsx'
 import HomePage from './components/HomePage/main/HomePage.jsx'
 import AboutUs from './components/AboutUs/AboutUs.jsx'
 import Login from './components/Forms/Login.jsx'
 import Signup from './components/Forms/Signup.jsx'
-import store from './store/store.jsx';
-import {Provider} from 'react-redux';
 import ForgotPassword from './components/Forms/ForgetPassword.jsx'
+import NotFoundPage from './components/NotFound/NotFoundPage'
+
+import './index.css'
 
 const router = createBrowserRouter([
   {path:"/", element:<App/>, children: [ // Replace App with homepage
@@ -24,7 +29,11 @@ const router = createBrowserRouter([
     {path:"/whales", element: <Whales/>},
     {path:"/whales/orcas", element: <OrcaBio/>},
     {path:"/whales/grays", element: <GrayBio/>},
+    {path:"/whales/blues", element: <BlueBio />},
     {path:"/whales/humpbacks", element: <HumpbackBio/>},
+    {path:"/whales/fins", element: <FinBio />},
+    {path:"/whales/minkes", element: <MinkeBio/>},
+    {path:"/whales/grays", element: <GrayBio/>},
     {path:"/account", element: <Account/>},
     {path:"/aboutus", element: <AboutUs/>},
     {path:"/login", element: <Login/>},

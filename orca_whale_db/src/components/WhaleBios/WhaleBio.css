@@ -1,0 +1,31 @@
+.bio-page-container {
+    height: 100vh;
+    min-height: 150vh; /* Set a minimum height of the viewport height */
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    background-image: url("../../../assets/orcaBioBackground.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position-y: -40px;
+}
+
+.header-container {
+    text-align: center;
+    padding: 2rem;
+}
+
+.bio-white-text {
+    color: white;
+}
+
+.description-container {
+    /* Add styles for description container if needed */
+    background-color: #0F1035;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
+    border-radius: 10px;
+    padding: 20px; /* Adjust the padding as needed */
+}
+
+
