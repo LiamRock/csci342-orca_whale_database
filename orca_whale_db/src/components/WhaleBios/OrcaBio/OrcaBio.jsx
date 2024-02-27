@@ -1,5 +1,7 @@
 import "../WhaleBio.css";
+import "./OrcaBio.css"
 import SpeciesProfile from "../../WhaleGroup/SpeciesProfile";
+import "../../WhaleGroup/SpeciesProfile.css"
 
 const ecotypeDataAPI = [
   {
@@ -29,13 +31,6 @@ const ecotypeDataAPI = [
 ];
 
 function OrcaBio() {
-  const cardStyle = {
-    display: "flex",
-    flexWrap: "wrap",
-    textAlign: "left",
-    justifyContent: "center", // Center content horizontally
-  };
-
   return (
     <div className="bio-page-container">
       <div className="header-container">
@@ -59,8 +54,17 @@ function OrcaBio() {
         </div>
       </div>
 
+    <div className="info-style">
+        <img className="img-style" src="/src/assets/orcaTypes.png" />
+        <div className="desc-text">
+            <h1 className="bio-white-text">Orca</h1>
+            <h2 className="bio-white-text">Killer Whale</h2>
+            <p className="bio-white-text">Orcinus orca</p>
+        </div>
+    </div>
+
       <div className="cards-container">
-        <div style={cardStyle}>
+        <div className="card-style">
           {ecotypeDataAPI.map((whale) => (
             <SpeciesProfile
               key={whale.id}

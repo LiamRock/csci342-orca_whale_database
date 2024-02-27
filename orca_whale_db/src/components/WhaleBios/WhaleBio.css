@@ -1,6 +1,6 @@
 .bio-page-container {
     height: 100vh;
-    min-height: 150vh; /* Set a minimum height of the viewport height */
+    min-height: 280vh; /* Set a minimum height of the viewport height */
     display: flex;
     flex-direction: column;
     margin: 0;
