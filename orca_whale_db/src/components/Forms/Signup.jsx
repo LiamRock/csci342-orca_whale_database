@@ -16,7 +16,7 @@ function Signup() {
             <h2 className='text-7xl text-center pt-20'>PNW TRACKER</h2>
             <h2 className='text-5xl text-center py-10'>Welcome Back!</h2>
             <form onSubmit={handleSubmit}>
-                <div className="container flex flex-col items-center">
+                <div className="flex flex-col items-center">
                     <input className='box-border rounded-lg pt-2 pr-40 pl-2 pb-2 mt-0 mb-3.5' type="text" placeholder="Username" name="userName" value={userName} onChange={(event) => setUserName(event.target.value)} />
                     <input className='box-border rounded-lg pt-2 pr-40 pl-2 pb-2 mt-0 mb-3.5' type="text" placeholder="Email" name="email" value={email} onChange={(event) => setEmail(event.target.value)} />
                     <input className='box-border rounded-lg pt-2 pr-40 pl-2 pb-2 mt-0 mb-3.5' type="password" placeholder="Password" name="password" value={password} onChange={(event) => setPassword(event.target.value)} />
