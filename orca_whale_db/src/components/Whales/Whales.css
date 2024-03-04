@@ -15,7 +15,7 @@
   transform: translateX(-50%);
   width: 100%; /* Ensures the title spans the full width */
   text-align: center;
-  margin-top: 150px; /* Use percentage-based margin for responsiveness */
+  margin-top: 130px; /* Use percentage-based margin for responsiveness */
 }
 
 .whales-title-text {
@@ -29,5 +29,5 @@
   transform: translateX(-50%);
   width: 100%; /* Ensures the title spans the full width */
   text-align: center;
-  margin-top: 250px; /* Use percentage-based margin for responsiveness */
+  margin-top: 200px; /* Use percentage-based margin for responsiveness */
 }

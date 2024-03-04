@@ -33,49 +33,52 @@ const ecotypeDataAPI = [
 function OrcaBio() {
   return (
     <div className="bio-page-container">
-      <div className="header-container">
+      <div className="description-container">
         <div className="header-container">
           <h1 className="bio-white-text">Orca Whales</h1>
         </div>
+        
+        <hr/>
 
-        <div className="description-container">
-          <h2 className="bio-white-text">Description</h2>
-          <p className="bio-white-text">
-            The Pacific Northwest is home to diverse orcas, each with unique
-            eco-types. Resident Orcas, known for familial bonds, mainly eat
-            salmon and inhabit specific regions. Transient Orcas, preferring
-            marine mammals, lead nomadic lives in smaller, less stable groups.
-            Offshore Orcas, less studied, inhabit deeper waters with a broader
-            diet. These orca variations highlight adaptability to different
-            environments. Conservation is crucial due to challenges like
-            declining salmon, pollution, and vessel noise, impacting their
-            health in the rich PNW ecosystems.
-          </p>
+        <p className="bio-white-text">
+          The Pacific Northwest is home to diverse orcas, each with unique
+          eco-types. Resident Orcas, known for familial bonds, mainly eat
+          salmon and inhabit specific regions. Transient Orcas, preferring
+          marine mammals, lead nomadic lives in smaller, less stable groups.
+          Offshore Orcas, less studied, inhabit deeper waters with a broader
+          diet. These orca variations highlight adaptability to different
+          environments. Conservation is crucial due to challenges like
+          declining salmon, pollution, and vessel noise, impacting their
+          health in the rich PNW ecosystems.
+        </p>
+      </div>
+
+      <div className="orca-box-1">
+        <div className="info-style">
+            <img className="img-style" src="/src/assets/orcaTypes.png" />
+            <div className="desc-text">
+                <h1 style={{color:'white'}}>Orca</h1>
+                <h2 style={{color:'white'}}>Killer Whale</h2>
+                <p style={{color:'white'}}>Orcinus orca</p>
+                <p style={{color:'white'}}>For more info, you can check the <a href="https://en.wikipedia.org/wiki/Orca" target="_blank" rel="noopener noreferrer">Wikipedia page</a>.</p>
+            </div>
+        </div>
+
+        <div>
+          <div className="card-style">
+            {ecotypeDataAPI.map((whale) => (
+              <SpeciesProfile
+                key={whale.id}
+                img={whale.img}
+                name={whale.name}
+                description={whale.description}
+                bioLink={whale.bioLink}
+              />
+            ))}
+          </div>
         </div>
       </div>
 
-    <div className="info-style">
-        <img className="img-style" src="/src/assets/orcaTypes.png" />
-        <div className="desc-text">
-            <h1 className="bio-white-text">Orca</h1>
-            <h2 className="bio-white-text">Killer Whale</h2>
-            <p className="bio-white-text">Orcinus orca</p>
-        </div>
-    </div>
-
-      <div className="cards-container">
-        <div className="card-style">
-          {ecotypeDataAPI.map((whale) => (
-            <SpeciesProfile
-              key={whale.id}
-              img={whale.img}
-              name={whale.name}
-              description={whale.description}
-              bioLink={whale.bioLink}
-            />
-          ))}
-        </div>
-      </div>
     </div>
   );
 }

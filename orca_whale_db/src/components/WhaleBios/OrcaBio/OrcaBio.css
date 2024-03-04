@@ -1,17 +1,16 @@
+.orca-box-1 {
+    display: flex;
+    margin-bottom: 100px;
+}
+
 .card-style {
     display: flex;
     flex-wrap: wrap;
     text-align: left;
     justify-content: center; /* Center content horizontally */
     flex-direction: row; /* Set to row to align items horizontally */
+    height: 500px;
 }
-
-.cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Center content horizontally */
-    margin-top: 100px; /* Adjust margin as needed */
-  }
 
   .italic-text {
     font-style: italic !important;
@@ -21,9 +20,9 @@
 .info-style {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row; /* Set to row to align items horizontally */
+    flex-direction: column; /* Set to row to align items horizontally */
     justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
+    align-items: left; /* Center content vertically */
     background-color: #0F1035;
     padding: 40px; /* Add padding for spacing */
     border-radius: 10px; /* Add rounded edges */
@@ -34,10 +33,10 @@
 
 .img-style {
     flex: 0 0 auto; /* Make the image not grow or shrink */
-    margin-right: 20px; /* Adjust the margin as needed */
     border-radius: 5px; /* Optional: Add border-radius to the image */
     width: 800px; /* Set the width of the image */
     height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px;
 }
 
 .desc-text {
