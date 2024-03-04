@@ -28,7 +28,7 @@ header{
     width: 70%; /* Ensure the header spans the whole width */
     gap: 141px;
     border-radius: 100px;
-    z-index: 1;
+    z-index: 2;
 }
 .logo-image{
     width: 60px;
@@ -39,28 +39,13 @@ nav{
     align-items: center;
 }
 nav a{
-    margin: 0 2rem;
+    margin: 30px;
     color: var(--textColor);
     text-decoration: none;
     position: relative;
+    text-shadow: rgba(255, 255, 255, 0.8) 0px 0px 10px;
+    text-align: center;
 }
-/*line border*/
-nav a::after{
-    content: '';
-    position: absolute;
-    top: 50%; /* Adjust this value for vertical alignment */
-    right: 0;
-    transform: translateY(-45%);
-    height: 70%; /* Adjust the height of the line */
-    width: 1px; /* Width of the line */
-    background-color: var(--textColor); /* Color of the line */
-    margin-right: -33px;/* Adjust position between links*/
-    pointer-events: none;/*makes the line not clickable*/
-  }
-/*last nav a is changed to not have border*/
-.last-nav-a::after{
-    width: 0;
-  }
 nav a:hover{
     content: none;
     color:var(--secondaryColor);

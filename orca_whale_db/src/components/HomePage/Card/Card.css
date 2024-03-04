@@ -1,10 +1,10 @@
 .card{
-    width: 100%;
+    width: 100vw;
     height: 800px;
     padding: 0;
 }
 .card img{
-    width: 100%;
+    width: 100vw;
     height: 100%;
 }
 .card-content {
@@ -33,6 +33,7 @@
     margin-left: 100px;
 }
 .text p{
+    text-shadow: rgba(0, 0, 0, 0.7) 0px 0px 10px;
     margin-right: 100px;
     margin-left: 100px;
 }
