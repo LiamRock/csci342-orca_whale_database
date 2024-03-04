@@ -1,10 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url("../../../assets/orcaBioBackground.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-    background-position-y: -20px;
+    width: 100%
 }
 
 .blue-page-container {

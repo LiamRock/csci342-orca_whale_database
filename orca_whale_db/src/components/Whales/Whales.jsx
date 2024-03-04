@@ -58,14 +58,11 @@ function Whales() {
 
   return (
     <div className="page-container">
-      <br />
-
-      <div className='header-container'>
-        <h1 className="white-text">Whales of the Pacific Northwest!</h1>
+      <div className='whales-title'>
+        <h1 className="whales-title-text">Whales of the Pacific Northwest!</h1>
       </div>
 
-
-      <div className='cards-container'>
+      <div className='whales-cards-container'>
         <div style={cardStyle}>
           {whaleDataAPI.map((whale) => (
             <SpeciesProfile key={whale.id} img={whale.img} name={whale.name} description={whale.description} bioLink={whale.bioLink} />

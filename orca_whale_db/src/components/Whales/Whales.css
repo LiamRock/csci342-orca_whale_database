@@ -1,18 +1,54 @@
-.page-container{
-  /* margin-top: 4rem; */
-  background-image: url("../../assets/orcaWallpaper.jpg");
-  background-size: cover; /* Cover the entire container */
-  background-attachment: fixed; /* Fixed background position as the user scrolls */
-  background-position-y: -20px;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
-.header-container {
-  margin-top: 30px;
-}
-
-.cards-container {
+body {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* Center content horizontally */
-  margin-top: 100px; /* Adjust margin as needed */
+  align-items: center;
+  justify-content: center;
+  background-color: #242424;
+  color: rgba(255, 255, 255, 0.87);
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden; /* Hide horizontal scrollbar */
+  background-image: url("../../assets/orcaWallpaper.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Fixed background */
+}
+
+.page-container {
+  width: 100vw; /* Use viewport width to fill the screen width */
+  min-height: 100vh;
+}
+
+.whales-title {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%; /* Ensures the title spans the full width */
+  text-align: center;
+  margin-top: 130px; /* Use percentage-based margin for responsiveness */
+}
+
+.whales-title-text {
+  color: white;
+}
+
+.whales-cards-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%; /* Ensures the title spans the full width */
+  text-align: center;
+  margin-top: 200px; /* Use percentage-based margin for responsiveness */
 }
