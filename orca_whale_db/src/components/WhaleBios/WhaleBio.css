@@ -16,10 +16,18 @@
     padding: 0px !important;
 }
 
+.bio-title {
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-weight: bolder;
+}
+
 .bio-white-text {
     color: white;
     padding: 20px;
     text-align: center;
+    font-size: x-large;
 }
 
 .description-container {
@@ -27,10 +35,11 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
     border-radius: 10px;
     padding: 20px;
-    width: 1000px;
+    width: 1500px;
     max-width: 90%; /* Ensure it doesn't exceed the viewport width */
     margin-top: 170px; /* Adjust the margin-top as needed */
     margin-bottom: 50px;
+    height: auto;
 }
 
 

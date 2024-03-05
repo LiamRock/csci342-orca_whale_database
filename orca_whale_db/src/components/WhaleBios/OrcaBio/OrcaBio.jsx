@@ -2,6 +2,9 @@ import "../WhaleBio.css";
 import "./OrcaBio.css"
 import SpeciesProfile from "../../WhaleGroup/SpeciesProfile";
 import "../../WhaleGroup/SpeciesProfile.css"
+import DidYouKnow from "../../DidYouKnow/DidYouKnow"
+import Carousel from "../../Carousel/Carousel.jsx"
+import { slides } from "./orcaSlidesData.json"
 
 const ecotypeDataAPI = [
   {
@@ -35,7 +38,7 @@ function OrcaBio() {
     <div className="bio-page-container">
       <div className="description-container">
         <div className="header-container">
-          <h1 className="bio-white-text">Orca Whales</h1>
+          <h1 className="bio-title">Orca Whales</h1>
         </div>
         
         <hr/>
@@ -76,10 +79,18 @@ function OrcaBio() {
               />
             ))}
           </div>
+
+          <div>
+              <DidYouKnow fact="Orcas are the largets species of Dolphin in the world!" img="../src/assets/orcaSizeCompare.jpg"/>
+          </div>
         </div>
       </div>
 
+      <div className="carousel-container">
+        <Carousel data={slides}/>
+      </div>
     </div>
+    
   );
 }
 

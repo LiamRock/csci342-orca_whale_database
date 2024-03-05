@@ -18,25 +18,29 @@
     }
 
 .info-style {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column; /* Set to row to align items horizontally */
-    justify-content: center; /* Center content horizontally */
-    align-items: left; /* Center content vertically */
     background-color: #0F1035;
-    padding: 40px; /* Add padding for spacing */
     border-radius: 10px; /* Add rounded edges */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8); /* Add box shadow */
     width: fit-content; /* Fit the width to content */
-    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px;
+    height: 770px;
+}
+
+.carousel-container {
+    background-color: #0F1035;
+    border-radius: 10px; /* Add rounded edges */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8); /* Add box shadow */
+    padding: 20px;
+    height: auto;
+    width: auto;
 }
 
 .img-style {
-    flex: 0 0 auto; /* Make the image not grow or shrink */
     border-radius: 5px; /* Optional: Add border-radius to the image */
     width: 800px; /* Set the width of the image */
     height: auto; /* Maintain aspect ratio */
     margin-bottom: 20px;
+    margin-top: 0px;
 }
 
 .desc-text {

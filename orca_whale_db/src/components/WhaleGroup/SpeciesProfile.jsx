@@ -10,11 +10,6 @@ function SpeciesProfile(props) {
         src={props.img}
         alt=""
         className='card-image'
-        // style={{
-        //   objectFit: "cover", // Adjust based on your preference
-        //   height: "200px", // Set a fixed height for the image
-        //   width: "100%", // Ensure the image takes up the full width of the container
-        // }}
       />
       <p className='card-description'>{props.description}</p>
 
@@ -24,7 +19,6 @@ function SpeciesProfile(props) {
         </Link>
       </div>
 
-      {/* Add other content as needed */}
       <Outlet />
     </div>
   );
