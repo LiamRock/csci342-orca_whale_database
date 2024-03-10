@@ -1,22 +1,22 @@
 import React from 'react';
-import './DiscussionPost.css'; // Import your CSS file
+import './DiscussionPost.css';
 
 import profile from '../../assets/profile-circle.svg';
 import postImage from '../../assets/banner.jpg';
 
-function DiscussionPost() {
+function DiscussionPost({ username, location, date, time, description }) {
     return (
         <div className="post-container">
             <div className="user-info">
                 <img src={profile} alt="Profile" className="profile-image" />
                 <div className="user-details">
-                    <h1 className="username">UserName</h1>
-                    <p className="location">Location</p>
-                    <p className="time">Time and Date</p>
+                    <h1 className="username">UserName{username}</h1>
+                    <p className="location">Location{location}</p>
+                    <p className="time">Date and Time{date} {time}</p>
                 </div>
             </div>
             <p className="description">
-                Description
+                Description{description}
             </p>
             <img src={postImage} alt="Post" className="post-image" />
         </div>
