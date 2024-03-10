@@ -7,7 +7,6 @@ function Banner({title, backgroundImage}) {
                 <div className='banner-text'>
                     <h1 className='text-white '>{title}</h1>
                 </div>
-                <button className="banner-button">Learn More</button>
             </div>
         </div>
     )

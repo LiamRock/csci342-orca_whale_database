@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './Card.css';
 function Card() {
   
@@ -12,7 +13,9 @@ function Card() {
                         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
                         nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
                     </p>
-                    <button className="button">See Posts</button>
+                    <button className="button">
+                        <Link to="/posts" className="text-black">See Posts</Link>
+                    </button>
                 </div>
                 <img src="./src/assets/card.jpg"/>
             </div>

@@ -19,8 +19,9 @@ import Login from './components/Forms/Login.jsx'
 import Signup from './components/Forms/Signup.jsx'
 import ForgotPassword from './components/Forms/ForgetPassword.jsx'
 import NotFoundPage from './components/NotFound/NotFoundPage'
-
+import PostPage from './components/PostPage/PostPage.jsx';
 import './index.css'
+
 
 const router = createBrowserRouter([
   {path:"/", element:<App/>, children: [ // Replace App with homepage
@@ -39,6 +40,7 @@ const router = createBrowserRouter([
     {path:"/login", element: <Login/>},
     {path:"/signup", element: <Signup/>},
     {path:"/forgotpassword", element: <ForgotPassword/>},
+    {path:"/posts", element: <PostPage/>},
   ]}
 ]);
 
