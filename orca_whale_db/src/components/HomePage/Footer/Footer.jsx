@@ -7,9 +7,9 @@ function Footer() {
         <div className='footer-content'>
             <img src='./src/assets/orcaLogo.png'/>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Discover awe-inspiring sightings, fascinating facts, and captivating stories about these 
+            majestic marine creatures. Join our community of enthusiasts and conservationists as we 
+            celebrate the beauty and wonder of whales together. 
             </p>
         </div>
         <div className='links'>
