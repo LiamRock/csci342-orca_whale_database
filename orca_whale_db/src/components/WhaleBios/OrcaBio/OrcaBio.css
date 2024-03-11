@@ -27,18 +27,6 @@
     height: 770px;
 }
 
-.carousel-container {
-    background-color: #0F1035;
-    border-radius: 10px; /* Add rounded edges */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8); /* Add box shadow */
-    padding: 0px;
-    height: auto;
-    width: auto;
-    display: flex;
-    justify-content: center;
-    margin: 40px;
-}
-
 .img-style {
     border-radius: 5px; /* Optional: Add border-radius to the image */
     width: 800px; /* Set the width of the image */

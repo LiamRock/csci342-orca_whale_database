@@ -1,5 +1,4 @@
 /* Whales.js */
-import React from 'react';
 import SpeciesProfile from '../WhaleGroup/SpeciesProfile';
 import './Whales.css';
 

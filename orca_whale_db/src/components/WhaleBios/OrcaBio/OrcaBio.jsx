@@ -5,7 +5,7 @@ import "../../WhaleGroup/SpeciesProfile.css"
 // import DidYouKnow from "../../DidYouKnow/DidYouKnow"
 import DidYouKnowCarousel from "../../DidYouKnow/DidYouKnowCarousel.jsx"
 // import Carousel from "../../Carousel/Carousel.jsx"
-import { slides, facts } from "./orcaSlidesData.json"
+import { facts } from "./orcaSlidesData.json"
 import BioDescription from '../BioDescription/BioDescription.jsx'
 
 const ecotypeDataAPI = [
@@ -38,28 +38,6 @@ const ecotypeDataAPI = [
 function OrcaBio() {
   return (
     <div className="bio-page-container">
-      {/* <div className="description-container">
-        <div className="header-container">
-          <h1 className="bio-title">Orca Whales</h1>
-          <p className="subtitle">Orcinus orca</p>
-          <a className="bio-link" href="https://en.wikipedia.org/wiki/Orca" target="_blank" rel="noreferrer">Wikipedia Page</a>
-        </div>
-        
-        <hr/>
-
-        <p className="bio-white-text">
-          The Pacific Northwest is home to diverse orcas, each with unique
-          eco-types. Resident Orcas, known for familial bonds, mainly eat
-          salmon and inhabit specific regions. Transient Orcas, preferring
-          marine mammals, lead nomadic lives in smaller, less stable groups.
-          Offshore Orcas, less studied, inhabit deeper waters with a broader
-          diet. These orca variations highlight adaptability to different
-          environments. Conservation is crucial due to challenges like
-          declining salmon, pollution, and vessel noise, impacting their
-          health in the rich PNW ecosystems.
-        </p>
-      </div> */}
-
       <BioDescription 
         title="Orca Whales"
         subtitle="Orcinus orca"
