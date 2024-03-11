@@ -1,19 +1,15 @@
 import '../WhaleBio.css';
+import BioDescription from '../BioDescription/BioDescription.jsx'
 
 function GrayBio() {
     return (
         <div className='bio-page-container'>
-            <div className='header-container'>
-                <div className='header-container'>
-                    <h1 className="bio-white-text">Gray Whales</h1>
-                </div>
-
-                <div className='description-container'>
-                    <h2 className='bio-white-text'>Description</h2>
-                    <p className='bio-white-text'>
-                    Gray whales (Eschrichtius robustus) are iconic inhabitants of the Pacific Northwest (PNW), recognized for their mottled gray appearance and extraordinary migration. These whales embark on one of the longest mammalian migrations, traveling between their Arctic feeding grounds and Baja California breeding and calving lagoons. In the PNW, they are frequently observed during their spring and fall migrations, offering a captivating spectacle for whale watchers along the coastline. Conservation efforts in the region focus on understanding and safeguarding gray whales, addressing concerns such as entanglement in fishing gear and the impacts of environmental changes on their migratory routes.</p>
-                </div>
-            </div>
+            <BioDescription 
+                title="Gray Whales"
+                subtitle="Eschrichtius robustus"
+                wiki="https://en.wikipedia.org/wiki/Gray_whale"
+                desc="The Pacific Northwest is graced by the presence of magnificent gray whales, captivating inhabitants of its expansive coastal waters. Known for their remarkable migration journeys, gray whales embark on one of the longest migrations of any mammal, traveling thousands of miles between their Arctic feeding grounds and the warm lagoons of Baja California where they give birth. Their feeding habits predominantly involve bottom-feeding on benthic organisms in shallow coastal areas, showcasing a distinct behavior that sets them apart. These gentle giants, without the complex ecotypes observed in orcas, captivate onlookers with their awe-inspiring movements and contribute to the rich marine tapestry of the Pacific Northwest. Conservation efforts remain essential to protect these majestic creatures from various threats and ensure the continued harmony of their habitats."
+            />
         </div>
     );
 }

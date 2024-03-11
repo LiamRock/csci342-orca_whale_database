@@ -10,11 +10,12 @@
     justify-content: center; /* Center content horizontally */
     flex-direction: row; /* Set to row to align items horizontally */
     height: 500px;
+    width: 1300px;
 }
 
   .italic-text {
-    font-style: italic !important;
-    color: white;
+        font-style: italic !important;
+        color: white;
     }
 
 .info-style {
@@ -30,9 +31,12 @@
     background-color: #0F1035;
     border-radius: 10px; /* Add rounded edges */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8); /* Add box shadow */
-    padding: 20px;
+    padding: 0px;
     height: auto;
     width: auto;
+    display: flex;
+    justify-content: center;
+    margin: 40px;
 }
 
 .img-style {
@@ -47,4 +51,8 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: column; /* Set to column to stack items vertically */
+}
+
+hr {
+    margin-top: 20px;
 }

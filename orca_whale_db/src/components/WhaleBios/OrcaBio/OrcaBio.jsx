@@ -2,9 +2,11 @@ import "../WhaleBio.css";
 import "./OrcaBio.css"
 import SpeciesProfile from "../../WhaleGroup/SpeciesProfile";
 import "../../WhaleGroup/SpeciesProfile.css"
-import DidYouKnow from "../../DidYouKnow/DidYouKnow"
-import Carousel from "../../Carousel/Carousel.jsx"
-import { slides } from "./orcaSlidesData.json"
+// import DidYouKnow from "../../DidYouKnow/DidYouKnow"
+import DidYouKnowCarousel from "../../DidYouKnow/DidYouKnowCarousel.jsx"
+// import Carousel from "../../Carousel/Carousel.jsx"
+import { slides, facts } from "./orcaSlidesData.json"
+import BioDescription from '../BioDescription/BioDescription.jsx'
 
 const ecotypeDataAPI = [
   {
@@ -36,9 +38,11 @@ const ecotypeDataAPI = [
 function OrcaBio() {
   return (
     <div className="bio-page-container">
-      <div className="description-container">
+      {/* <div className="description-container">
         <div className="header-container">
           <h1 className="bio-title">Orca Whales</h1>
+          <p className="subtitle">Orcinus orca</p>
+          <a className="bio-link" href="https://en.wikipedia.org/wiki/Orca" target="_blank" rel="noreferrer">Wikipedia Page</a>
         </div>
         
         <hr/>
@@ -54,43 +58,39 @@ function OrcaBio() {
           declining salmon, pollution, and vessel noise, impacting their
           health in the rich PNW ecosystems.
         </p>
-      </div>
+      </div> */}
 
-      <div className="orca-box-1">
-        <div className="info-style">
-            <img className="img-style" src="/src/assets/orcaTypes.png" />
-            <div className="desc-text">
-                <h1 style={{color:'white'}}>Orca</h1>
-                <h2 style={{color:'white'}}>Killer Whale</h2>
-                <p style={{color:'white'}}>Orcinus orca</p>
-                <p style={{color:'white'}}>For more info, you can check the <a href="https://en.wikipedia.org/wiki/Orca" target="_blank" rel="noopener noreferrer">Wikipedia page</a>.</p>
-            </div>
-        </div>
+      <BioDescription 
+        title="Orca Whales"
+        subtitle="Orcinus orca"
+        wiki="https://en.wikipedia.org/wiki/Orca"
+        desc="The Pacific Northwest is home to diverse orcas, each with unique
+        eco-types. Resident Orcas, known for familial bonds, mainly eat
+        salmon and inhabit specific regions. Transient Orcas, preferring
+        marine mammals, lead nomadic lives in smaller, less stable groups.
+        Offshore Orcas, less studied, inhabit deeper waters with a broader
+        diet. These orca variations highlight adaptability to different
+        environments. Conservation is crucial due to challenges like
+        declining salmon, pollution, and vessel noise, impacting their
+        health in the rich PNW ecosystems."
+      />
 
-        <div>
-          <div className="card-style">
-            {ecotypeDataAPI.map((whale) => (
-              <SpeciesProfile
-                key={whale.id}
-                img={whale.img}
-                name={whale.name}
-                description={whale.description}
-                bioLink={whale.bioLink}
-              />
-            ))}
-          </div>
-
-          <div>
-              <DidYouKnow fact="Orcas are the largets species of Dolphin in the world!" img="../src/assets/orcaSizeCompare.jpg"/>
-          </div>
-        </div>
+      <div className="card-style">
+        {ecotypeDataAPI.map((whale) => (
+          <SpeciesProfile
+            key={whale.id}
+            img={whale.img}
+            name={whale.name}
+            description={whale.description}
+            bioLink={whale.bioLink}
+          />
+        ))}
       </div>
 
       <div className="carousel-container">
-        <Carousel data={slides}/>
+        <DidYouKnowCarousel data={facts}/>
       </div>
     </div>
-    
   );
 }
 

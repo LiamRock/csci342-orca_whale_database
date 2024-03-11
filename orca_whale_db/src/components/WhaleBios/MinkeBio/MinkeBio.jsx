@@ -1,19 +1,15 @@
 import '../WhaleBio.css';
+import BioDescription from '../BioDescription/BioDescription.jsx'
 
 function MinkeBio() {
     return (
         <div className='bio-page-container'>
-            <div className='header-container'>
-                <div className='header-container'>
-                    <h1 className="bio-white-text">Minke Whales</h1>
-                </div>
-
-                <div className='description-container'>
-                    <h2 className='bio-white-text'>Description</h2>
-                    <p className='bio-white-text'>
-                    Minke whales (Balaenoptera acutorostrata) are relatively common inhabitants of the Pacific Northwest (PNW) waters. These smaller baleen whales, reaching lengths of around 23 feet, are recognized by their modest size, pointed snouts, and distinct white bands on their flippers. Minkes can be observed year-round in the PNW, displaying a more solitary and elusive behavior compared to some other whale species. They are known to feed on small fish and krill, contributing to the region's rich marine biodiversity. Despite their smaller size, conservation efforts in the PNW aim to understand and protect these enigmatic minke whales, adding to the overall appreciation and stewardship of marine life in the area.</p>
-                </div>
-            </div>
+            <BioDescription 
+                title="Common Minke Whales"
+                subtitle="Balaenoptera acutorostrata"
+                wiki="https://en.wikipedia.org/wiki/Common_minke_whale"
+                desc="Within the Pacific Northwest's marine expanse, the common Minke whales add a touch of enchantment to the coastal waters. Characterized by their modest size and streamlined bodies, these whales navigate with agility, contributing to the region's diverse marine tapestry. Displaying a relatively solitary lifestyle, common Minke whales engage in gentle surface behaviors such as breaching and porpoising. Versatile feeders, they consume small fish, krill, and other marine organisms. Unlike orcas with intricate ecotypes or humpbacks known for acrobatics, common Minke whales are subtle in their presence, often eluding attention. Their vocalizations, though less complex than some counterparts, echo through the ocean depths. Conservation endeavors are crucial to safeguard common Minke whales from potential threats, ensuring the continued enchantment of these understated yet vital contributors to the diverse marine life of the Pacific Northwest."
+            />   
         </div>
     );
 }

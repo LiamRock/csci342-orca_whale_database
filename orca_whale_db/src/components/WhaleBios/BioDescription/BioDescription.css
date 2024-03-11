@@ -1,0 +1,41 @@
+.bio-description-container {
+    background-color: #0F1035;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
+    border-radius: 10px;
+    padding: 20px;
+    width: 1300px;
+    margin-top: 170px; /* Adjust the margin-top as needed */
+    margin-bottom: 50px;
+    height: auto;
+}
+
+.bio-header-container {
+    text-align: center;
+    padding: 0px !important;
+}
+
+.bio-title {
+    color: white;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.bio-link {
+    color: white;
+    font-weight: bolder; 
+    margin: 20px;
+}
+
+.subtitle {
+    font-style: italic;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: x-large;
+    margin-bottom: 10px;
+}
+
+.bio-white-text {
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: x-large;
+}

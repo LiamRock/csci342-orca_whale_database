@@ -1,6 +1,6 @@
 .page-container {
   width: 100vw; /* Use viewport width to fill the screen width */
-  min-height: 100vh;
+  min-height: 200vh;
   background-image: url('../../assets/orcaWallpaper.jpg'); /* Replace 'your-image-url.jpg' with the actual path to your image */
   background-size: cover;
   background-position: center; /* Center the background image */
