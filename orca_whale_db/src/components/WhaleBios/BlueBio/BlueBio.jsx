@@ -1,6 +1,7 @@
 import '../WhaleBio.css';
 import BioDescription from '../BioDescription/BioDescription.jsx'
 import DidYouKnowCarousel from "../../DidYouKnow/DidYouKnowCarousel.jsx"
+import { facts } from "./blueData.json"
 
 function BlueBio() {
     return (

@@ -1,0 +1,37 @@
+{
+
+    "facts": [
+        {
+            "fact": "Blue whales hold the title of the largest animals on Earth, with some individuals reaching lengths of over 100 feet and weighing as much as 200 tons.",
+            "img": "https://www.americanoceans.org/wp-content/uploads/2023/08/are-blue-whales-dangerous-scaled.jpeg"
+        },
+        {
+            "fact": "Blue whales are baleen whales, using comb-like plates in their mouths to filter small organisms like krill from the water. A single adult can consume up to 4 tons of krill per day.",
+            "img": "https://us.whales.org/wp-content/uploads/sites/2/2018/12/humpback-whale-wdc.jpg"
+        },
+        {
+            "fact": "The heart of a blue whale is massive, weighing as much as a small car, and its heartbeat can be detected from over 2 miles away. This colossal heart helps pump blood through their vast bodies.",
+            "img": "https://live.staticflickr.com/502/31988440274_5d015d0907_b.jpg"
+        },
+        {
+            "fact": "Blue whales are known for their unique and powerful vocalizations, which can travel for hundreds of miles underwater. These calls are crucial for communication, locating mates, and potentially navigating their environments.",
+            "img": "https://www.bksv.com/~/media/C571D31A651F4279B12F1A21E5F85E6E.ashx?hash=B8B37CDE5066D6B1276EA05558C8F461F59EE9CD&h=449&w=866"
+        },
+        {
+            "fact": "Despite their massive size, blue whales are gentle giants, and there are no known instances of them attacking humans. They are often observed peacefully swimming or feeding in various oceans around the world.",
+            "img": "https://news.stanford.edu/wp-content/uploads/2021/10/humpback-whale-Antarctic.jpg"
+        },
+        {
+            "fact": "A blue whale’s tongue alone can weigh as much as an elephant.",
+            "img": "https://worldanimalfoundation.org/wp-content/uploads/2023/03/Blue-Whale-Tongue-review.jpg"
+        },
+        {
+            "fact": "Despite being massive, blue whales are graceful swimmers, capable of reaching speeds of up to 20 miles per hour when swimming at the surface. However, they typically move much slower during feeding.",
+            "img": "https://d1jyxxz9imt9yb.cloudfront.net/article/6150/meta_image/regular/sri-lanka-blue-whale-ChristianLoader.jpg"
+        },
+        {
+            "fact": "Blue whales were heavily hunted during the 20th century, leading to a drastic decline in their populations. While they are now protected, they still face threats such as ship strikes, ocean noise, and climate change.",
+            "img": "https://www.nhm.ac.uk/bluewhale/static/images/hotspots/backgrounds/ocean7_whaling_whaling-men_col2-xxlarge.jpg"
+        }
+    ]
+}
