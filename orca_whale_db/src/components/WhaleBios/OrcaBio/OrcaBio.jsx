@@ -12,10 +12,10 @@ const ecotypeDataAPI = [
   {
     id: 1,
     img: '/src/assets/SRKW.jpg',
-    name: "Resident Orcas",
+    name: "Southern Resident Orcas",
     description:
       "Resident orcas are known for their strong family bonds and social structures. They primarily feed on fish, with a particular emphasis on salmon.",
-    bioLink: "/whales/orcas",
+    bioLink: "/whales/orcas/residents",
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const ecotypeDataAPI = [
     name: "Transient Orcas",
     description:
       "Transient orcas have a more nomadic lifestyle compared to residents. They prefer marine mammals as their primary prey, such as seals and sea lions.",
-    bioLink: "/whales/orcas",
+    bioLink: "/whales/orcas/transients",
   },
   {
     id: 3,
@@ -31,7 +31,7 @@ const ecotypeDataAPI = [
     name: "Offshore Orcas",
     description:
       " Offshore orcas are less studied than residents and transients. They are known to inhabit deeper waters and have a more varied diet, including fish and squid.",
-    bioLink: "/whales/orcas",
+    bioLink: "/whales/orcas/offshore",
   },
 ];
 
