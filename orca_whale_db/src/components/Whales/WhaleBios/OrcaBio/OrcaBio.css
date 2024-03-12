@@ -8,6 +8,8 @@
     border-radius: 10px; /* Add rounded edges */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8); /* Add box shadow */
     width: fit-content; /* Fit the width to content */
+    padding: 20px;
+    margin-bottom: 40px;
 }
 
 .card-style {
