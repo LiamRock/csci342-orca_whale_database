@@ -8,10 +8,10 @@ function BioDescription(props) {
         <div className="bio-header-container">
           <h1 className="bio-title">{props.title}</h1>
           <p className="subtitle">{props.subtitle}</p>
-          <a className="bio-link" href={props.wiki} target="_blank" rel="noreferrer">Wikipedia Page</a>
+          <a className="bio-moreinfo-link" href={props.wiki} target="_blank" rel="noreferrer">More Information!</a>
         </div>
         
-        <hr/>
+        <hr className='bio-hr'/>
 
         <p className="bio-white-text">
             {props.desc}

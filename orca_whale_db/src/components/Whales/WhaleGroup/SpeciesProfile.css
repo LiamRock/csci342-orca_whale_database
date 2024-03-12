@@ -48,5 +48,26 @@
   position: relative; /* Change to relative to allow button container to flow within card container */
   margin-top: auto; /* Push the button container to the bottom */
   padding-top: 15px;
-  
+}
+
+.reactive-button {
+  display: block;
+  max-width: 250px;
+  margin: auto;
+  color: black;
+  background-color: white;
+  padding: 10px;
+  border-radius: 2rem;
+  font-weight: bolder; 
+  font-size: larger;
+  text-decoration: none;
+  transition-duration: 0.2s !important;
+}
+
+.reactive-button:hover {
+  transform: scale(1.1);
+  background-color: white;
+  color: black;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  border-width: 0;
 }

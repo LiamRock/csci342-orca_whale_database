@@ -53,6 +53,11 @@ function OrcaBio() {
         health in the rich PNW ecosystems."
       />
 
+      <div className="orca-conservation-container">
+        <h1>Conservation</h1>
+        <hr/>
+      </div>
+
       <div className="card-style">
         {ecotypeDataAPI.map((whale) => (
           <SpeciesProfile
