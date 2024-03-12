@@ -17,7 +17,7 @@ connection.once("open", () => {
   console.log("MongoDB database connection established successfully");
 });
 
-const sightingsRouter = require("./routes/Sightings");
+const sightingsRouter = require("./routes/sightings.js");
 app.use("/sightings", sightingsRouter);
 
 app.listen(port, () => {
