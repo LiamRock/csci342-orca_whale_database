@@ -4,7 +4,9 @@
   "description": "backend for orca_whale_db",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "cd && cd ../api && node server.js",
+    "client": "cd && cd ../orca_whale_db && npm run dev"
   },
   "author": "",
   "license": "ISC",
