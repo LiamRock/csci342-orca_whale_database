@@ -20,6 +20,6 @@ connection.once("open", () => {
 const sightingsRouter = require("./routes/sightings.js");
 app.use("/sightings", sightingsRouter);
 
-app.listen(port, () => {
+app.listen(port, "0.0.0.0", () => {
   console.log(`Server is running on port: ${port}`);
 });
