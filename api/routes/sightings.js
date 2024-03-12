@@ -5,7 +5,7 @@ router
   .route("/")
   .get((req, res) => {
     Sighting.find()
-      .then((sightings) => res.json({ result: sightings }))
+      .then((sightings) => res.json(sightings))
       .catch((err) => req.status(400).json("Error: " + err));
   })
 
@@ -51,7 +51,7 @@ router
 
     newSighting
       .save()
-      .then(() => res.json({ result: newSighting }))
+      .then(() => res.json(newSighting))
       .catch((err) => res.status(400).json("Error: " + err));
   });
 
