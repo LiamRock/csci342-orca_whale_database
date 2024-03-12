@@ -1,0 +1,36 @@
+{
+    "facts": [
+        {
+            "fact": "Fin whales, the second-largest animals on Earth, possess a sleek and streamlined body, enabling them to reach impressive speeds of up to 25 miles per hour.",
+            "img": "https://c02.purpledshub.com/uploads/sites/62/2023/02/Fin-whales-bf492d0.jpg"
+        },
+        {
+            "fact": "Known for their distinct asymmetrical coloration, fin whales have a white lower right jaw and a darker left side. This unique marking aids researchers in identifying individuals.",
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYQqlg62MD1W6Si8SbeYTH2VANVexUljltyZbBfIYoL-UeSgb5-SqD6GKBmVoo2k0uy6c&usqp=CAU"
+        },
+        {
+            "fact": "Fin whales employ a unique feeding technique called lunge feeding, wherein they engulf large volumes of water and prey, expanding the pleats on their throat to accommodate the massive intake.",
+            "img": "https://i0.wp.com/www.sciencenews.org/wp-content/uploads/2022/01/011922_so_baleen-whales_feat.jpg?fit=1440%2C810&amp;ssl=1"
+        },
+        {
+            "fact": "These whales produce low-frequency vocalizations that can travel for hundreds of miles. The purpose of their calls is not fully understood but may involve communication, navigation, or locating potential mates.",
+            "img": "https://uk.whales.org/wp-content/uploads/sites/6/2023/10/CS23313-scaled-e1696411068476.jpg"
+        },
+        {
+            "fact": "Fin whales are known for their relatively long and streamlined bodies, contributing to their nickname 'greyhounds of the sea.' They are adept swimmers and can cover vast distances during migrations.",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Finhval_%281%29.jpg"
+        },
+        {
+            "fact": "The gestation period for fin whales is around 11 months, and calves are born weighing up to 2,000 pounds. Mother-calf bonds are strong, with mothers providing care and protection for an extended period.",
+            "img": "https://whalesanddolphins.tethys.org/wp-content/uploads/2023/09/CORSARA-PROPELLER-2-20230902-JESSICA-PICOZZI-1030x687.jpg"
+        },
+        {
+            "fact": "Despite being one of the fastest whales, fin whales face threats such as ship strikes, entanglement in fishing gear, and noise pollution. Conservation efforts are crucial to ensure the protection of these magnificent marine beings.",
+            "img": "https://scx2.b-cdn.net/gfx/news/2018/2-thecarcassof.jpg"
+        },
+        {
+            "fact": "Fin whales have a global distribution, inhabiting various oceans and seas. Their adaptability to different environments highlights their role as important contributors to marine ecosystems around the world.",
+            "img": "../src/assets/finDist.png"
+        }
+    ]
+}

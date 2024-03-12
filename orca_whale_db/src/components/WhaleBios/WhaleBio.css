@@ -1,31 +1,67 @@
 .bio-page-container {
-    height: 100vh;
-    min-height: 280vh; /* Set a minimum height of the viewport height */
+    width: 100vw;
+    min-height: 100vh;
+    background-image: url('../../assets/orcaBioBackground.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
-    margin: 0;
-    padding: 0;
-    background-image: url("../../../assets/orcaBioBackground.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-    background-position-y: -40px;
+    align-items: center;
+    position: relative;
+    padding-left: 10rem;
+    padding-right: 10rem;
 }
 
 .header-container {
     text-align: center;
-    padding: 2rem;
+    padding: 0px !important;
+}
+
+.bio-title {
+    color: white;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.bio-link {
+    color: white;
+    font-weight: bolder; 
+    margin: 20px;
+}
+
+.subtitle {
+    font-style: italic;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: x-large;
 }
 
 .bio-white-text {
     color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: x-large;
 }
 
 .description-container {
-    /* Add styles for description container if needed */
     background-color: #0F1035;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
     border-radius: 10px;
-    padding: 20px; /* Adjust the padding as needed */
+    padding: 20px;
+    width: 1300px;
+    margin-top: 170px; /* Adjust the margin-top as needed */
+    margin-bottom: 50px;
+    height: auto;
 }
 
-
+.carousel-container {
+    background-color: #0F1035;
+    border-radius: 10px; /* Add rounded edges */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8); /* Add box shadow */
+    padding: 0px;
+    height: auto;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    margin: 40px;
+}

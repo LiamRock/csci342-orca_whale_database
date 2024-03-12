@@ -1,5 +1,4 @@
 /* Whales.js */
-import React from 'react';
 import SpeciesProfile from '../WhaleGroup/SpeciesProfile';
 import './Whales.css';
 
@@ -42,7 +41,7 @@ const whaleDataAPI = [
   {
     id: 6,
     img: 'src/assets/minkeWhale.jpg',
-    name: 'Minke Whale',
+    name: 'Common Minke Whale',
     description: "The Minke Whale, a smaller baleen whale species, is recognized for its modest size, streamlined appearance, and often elusive nature, contributing to the diversity of marine life with its subtle yet fascinating presence in the world's oceans.",
     bioLink: "/whales/minkes",
   },
@@ -58,14 +57,11 @@ function Whales() {
 
   return (
     <div className="page-container">
-      <br />
-
-      <div className='header-container'>
-        <h1 className="white-text">Whales of the Pacific Northwest!</h1>
+      <div className='whales-title'>
+        <h1 className="whales-title-text">Whales of the Pacific Northwest!</h1>
       </div>
 
-
-      <div className='cards-container'>
+      <div className='whales-cards-container'>
         <div style={cardStyle}>
           {whaleDataAPI.map((whale) => (
             <SpeciesProfile key={whale.id} img={whale.img} name={whale.name} description={whale.description} bioLink={whale.bioLink} />

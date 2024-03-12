@@ -1,0 +1,55 @@
+{
+    "slides": [
+        {
+            "src": "https://www.thoughtco.com/thmb/JT-Zx0vKKPlgsj5NmVk3fjZEs5k=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-826128004-6cb21c0037424480b047a648e294e669.jpg",
+            "alt": "orcas1"
+        },
+        {
+            "src": "https://seattleorcawhalewatching.com/wp-content/uploads/2016/07/61-DSC_0210.jpg",
+            "alt": "orcas2"
+        },
+        {
+            "src": "https://i.natgeofe.com/n/7d4dee00-a0ac-4582-8b9a-cd72aed610f4/03_orca_killer_whale_gallery.jpg",
+            "alt": "orcas3"
+        },
+        {
+            "src": "https://annemckinnell.com/blog/wp-content/uploads/2013/06/victoria_20130604__MG_2995-Edit_lg.jpg",
+            "alt": "orcas4"
+        }
+    ],
+
+    "facts": [
+        {
+            "fact": "Orcas are apex predators and have one of the most diverse diets among marine animals. They feed on fish, squid, and marine mammals, including seals, sea lions, and even whales and sharks.",
+            "img": "https://i.guim.co.uk/img/media/e73c6fa205a7edbce081a360abfc6380e98eafc4/0_189_1430_858/master/1430.jpg?width=1200&quality=85&auto=format&fit=max&s=e2ed83265419e9bbfa8410652cd2db23"
+        },
+        {
+            "fact": "Different orca populations around the world exhibit unique cultural behaviors, including distinct hunting techniques, vocalizations, and even food preferences. This diversity suggests a high level of intelligence and social structure within these groups.",
+            "img": "https://qph.cf2.quoracdn.net/main-qimg-de7e1421e2862f1e93fd887adff51b96-lq"
+        },
+        {
+            "fact": "Orcas use a sophisticated system of clicks, whistles, and pulsed calls to communicate with each other. Each pod has its own distinct set of vocalizations, contributing to the idea of cultural differences among populations.",
+            "img": "https://www.fisheries.noaa.gov/s3/styles/original/s3/dam-migration/killer-whale-echolocation.jpg?itok=WsK8oBDe"
+        },
+        {
+            "fact": "Orcas are known for their problem-solving abilities. They have been observed using coordinated efforts to hunt, manipulate objects, and even play games. Some researchers compare their problem-solving skills to those of great apes.",
+            "img": "https://i.natgeofe.com/n/967aa2d7-7395-45aa-9b95-c12865dd73d4/MM10112_BG_B1WaveWash_WPY_ORIGINAL_3x2.jpg"
+        },        
+        {
+            "fact": "Orcas typically live in family groups called pods, which are led by an older female known as the matriarch. The bond between members of a pod, especially between mothers and their calves, is strong and enduring.",
+            "img": "https://i.natgeofe.com/n/7d4dee00-a0ac-4582-8b9a-cd72aed610f4/03_orca_killer_whale_gallery_3x2.jpg"
+        },        
+        {
+            "fact": "Orcas have one of the longest lifespans of any marine mammal. While the average lifespan is around 50-80 years, some individuals in the wild have been known to live over 90 years.",
+            "img": "https://www.deadlinenews.co.uk/wp-content/uploads/2022/01/20_DAY_OLD_SCOTTISH_ORCA_DN01-1-e1642514201819.jpg"
+        },
+        {
+            "fact": "Orcas are found in oceans all around the world, from the Arctic to Antarctic regions. Their adaptability to various environments makes them one of the most widespread marine mammals.",
+            "img": "../src/assets/orcaDistribution.png"
+        },
+        {
+            "fact": "While orcas are not currently considered endangered, some populations face threats such as pollution, habitat loss, and depletion of their prey. Conservation efforts are crucial to ensuring the continued well-being of these remarkable marine creatures.",
+            "img": "https://www.biologicaldiversity.org/news/press_releases/2017/images/srkw_updated.jpg"
+        }
+    ]
+}

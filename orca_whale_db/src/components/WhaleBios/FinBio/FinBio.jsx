@@ -1,19 +1,21 @@
 import '../WhaleBio.css';
+import BioDescription from '../BioDescription/BioDescription.jsx'
+import DidYouKnowCarousel from "../../DidYouKnow/DidYouKnowCarousel.jsx"
+import { facts } from "./finData.json"
 
 function FinBio() {
     return (
         <div className='bio-page-container'>
-            <div className='header-container'>
-                <div className='header-container'>
-                    <h1 className="bio-white-text">Fin Whales</h1>
-                </div>
+            <BioDescription 
+                title="Fin Whales"
+                subtitle="Balaenoptera physalus"
+                wiki="https://en.wikipedia.org/wiki/Fin_whale"
+                desc="In the expanse of the Pacific Northwest, the graceful presence of fin whales adds to the region's marine splendor. As the second-largest animals on Earth, fin whales navigate coastal waters with elegance, distinguished by their slender bodies and a distinctive chevron pattern on their backs. Renowned for their swift swimming capabilities, fin whales employ a filter-feeding technique, engulfing vast quantities of small fish and krill. Unlike orcas with their ecotypes or humpbacks with acrobatics, fin whales exhibit a more reserved nature, often seen alone or in small groups. Their low-frequency vocalizations, a form of communication, resonate across the ocean depths. Conservation efforts are essential to protect fin whales from threats like ship strikes and habitat disturbances, ensuring the continued presence of these magnificent beings, enriching the Pacific Northwest's diverse marine tapestry."
+            />
 
-                <div className='description-container'>
-                    <h2 className='bio-white-text'>Description</h2>
-                    <p className='bio-white-text'>
-Fin whales (Balaenoptera physalus), the second-largest whales globally, are occasionally spotted in the Pacific Northwest (PNW) during their migratory journeys. Recognizable by their sleek, streamlined bodies and asymmetrical coloration, fin whales undertake long migrations, and the PNW serves as part of their route. Although not as commonly observed as some other whale species in the region, their presence highlights the diverse marine ecosystem. Fin whales are known to feed on small schooling fish, and efforts are ongoing to monitor and protect these majestic creatures in the Pacific Northwest waters, contributing to the broader understanding of their behavior and promoting conservation measures.</p>
-                </div>
-            </div>
+            <div className="carousel-container">
+                <DidYouKnowCarousel data={facts}/>
+            </div>                   
         </div>
     );
 }

@@ -1,0 +1,37 @@
+{
+
+    "facts": [
+        {
+            "fact": "Gray whales are baleen whales and are known for their distinctive heart-shaped blow, which can reach up to 12 feet high.",
+            "img": "https://whalestaildepoebay.com/wp-content/uploads/2016/11/page_photo2_5B1D2673-371C-4C42-B2A7-9D1F5D604403.jpg"
+        },
+        {
+            "fact": "Gray whales undertake one of the longest migrations of any mammal, traveling up to 12,000 miles round trip between their feeding grounds in the Arctic and their breeding grounds in Baja California.",
+            "img": "https://www.seakayakadventures.com/sites/seakayakadventures.com/files/images/Gray%20Whale%20Migration%20Map%20-%20resized.jpg"
+        },
+        {
+            "fact": "Gray whales are bottom-feeders, using their baleen plates to filter small organisms like amphipods and other tiny prey from the ocean floor.",
+            "img": "https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/grey-whale-showing-baleen-plates-baja-california-mexico-mark-carwardine--natureplcom.jpg"
+        },
+        {
+            "fact": "Gray whales have distinctive mottled gray coloration and often bear patches of barnacles and whale lice, creating unique patterns on their skin that can be used for individual identification.",
+            "img": "https://www.marinemammalcenter.org/storage/app/uploads/public/6d0/3a6/53f/thumb__749_0_0_0_crop.jpg"
+        },
+        {
+            "fact": "Gray whales are known for their friendly and curious behavior towards boats, often approaching vessels in a phenomenon known as 'whale watching' encounters.",
+            "img": "https://bajaex.com/wp-content/uploads/2021/11/sanignacio14-1200x866.jpg"
+        },
+        {
+            "fact": "Gray whales lack a dorsal fin, making their appearance distinct from other whale species. Instead, they have a series of small humps or knuckles along their back.",
+            "img": "https://photos.travellerspoint.com/250455/large_DSCN9665.jpg"
+        },
+        {
+            "fact": "Gray whales have a lifespan of around 50-70 years, with females generally outliving males. They reach maturity at about 8 years old and have a slow reproductive rate, giving birth every 2-3 years.",
+            "img": "https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2023-01/nnewborn-calf-te-230104-eb532d.jpg"
+        },
+        {
+            "fact": "Although gray whales are currently not listed as endangered, they face threats such as entanglement in fishing gear, ship strikes, and habitat degradation. Conservation efforts are essential to protect their populations.",
+            "img": "https://www.fisheries.noaa.gov/s3/dam-migration/whale-entanglement.jpg"
+        }
+        ]
+}
