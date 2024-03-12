@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 //sfc//ffc//rcfe
-import '../button.css'
+import './GroupCard.css'
 
 function GroupCard(props) {
     return (
