@@ -9,7 +9,7 @@
     margin-bottom: 40px;
 }
 
-.dyk-slide {
+.dyk-slide-right {
     border-radius: 0.5rem;
     border-color: transparent;
     width: 100%;
@@ -17,12 +17,47 @@
     user-select: none;
     display: flex;
     justify-content: center;
+    animation: slidein-right 1s;
+}
+
+@keyframes slidein-right {
+    0% {
+        opacity: 0;
+        transform: translateX(250px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.dyk-slide-left {
+    border-radius: 0.5rem;
+    border-color: transparent;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    animation: slidein-left 1s;
+}
+
+@keyframes slidein-left {
+    0% {
+        opacity: 0;
+        transform: translateX(-250px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .slide-hidden {
     display: none;
 }
-
 .arrow {
     position: absolute;
     width: 2rem;
