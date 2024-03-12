@@ -1,5 +1,5 @@
 /* Whales.js */
-import SpeciesProfile from '../WhaleGroup/SpeciesProfile';
+import SpeciesProfile from './WhaleGroup/SpeciesProfile';
 import './Whales.css';
 
 const whaleDataAPI = [
