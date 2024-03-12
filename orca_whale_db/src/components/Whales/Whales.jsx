@@ -56,12 +56,13 @@ function Whales() {
   };
 
   return (
-    <div className="page-container">
-      <div className='whales-title'>
-        <h1 className="whales-title-text">Whales of the Pacific Northwest!</h1>
+    <div className="pt-[9rem] flex flex-col text-center bg-[url('../src/assets/speciesBackground.jpg')]
+    bg-cover bg-no-repeat bg-center top-0 items-center w-[100vw] min-h-[100vh]">
+      <div className='shadow-[0_8px_16px_rgba(0, 0, 0, 1)] rounded-[10px] bg-[#0F1035] p-[12px]'>
+        <h1 className="text-white">Whales of the Pacific Northwest!</h1>
       </div>
 
-      <div className='whales-cards-container'>
+      <div className='mt-[30px]'>
         <div style={cardStyle}>
           {whaleDataAPI.map((whale) => (
             <SpeciesProfile key={whale.id} img={whale.img} name={whale.name} description={whale.description} bioLink={whale.bioLink} />
