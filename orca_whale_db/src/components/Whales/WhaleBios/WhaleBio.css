@@ -1,7 +1,7 @@
 .bio-page-container {
     width: 100vw;
     min-height: 100vh;
-    background-image: url('../../assets/orcaBioBackground.jpg');
+    background-image: url('../../../assets/orcaBioBackground.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
