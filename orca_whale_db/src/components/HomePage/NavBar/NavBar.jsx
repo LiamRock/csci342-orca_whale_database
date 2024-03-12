@@ -19,7 +19,7 @@ function Navbar(){
     return(
         <header>
             <Link to="/">
-                <img src="./src/assets/orcaLogo.png" className="logo-image"></img>
+                <img src="../src/assets/orcaLogo.png" className="logo-image"></img>
             </Link>
                 <nav ref={navRef}>
                     {user.email ? (
