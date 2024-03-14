@@ -22,6 +22,7 @@ import NotFoundPage from './components/NotFound/NotFoundPage'
 import ResidentBio from './components/Whales/WhaleBios/OrcaBio/ResidentBio/ResidentBio.jsx'
 import TransientBio from './components/Whales/WhaleBios/OrcaBio/TransientBio/TransientBio.jsx'
 import OffshoreBio from './components/Whales/WhaleBios/OrcaBio/OffshoreBio/OffshoreBio.jsx'
+import ProtectedRoute from './util/ProtectedRoute.jsx'
 
 import './index.css'
 
@@ -40,11 +41,13 @@ const router = createBrowserRouter([
     {path:"/whales/fins", element: <FinBio />},
     {path:"/whales/minkes", element: <MinkeBio/>},
     {path:"/whales/grays", element: <GrayBio/>},
-    {path:"/account", element: <Account/>},
     {path:"/aboutus", element: <AboutUs/>},
     {path:"/login", element: <Login/>},
     {path:"/signup", element: <Signup/>},
     {path:"/forgotpassword", element: <ForgotPassword/>},
+    {path:"", element: <ProtectedRoute/>, children: [
+      {path:"/account", element: <Account/>}
+    ]}
   ]}
 ]);
 

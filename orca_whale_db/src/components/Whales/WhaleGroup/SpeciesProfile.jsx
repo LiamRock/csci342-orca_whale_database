@@ -14,8 +14,8 @@ function SpeciesProfile(props) {
       <p className='card-description'>{props.description}</p>
 
       <div className='button-container'>
-        <Link to={props.bioLink}>
-          <button className='reactive-button'>Learn More</button>
+        <Link to={props.bioLink} className='reactive-button'>
+          Learn More
         </Link>
       </div>
 
