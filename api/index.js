@@ -17,11 +17,7 @@ connection.once("open", () => {
   console.log("MongoDB database connection established successfully");
 });
 
-<<<<<<< HEAD:api/index.js
-const sightingsRouter = require("./routes/sightings.js");
-=======
 const sightingsRouter = require("./routes/sightings");
->>>>>>> Dima2.0:api/server.js
 app.use("/sightings", sightingsRouter);
 
 const postsRouter = require("./routes/posts");
