@@ -3,6 +3,7 @@ let User = require("../models/user.model");
 const bodyParser = require("body-parser");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+router.use(bodyParser.json());
 
 router
     .route("/")

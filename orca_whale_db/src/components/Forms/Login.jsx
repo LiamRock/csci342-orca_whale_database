@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
 import {z} from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -22,19 +22,39 @@ function Login() {
     });
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const [isLoading, setIsLoading] = useState(false);
 
     const onSubmit = data => {
-        const storedUserData = localStorage.getItem('user');
-        const userData = storedUserData ? JSON.parse(storedUserData) : null;
-
-        if(userData && userData.email === data.email && userData.password === data.password) {
-            dispatch(login(userData));
-            toast.success("Login sucessful");
-            navigate("/account");
-          } else {
-            toast.error("You have entered an invalid email or password")
-          }
-    }
+      setIsLoading(true);
+      fetch("http://localhost:3000/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      })
+      .then((response) => {
+        if(!response.ok) {
+          throw new Error ("An error has occured during login.");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("user", JSON.stringify(data.user));
+        toast.success("Login successful!");
+        dispatch(login({
+          userName: data?.user?.userName || "",
+          email: data?.user?.email || "",
+          
+        }));
+        navigate("/account");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      })
+      .finally(() => setIsLoading(false));
+    };
 
     useEffect(() => {
         const errorKeys = Object.keys(errors);
@@ -56,7 +76,13 @@ function Login() {
                     <input className='box-border rounded-lg border-2 border-black text-black bg-white pt-2 pr-40 pl-2 pb-2 mt-0 mb-3.5 ' type="password" placeholder="Password" name="password" {...register("password")}/>
                     <p><Link to="/forgotpassword">Forgot my password?</Link></p>
                     <br />
-                    <button className="text-black bg-slate-100 pt-2 pr-2 pl-2 pb-2 mt-0 mb-3.5">Sign in</button>
+                    {isLoading ? (
+                    <button className='text-black bg-slate-100 pt-2 pr-2 pl-2 pb-2 mt-0 mb-3.5' disabled>
+                      Loading...
+                    </button>
+                  ) : (
+                    <button className='text-black bg-slate-100 pt-2 pr-2 pl-2 pb-2 mt-0 mb-3.5'>Login</button>
+                  )}
                     <p>Dont have an account? <Link to="/signup">Sign up</Link></p>
                     
                 </div>

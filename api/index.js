@@ -21,10 +21,10 @@ const sightingsRouter = require("./routes/sightings.js");
 app.use("/sightings", sightingsRouter);
 
 const signupRouter = require("./routes/signup.js");
-app.use("api/signup", signupRouter);
+app.use("/signup", signupRouter);
 
 const loginRouter = require("./routes/login.js");
-app.use("api/login", loginRouter);
+app.use("/login", loginRouter);
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);

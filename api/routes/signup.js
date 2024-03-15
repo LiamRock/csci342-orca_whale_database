@@ -3,9 +3,10 @@ let User = require("../models/user.model");
 const bodyParser = require("body-parser");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+router.use(bodyParser.json());
 
 router
-    .route("/api/signup")
+    .route("/")
     .get((req, res) => {
         User.find()
             .then((user) => res.json({ result: user}))
@@ -28,9 +29,8 @@ router
                 if (err) {
                   return res.status(500).json({ message: "Error hashing password" });
                 }
-
-                const cuser = new User({
-                    ...rest,
+                const user = new User({
+                    userName,
                     email,
                     password: hashedPassword,
                 });

@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { Toaster, toast } from "react-hot-toast";
-import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 
 const signupSchema = z.object({
@@ -42,7 +40,7 @@ function Signup() {
         }
         setIsLoading(true);
 
-        fetch("http://localhost:3000/api/signup", {
+        fetch("http://localhost:3000/signup", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -51,7 +49,7 @@ function Signup() {
         })
         .then((response) => {
           if(!response.ok) {
-            throw new Error("Network response was not okay.")
+            throw new Error(response)
           }
           return response.json();
         })
@@ -60,7 +58,7 @@ function Signup() {
           navigate("/login");
         })
         .catch((error) => {
-          toast.error(error.message || "An error occurred during signup.");
+          toast.error(error.message || "An error occurred during signup");
         })
         .finally(() => {
             setIsLoading(false);
