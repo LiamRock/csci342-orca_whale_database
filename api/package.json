@@ -5,19 +5,23 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "pwd && cd ../api && node server.js",
+    "server": "pwd && cd ../api && node index.js",
     "client": "pwd && cd ../orca_whale_db && npm run dev",
-    "start": "npm run server && npm run client"
+    "start": "npm run server && npm run client",
+    "dev": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.2",
     "buffer": "^6.0.3",
     "cors": "^2.8.5",
+    "cours": "^1.0.0",
     "dotenv": "^16.4.5",
     "ejs": "^3.1.9",
-    "express": "^4.18.2",
+    "express": "^4.18.3",
+    "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.3.0",
     "mongoose": "^8.2.0",
     "multer": "^1.4.5-lts.1"

@@ -1,7 +1,8 @@
 import '../WhaleBio.css';
 import BioDescription from '../BioDescription/BioDescription.jsx'
 import DidYouKnowCarousel from "../../DidYouKnow/DidYouKnowCarousel.jsx"
-import { facts } from "./humpbackData.json"
+import { slides, facts } from "./humpbackData.json"
+import Carousel from "../../Carousel/Carousel.jsx"
 
 function HumpbackBio() {
     return (
@@ -15,6 +16,10 @@ function HumpbackBio() {
 
             <div className="carousel-container">
                 <DidYouKnowCarousel data={facts}/>
+            </div>
+
+            <div className='carousel-container'>
+                <Carousel data={slides}/>
             </div>
         </div>
     );

@@ -1,11 +1,9 @@
-import React, { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { Toaster, toast } from "react-hot-toast";
-import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 
 const signupSchema = z.object({
@@ -20,8 +18,9 @@ function Signup() {
         resolver:zodResolver(signupSchema)
       });
       const navigate = useNavigate();
-      const dispatch = useDispatch();
-  
+      
+      const [isLoading, setIsLoading] = useState(false);
+
       const password = watch("password");
       const confirmPassword = watch("confirmPassword");
   
@@ -39,11 +38,32 @@ function Signup() {
             toast.error("Passwords do not match");
             return;
         }
-        console.log("Signup data:", data);
-        localStorage.setItem("user", JSON.stringify(data));
-        toast.success("Signup sucessful. Please login.");
-        navigate("/login");
-      }
+        setIsLoading(true);
+
+        fetch("http://localhost:3000/signup", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data)
+        })
+        .then((response) => {
+          if(!response.ok) {
+            throw new Error(response)
+          }
+          return response.json();
+        })
+        .then(() => {
+          toast.success("Signup successful. Please login.");
+          navigate("/login");
+        })
+        .catch((error) => {
+          toast.error(error.message || "An error occurred during signup");
+        })
+        .finally(() => {
+            setIsLoading(false);
+        });
+      };
   
     return (
         <div className='text-black w-[100vw]'>
@@ -56,7 +76,13 @@ function Signup() {
                     <input className='box-border rounded-lg border-2 border-black text-black bg-white pt-2 pr-40 pl-2 pb-2 mt-0 mb-3.5 ' type="text" placeholder="Email" name="email" {...register("email")}/>
                     <input className='box-border rounded-lg border-2 border-black text-black bg-white pt-2 pr-40 pl-2 pb-2 mt-0 mb-3.5 ' type="password" placeholder="Password" name="password" {...register("password")} />
                     <input className='box-border rounded-lg border-2 border-black text-black bg-white pt-2 pr-40 pl-2 pb-2 mt-0 mb-3.5 ' type="password" placeholder="confirmPassword" name="confirmPassword" {...register("confirmPassword")} />
-                    <button className=" bg-slate-100 pt-2 pr-2 pl-2 pb-2 mt-0 mb-3.5">Register</button>
+                    {isLoading ? (
+                      <button className='bg-slate-100 pt-2 pr-2 pl-2 pb-2 mt-0 mb-3.5' disabled>
+                          Loading...
+                      </button>
+                    ) : (
+                        <button className='bg-slate-100 pt-2 pr-2 pl-2 pb-2 mt-0 mb-3.5'>Sign up</button>
+                    )}
                     <p>Already have an account? <Link to="/login">Log in</Link></p>
                 </div>
                 <br />

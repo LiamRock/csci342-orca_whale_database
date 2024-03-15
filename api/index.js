@@ -23,6 +23,12 @@ app.use("/sightings", sightingsRouter);
 const postsRouter = require("./routes/posts");
 app.use("/posts", postsRouter);
 
+const signupRouter = require("./routes/signup.js");
+app.use("/signup", signupRouter);
+
+const loginRouter = require("./routes/login.js");
+app.use("/login", loginRouter);
+
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
 });

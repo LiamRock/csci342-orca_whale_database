@@ -4,6 +4,7 @@ import App from './components/App/App'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import store from './store/store.jsx';
 import { Provider } from 'react-redux';
+import ProtectedRoute from './util/ProtectedRoute.jsx';
 
 import Whales from './components/Whales/Whales'
 import OrcaBio from './components/Whales/WhaleBios/OrcaBio/OrcaBio.jsx'
@@ -22,7 +23,7 @@ import NotFoundPage from './components/NotFound/NotFoundPage'
 import PostPage from './components/PostPage/PostPage.jsx';import ResidentBio from './components/Whales/WhaleBios/OrcaBio/ResidentBio/ResidentBio.jsx'
 import TransientBio from './components/Whales/WhaleBios/OrcaBio/TransientBio/TransientBio.jsx'
 import OffshoreBio from './components/Whales/WhaleBios/OrcaBio/OffshoreBio/OffshoreBio.jsx'
-import ProtectedRoute from './util/ProtectedRoute.jsx'
+// import ProtectedRoute from './util/ProtectedRoute.jsx'
 
 import './index.css'
 
