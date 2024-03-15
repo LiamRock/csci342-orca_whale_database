@@ -23,6 +23,7 @@ import NotFoundPage from './components/NotFound/NotFoundPage'
 import ResidentBio from './components/Whales/WhaleBios/OrcaBio/ResidentBio/ResidentBio.jsx'
 import TransientBio from './components/Whales/WhaleBios/OrcaBio/TransientBio/TransientBio.jsx'
 import OffshoreBio from './components/Whales/WhaleBios/OrcaBio/OffshoreBio/OffshoreBio.jsx'
+import ProtectedRoute from './util/ProtectedRoute.jsx'
 
 import './index.css'
 

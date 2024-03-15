@@ -66,7 +66,7 @@ function Signup() {
       };
   
     return (
-        <div className='text-black'>
+        <div className='text-black w-[100vw]'>
             <br />
             <h2 className='text-7xl text-center pt-20'>PNW TRACKER</h2>
             <h2 className='text-5xl text-center py-10'>Sign up</h2>

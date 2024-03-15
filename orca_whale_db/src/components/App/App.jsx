@@ -19,7 +19,7 @@ function App() {
       // Simulate loading user data
       setTimeout(() => {
         dispatch(login({
-          userName: user?.firstName || '',
+          userName: user?.userName || '',
           email: user?.email || '',
         }));
         dispatch(loader(true)); // Finish loading

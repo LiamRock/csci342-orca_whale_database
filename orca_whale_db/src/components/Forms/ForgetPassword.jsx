@@ -41,7 +41,7 @@ function ForgetPassword() {
         });
       }, [errors]);
     return (
-        <div className='text-black '>
+        <div className='text-black w-[100vw]'>
         <h2 className='text-4xl text-center py-5'>Forget your password</h2>
         <p className='text-center pb-5'>Please enter the email address you'd like your password reset information sent to</p>
         <form onSubmit={handleSubmit(onSubmit)}>

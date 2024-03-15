@@ -71,7 +71,7 @@ function Login() {
             <h2 className='text-7xl text-center pt-20'>PNW TRACKER</h2>
             <h2 className='text-5xl text-center py-10'>Welcome Back!</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col items-center w-[100vw]">
                     <input className='box-border rounded-lg border-2 border-black text-black bg-white pt-2 pr-40 pl-2 pb-2 mt-0 mb-3.5 ' type="text" placeholder="Email" name="email" {...register("email")}/>
                     <input className='box-border rounded-lg border-2 border-black text-black bg-white pt-2 pr-40 pl-2 pb-2 mt-0 mb-3.5 ' type="password" placeholder="Password" name="password" {...register("password")}/>
                     <p><Link to="/forgotpassword">Forgot my password?</Link></p>

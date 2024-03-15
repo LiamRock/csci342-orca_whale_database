@@ -57,6 +57,7 @@ function OrcaBio() {
         <h1 className="bio-title">Conservation</h1>
         <hr/>
         <p className="bio-white-text">Orca conservation in the Pacific Northwest (PNW) represents a multifaceted effort to protect and restore the region's iconic killer whale populations. With a particular focus on the critically endangered Southern Resident Killer Whales, conservation initiatives in the PNW aim to address the complex challenges threatening their survival. Key components of these efforts include habitat restoration and protection, especially for critical Chinook salmon spawning grounds, the primary food source for Southern Residents. Collaborative research endeavors seek to enhance our understanding of orca behavior, health, and the impacts of human activities on their environment. Stricter regulations on vessel traffic, noise reduction measures, and pollution control strategies contribute to minimizing disturbances to these whales. Public engagement and education play a crucial role, fostering a collective responsibility for the marine ecosystem's well-being. The Pacific Northwest's commitment to orca conservation underscores the interconnectedness of ecological health and human actions, emphasizing the need for sustainable practices to ensure the long-term survival of these majestic marine species.</p>
+        <a className="bio-moreinfo-link" href="https://www.orcaconservancy.org/donate" target="_blank" rel="noreferrer">Donate</a>
       </div>
 
       <div className="card-style">
