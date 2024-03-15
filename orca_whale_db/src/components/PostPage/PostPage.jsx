@@ -6,13 +6,14 @@ import Banner from "../HomePage/Banner/Banner";
 import Sightings from "../Sightings/Sightings";
 
 function PostPage() {
-    const [sightings, setSightings] = useState([]);
+    const [posts, setPosts] = useState([]);
 
     useEffect(() => {
         // Fetch sightings data from backend when component mounts
-        axios.get('http://localhost:3000/sightings') // Assuming your backend is running on port 5001
+        axios.get('http://localhost:3000/posts') // Assuming your backend is running on port 5001
             .then(response => {
-                setSightings(response.data); // Assuming sightings data is stored in response.data.result
+              console.log(response.data.result);
+                setPosts(response.data.result); // Assuming sightings data is stored in response.data.result
             })
             .catch(error => {
                 console.error('Error fetching sightings:', error);
@@ -24,16 +25,16 @@ function PostPage() {
         <Banner title={"See what people have been posting!"} backgroundImage={"./src/assets/grey-whale-banner.jpg"} />
         <div className="mt-8"></div>
         <Sightings/>
-        <DiscussionPost/>
-        {/*sightings.map(sighting => (
+        {posts.map(post => (
                 <DiscussionPost
-                    key={sighting.id} // Assuming sighting objects have a unique identifier like _id
-                    username={sighting.user}
-                    location={`${sighting.lat}, ${sighting.long}`}
-                    time={sighting.time}
-                    description={sighting.description}
+                    key={post._id} // Assuming sighting objects have a unique identifier like _id
+                    username={post.user}
+                    location={`${post.lat}, ${post.long}`}
+                    time={post.time}
+                    description={post.description}
+                    image={post.image}
                 />
-        ))*/}
+        ))}
         <CreateDiscussion/>
         <div className="mb-8"></div>
       </>
