@@ -1,5 +1,5 @@
-import { Fragment } from "react";
-import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
+import { Fragment, useEffect, useState } from "react";
+import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
 
 const containerStyle = {
   width: "80rem",
@@ -12,10 +12,22 @@ const center = {
 };
 
 function MapComponent() {
+  const [markers, setMarkers] = useState(null);
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAP_API_KEY,
   });
+
+  useEffect(() => {
+    const getSightings = async () => {
+      await fetch(`http://localhost:3000/sightings`)
+        .then(async (response) => await response.json())
+        .then((response) => {
+          setMarkers(response);
+        });
+    };
+    getSightings();
+  }, []);
 
   return (
     <Fragment>
@@ -27,7 +39,13 @@ function MapComponent() {
             mapContainerStyle={containerStyle}
             mapId={"3878aad1a59aef57"}
           >
-            {/* Markers here */}
+            {markers &&
+              markers.map(({ lat, long }, index) => (
+                <Marker
+                  key={index}
+                  position={{ lat: parseFloat(lat), lng: parseFloat(long) }}
+                />
+              ))}
           </GoogleMap>
         ) : null}
       </div>
