@@ -1,5 +1,7 @@
 import "../../WhaleBio.css";
 import BioDescription from "../../BioDescription/BioDescription";
+import Carousel from "../../../Carousel/Carousel"
+import { slides } from "./offshoreData.json"
 
 function OffshoreBio() {
   return (
@@ -7,7 +9,7 @@ function OffshoreBio() {
       <BioDescription
         title="Offshore Orcas"
         subtitle="A great white shark's worst nightmare..."
-        wiki="https://en.wikipedia.org/wiki/Southern_resident_orcas "
+        wiki="https://georgiastrait.org/work/species-at-risk/orca-protection/killer-whales-pacific-northwest/offshore-killer-whales/"
         desc="The North Pacific Offshore killer whales, a captivating and elusive population, 
         were first sighted off Haida Gwaii in 1979, marking the beginning of the discovery of this unique group. 
         Spanning the waters between Southern California and the Aleutian Islands, 
@@ -20,6 +22,10 @@ function OffshoreBio() {
         With a diet primarily consisting of fish and sharks, the Offshore killer whales present a fascinating aspect of marine ecology. 
         Despite challenges in studying them due to their offshore habits, ongoing research and increased sightings offer hope for a better understanding of and conservation strategies for this enigmatic population."
       />
+
+      <div className="carousel-container">
+        <Carousel data={slides}/>
+      </div>
     </div>
   );
 }

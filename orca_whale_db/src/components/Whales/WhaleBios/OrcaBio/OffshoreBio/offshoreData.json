@@ -1,0 +1,16 @@
+{
+    "slides": [
+        {
+            "src": "https://assets.newatlas.com/dims4/default/d99352c/2147483647/strip/true/crop/965x643+10+0/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2F2a%2F93%2F29f1115d43518f7f593fbc708c77%2Fphoto.JPG",
+            "alt": "orcas1"
+        },
+        {
+            "src": "https://i.natgeofe.com/n/a2f30b7a-6cdd-4d92-af7c-8d600f972405/0000016b-f729-dbf3-ab7f-f73facd20000.jpg",
+            "alt": "orcas2"
+        },
+        {
+            "src": "https://fh-sites.imgix.net/sites/2813/2017/05/06201447/killerwhale.jpg?auto=compress%2Cformat&w=1000&h=1000&fit=max",
+            "alt": "orcas3"
+        }
+    ]
+}
