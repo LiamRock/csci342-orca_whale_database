@@ -1,0 +1,51 @@
+.post-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 0 auto 20px auto; /* Updated margin to center the container */
+    max-width: 55%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.profile-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.username {
+    font-size: 18px;
+    margin: 0;
+}
+
+.location, .time {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.description {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333;
+    align-self: center;
+}
+
+.post-image {
+    width: 100%;
+    border-radius: 8px;
+    align-self: center;
+}

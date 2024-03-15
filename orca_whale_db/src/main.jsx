@@ -19,12 +19,13 @@ import Login from './components/Forms/Login.jsx'
 import Signup from './components/Forms/Signup.jsx'
 import ForgotPassword from './components/Forms/ForgetPassword.jsx'
 import NotFoundPage from './components/NotFound/NotFoundPage'
-import ResidentBio from './components/Whales/WhaleBios/OrcaBio/ResidentBio/ResidentBio.jsx'
+import PostPage from './components/PostPage/PostPage.jsx';import ResidentBio from './components/Whales/WhaleBios/OrcaBio/ResidentBio/ResidentBio.jsx'
 import TransientBio from './components/Whales/WhaleBios/OrcaBio/TransientBio/TransientBio.jsx'
 import OffshoreBio from './components/Whales/WhaleBios/OrcaBio/OffshoreBio/OffshoreBio.jsx'
 import ProtectedRoute from './util/ProtectedRoute.jsx'
 
 import './index.css'
+
 
 const router = createBrowserRouter([
   {path:"/", element:<App/>, children: [ // Replace App with homepage
@@ -45,6 +46,7 @@ const router = createBrowserRouter([
     {path:"/login", element: <Login/>},
     {path:"/signup", element: <Signup/>},
     {path:"/forgotpassword", element: <ForgotPassword/>},
+    {path:"/posts", element: <PostPage/>},
     {path:"", element: <ProtectedRoute/>, children: [
       {path:"/account", element: <Account/>}
     ]}

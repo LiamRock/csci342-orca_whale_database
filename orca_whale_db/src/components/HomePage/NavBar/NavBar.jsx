@@ -26,6 +26,8 @@ function Navbar(){
                     <>
                         <Link to="/whales">Species</Link>
                         <div className="border h-8 border-black border-l-0"></div>
+                        <Link to="/posts">Posts</Link>
+                        <div className="border h-8 border-black border-l-0"></div>
                         <Link to="/aboutus">About Us</Link>
                         <div className="border h-8 border-black border-l-0"></div>
                         <Link to="/account">Account</Link>
@@ -42,6 +44,8 @@ function Navbar(){
                     ) : (
                         <>
                             <Link to="/whales">Species</Link>
+                            <div className="border h-8 border-black border-l-0"></div>
+                            <Link to="/posts">Posts</Link>
                             <div className="border h-8 border-black border-l-0"></div>
                             <Link to="/aboutus">About Us</Link>
                             <div className="border h-8 border-black border-l-0"></div>

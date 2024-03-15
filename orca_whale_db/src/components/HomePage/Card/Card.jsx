@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './Card.css';
 function Card() {
   
@@ -6,13 +7,15 @@ function Card() {
             <img src="./src/assets/coast-background.jpg" />
             <div className='card-content'>
                 <div className='text'>
-                    <h1 >Lorem ipsum dolor sit amet!</h1>
+                    <h1 >See what people have posted!</h1>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                    Explore the wonders of the ocean with us! Share your extraordinary whale sightings 
+                    and dive into a world of marine marvels. Click below to share your experiences and 
+                    discover breathtaking encounters with our community!
                     </p>
-                    <button className="button">See Posts</button>
+                    <button className="button">
+                        <Link to="/posts" className="text-black">See Posts</Link>
+                    </button>
                 </div>
                 <img src="./src/assets/card.jpg"/>
             </div>
