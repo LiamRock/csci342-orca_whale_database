@@ -4,6 +4,7 @@ import App from './components/App/App'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import store from './store/store.jsx';
 import { Provider } from 'react-redux';
+import ProtectedRoute from './util/ProtectedRoute.jsx';
 
 import Whales from './components/Whales/Whales'
 import OrcaBio from './components/Whales/WhaleBios/OrcaBio/OrcaBio.jsx'
@@ -45,8 +46,8 @@ const router = createBrowserRouter([
     {path:"/login", element: <Login/>},
     {path:"/signup", element: <Signup/>},
     {path:"/forgotpassword", element: <ForgotPassword/>},
-    {path:"", element: <ProtectedRoute/>, children: [
-      {path:"/account", element: <Account/>}
+    {path: "", element:<ProtectedRoute/>, children: [
+      {path: "/account", element: <Account/>},
     ]}
   ]}
 ]);
