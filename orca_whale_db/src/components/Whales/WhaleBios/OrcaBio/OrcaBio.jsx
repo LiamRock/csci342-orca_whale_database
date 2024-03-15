@@ -2,10 +2,10 @@ import "../WhaleBio.css";
 import "./OrcaBio.css"
 import SpeciesProfile from "../../WhaleGroup/SpeciesProfile";
 import "../../WhaleGroup/SpeciesProfile.css"
-// import DidYouKnow from "../../DidYouKnow/DidYouKnow"
+//import DidYouKnow from "../../DidYouKnow/DidYouKnow"
 import DidYouKnowCarousel from "../../DidYouKnow/DidYouKnowCarousel.jsx"
-// import Carousel from "../../Carousel/Carousel.jsx"
-import { facts } from "./orcaSlidesData.json"
+import Carousel from "../../Carousel/Carousel.jsx"
+import { slides, facts } from "./orcaSlidesData.json"
 import BioDescription from '../BioDescription/BioDescription.jsx'
 
 const ecotypeDataAPI = [
@@ -74,6 +74,10 @@ function OrcaBio() {
 
       <div className="carousel-container">
         <DidYouKnowCarousel data={facts}/>
+      </div>
+
+      <div className="carousel-container">
+        <Carousel data={slides}/>
       </div>
     </div>
   );

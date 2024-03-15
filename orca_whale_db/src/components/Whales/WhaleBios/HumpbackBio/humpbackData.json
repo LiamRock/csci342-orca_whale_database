@@ -1,4 +1,20 @@
 {
+
+    "slides": [
+        {
+            "src": "https://www.ikelite.com/cdn/shop/articles/glenn-ostle-moorea-cover.jpg?v=1638397422&width=2048",
+            "alt": "humpback1"
+        },
+        {
+            "src": "https://www.honolulumagazine.com/wp-content/uploads/data-import/365ca6a7/humpbackwhale.jpg",
+            "alt": "humpback2"
+        },
+        {
+            "src": "https://www.caboprivateguide.com/wp-content/uploads/humpback-whale-drone-view.jpg",
+            "alt": "humpback3"
+        }
+    ],
+
     "facts": [
         {
             "fact": "Humpback whales are known for their acrobatic displays, including breaching, tail slapping, and pectoral fin waving, making them a favorite among whale watchers.",
