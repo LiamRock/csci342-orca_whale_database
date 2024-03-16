@@ -49,7 +49,6 @@ function GrayBio() {
       
       fetchImages();
     }, []);
-    
 
     return (
         <div className='bio-page-container'>
@@ -66,11 +65,11 @@ function GrayBio() {
 
             {imageUrls.length > 0 ? (
                 <div className="carousel-container">
-                <UnsplashCarousel data={imageUrls}/>
+                    <UnsplashCarousel data={imageUrls}/>
                 </div>
             ) : (
                 <div className="carousel-container">
-                <Carousel data={slides}/>
+                    <Carousel data={slides}/>
                 </div>
             )}
         </div>

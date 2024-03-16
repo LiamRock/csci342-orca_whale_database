@@ -1,5 +1,22 @@
 {
-
+    "slides": [
+        {
+            "src": "https://www.antarctica.gov.au/site/assets/files/45670/ia40342.1200x630.jpg",
+            "alt": "blue1"
+        },
+        {
+            "src": "https://www.biographic.com/wp-content/uploads/2019/09/blue-whales-Balaenoptera-musculus.jpg",
+            "alt": "blue2"
+        },
+        {
+            "src": "https://www.whalingmuseum.org/wp-content/uploads/2020/09/Hero.jpg",
+            "alt": "blue3"
+        },
+        {
+            "src": "https://images.squarespace-cdn.com/content/v1/638a651ad5f9324e20972bf2/1062b24e-a690-40cc-8cde-27702f80a311/blue-whale.jpeg",
+            "alt": "blue4"
+        }
+    ],
     "facts": [
         {
             "fact": "Blue whales hold the title of the largest animals on Earth, with some individuals reaching lengths of over 100 feet and weighing as much as 200 tons.",
