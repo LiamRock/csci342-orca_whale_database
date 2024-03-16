@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Toaster, toast } from "react-hot-toast";
+import { useSelector } from 'react-redux';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function CreateDiscussion(){
   const [formData, setFormData] = useState({
@@ -10,6 +13,9 @@ function CreateDiscussion(){
     user: '',
     image: ''
 });
+
+const user = useSelector(state => state.auth.user);
+const navigate = useNavigate();
 
 const handleChange = (e) => {
   if (e.target.name === 'image') {
@@ -23,8 +29,15 @@ const handleChange = (e) => {
 
 const handleSubmit = (e) => {
   e.preventDefault();
+
+  if (!user.userName) {
+    // If the user is not logged in, display an error toast
+    toast.error('You need to sign in before posting.');
+    return;
+  }
+
   const formDataToSend = new FormData();
-  formDataToSend.append('user', formData.user);
+  formDataToSend.append('user', user.userName);
   formDataToSend.append('lat', formData.lat);
   formDataToSend.append('long', formData.long);
   formDataToSend.append('species', formData.species);
@@ -36,13 +49,14 @@ const handleSubmit = (e) => {
       console.log('Post created successfully:', response.data.result);
       // Optionally, you can reset the form fields after successful submission
       setFormData({
-        user: '',
         lat: '',
         long: '',
         species: '',
         description: '',
         image: null
       });
+      // Refresh the page
+      navigate('/account');
     })
     .catch(error => {
       console.error('Error creating Post:', error);
@@ -52,7 +66,6 @@ const handleSubmit = (e) => {
 const handleCancel = () => {
   // Clear all form fields
   setFormData({
-    user: '',
     lat: '',
     long: '',
     species: '',
@@ -64,15 +77,6 @@ const handleCancel = () => {
     <>
       <div className="heading text-center font-bold text-2xl m-5 text-gray-800">New Sighting</div>
         <form className="editor mx-auto w-10/12 flex flex-col text-gray-800 border border-gray-300 p-4 shadow-lg max-w-2xl" onSubmit={handleSubmit}>
-        <input
-            className="title bg-gray-100 border border-gray-300 p-2 mb-4 outline-none"
-            spellCheck="false"
-            placeholder="User Name"
-            type="text"
-            name="user"
-            value={formData.user}
-            onChange={handleChange}
-          />
           <input
             className="title bg-gray-100 border border-gray-300 p-2 mb-4 outline-none"
             spellCheck="false"
@@ -126,6 +130,7 @@ const handleCancel = () => {
             >Post</button>
           </div>
         </form>
+        <Toaster/>
       </>
     );
   }

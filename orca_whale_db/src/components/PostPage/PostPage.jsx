@@ -16,7 +16,7 @@ function PostPage() {
                 setPosts(response.data.result); // Assuming sightings data is stored in response.data.result
             })
             .catch(error => {
-                console.error('Error fetching sightings:', error);
+                console.error('Error fetching posts:', error);
             });
     }, []);
 

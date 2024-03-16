@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import React from 'react';
+import axios from 'axios';
 
 import CreateDiscussion from '../CreateDiscussion/CreateDiscussion';
+import DiscussionPost from '../DiscussionPost/DiscussionPost';
 
 import profile from '../../assets/profile-circle.svg';
 import editIco from '../../assets/edit-pen.svg';
@@ -11,6 +14,7 @@ import './Account.css';
 
 const Account = () => {
     const { user } = useSelector((state) => state.auth);
+    const [posts, setPosts] = useState([]);
 
     const [username, setUsername] = useState('');
     const [disabled, setDisabled] = useState(true);
@@ -25,7 +29,20 @@ const Account = () => {
     useEffect(() => {
         setUsername(user.userName);
         setInitial(user.userName);
+
+         // Fetch sightings data from backend when component mounts
+         axios.get('http://localhost:3000/posts')
+         .then(response => {
+           console.log(response.data.result);
+           const allPosts = response.data.result;
+           const userPosts = allPosts.filter(post => post.user === user.userName);
+           setPosts(userPosts); // Set only user's posts
+         })
+         .catch(error => {
+             console.error('Error fetching posts:', error);
+         });
     }, [user]);
+
 
     const editUsername = () => {
         setInitial(username);
@@ -88,6 +105,16 @@ const Account = () => {
         <div className='mb-[30px]'>
             <CreateDiscussion/>
         </div>
+        {posts.map(post => (
+            <DiscussionPost
+                key={post._id} // Assuming sighting objects have a unique identifier like _id
+                username={post.user}
+                location={`${post.lat}, ${post.long}`}
+                time={post.time}
+                description={post.description}
+                image={post.image}
+            />
+        ))}
         </>
     )
 }
