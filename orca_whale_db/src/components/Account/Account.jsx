@@ -105,7 +105,7 @@ const Account = () => {
         <div className='mb-[30px]'>
             <CreateDiscussion/>
         </div>
-        {posts.map(post => (
+        {posts.slice().reverse().map(post => (
             <DiscussionPost
                 key={post._id} // Assuming sighting objects have a unique identifier like _id
                 username={post.user}

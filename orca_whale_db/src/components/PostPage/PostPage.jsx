@@ -25,12 +25,13 @@ function PostPage() {
         <Banner title={"See what people have been posting!"} backgroundImage={"./src/assets/grey-whale-banner.jpg"} />
         <div className="mt-8"></div>
         <Sightings/>
-        {posts.map(post => (
+        {posts.slice().reverse().map(post => (
                 <DiscussionPost
                     key={post._id} // Assuming sighting objects have a unique identifier like _id
                     username={post.user}
                     location={`${post.lat}, ${post.long}`}
                     time={post.time}
+                    date={post.date}
                     description={post.description}
                     image={post.image}
                 />
