@@ -44,7 +44,7 @@ function OrcaBio() {
     const fetchOrcaImages = async () => {
       try {
         const response = await fetch(
-          'https://api.unsplash.com/photos/random?query=orca,killer-whale&count=20&orientation=landscape&client_id=i4lZFrSlHGs23XNqRhHNIyg1A2Dzysi-v78ESKvWGPI'
+          'https://api.unsplash.com/photos/random?query=orca,killer-whale&count=10&orientation=landscape&client_id=i4lZFrSlHGs23XNqRhHNIyg1A2Dzysi-v78ESKvWGPI'
         );
         if (!response.ok) {
           throw new Error('Failed to fetch images');
