@@ -15,6 +15,8 @@ import './Account.css';
 const Account = () => {
     const { user } = useSelector((state) => state.auth);
     const [posts, setPosts] = useState([]);
+    const [filterDate, setFilterDate] = useState('');
+    const [reverseOrder, setReverseOrder] = useState(false);
 
     const [username, setUsername] = useState('');
     const [disabled, setDisabled] = useState(true);
@@ -41,7 +43,24 @@ const Account = () => {
          .catch(error => {
              console.error('Error fetching posts:', error);
          });
+         // Set the initial value of filterDate to the current date
+         const currentDate = new Date();
+         const year = currentDate.getFullYear();
+         const month = (currentDate.getMonth() + 1).toString().padStart(2, '0'); // Month starts from 0
+         const day = currentDate.getDate().toString().padStart(2, '0');
+         const formattedDate = `${year}-${month}-${day}`;
+         setFilterDate(formattedDate);
     }, [user]);
+
+    const handleFilterChange = (e) => {
+        setFilterDate(e.target.value);
+       };
+     
+       const handleReverseOrder = () => {
+         setReverseOrder(!reverseOrder); // Toggle the state to reverse the order
+     };
+     
+       const filteredPosts = posts.filter(post => new Date(post.date) <= new Date(filterDate));
 
 
     const editUsername = () => {
@@ -105,18 +124,46 @@ const Account = () => {
         <div className='mb-[30px]'>
             <CreateDiscussion/>
         </div>
-        {posts.slice().reverse().map(post => (
-            <DiscussionPost
-                key={post._id} // Assuming sighting objects have a unique identifier like _id
-                username={post.user}
-                lat={post.lat}
-                long={post.long}
-                time={post.time}
-                date={post.date}
-                description={post.description}
-                image={post.image}
-            />
-        ))}
+        <form>
+          <label htmlFor="filterDate" className="text-gray-700 ml-2 md:ml-[345px]">Filter up to a Date: </label>
+          <input className="text-gray-700" type="date" id="filterDate" name="filterDate" value={filterDate} onChange={handleFilterChange} />
+        </form>
+        <div className="mt-6"></div>
+        <button
+        onClick={handleReverseOrder}
+        className="block w-36 h-10 text-black text-sm bg-white p-12px rounded-2rem font-bold text-lg text-decoration-none border border-gray-700 ml-2 md:ml-[345px]
+        active:bg-gray-100"
+        >
+          Reverse Order
+        </button>
+        <div className="mt-6"></div>
+        {reverseOrder ? (
+          filteredPosts.map(post => (
+                  <DiscussionPost
+                      key={post._id} // Assuming sighting objects have a unique identifier like _id
+                      username={post.user}
+                      lat={post.lat}
+                      long={post.long}
+                      time={post.time}
+                      date={post.date}
+                      description={post.description}
+                      image={post.image}
+                  />
+          ))
+          ) : (
+            filteredPosts.slice().reverse().map(post => (
+              <DiscussionPost
+                  key={post._id} // Assuming sighting objects have a unique identifier like _id
+                  username={post.user}
+                  lat={post.lat}
+                  long={post.long}
+                  time={post.time}
+                  date={post.date}
+                  description={post.description}
+                  image={post.image}
+              />
+          ))
+        )}
         </>
     )
 }
