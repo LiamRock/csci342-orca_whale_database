@@ -51,10 +51,15 @@ router
       .toString()
       .padStart(2, "0")} ${ampm}`;
 
-    const image = {
+    let image = null;
+
+    // Check if req.file.filename is null
+    if ( req.file && req.file.filename) {
+    image = {
       data: fs.readFileSync(path.join(__dirname, '..', 'uploads', req.file.filename)),
       contentType: 'image/jpg'
-  }
+      };
+    }
 
     const lat = req.body.lat;
     const long = req.body.long;

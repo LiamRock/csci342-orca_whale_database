@@ -109,7 +109,8 @@ const Account = () => {
             <DiscussionPost
                 key={post._id} // Assuming sighting objects have a unique identifier like _id
                 username={post.user}
-                location={`${post.lat}, ${post.long}`}
+                lat={post.lat}
+                long={post.long}
                 time={post.time}
                 description={post.description}
                 image={post.image}

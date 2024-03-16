@@ -6,11 +6,11 @@ const postsSchema = new Schema(
   {
     lat: {
       type: String,
-      required: true,
+      required: false,
     },
     long: {
       type: String,
-      required: true,
+      required: false,
     },
     date: {
       type: String,
@@ -34,7 +34,7 @@ const postsSchema = new Schema(
     },
     image: {
       data: Buffer,
-      contentType: String
+      contentType: String,
   }
   },
   {

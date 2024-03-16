@@ -38,11 +38,25 @@ const handleSubmit = (e) => {
 
   const formDataToSend = new FormData();
   formDataToSend.append('user', user.userName);
+ // If lat and long are not empty, append them to formDataToSend
+ if (formData.lat.trim() !== '') {
   formDataToSend.append('lat', formData.lat);
+} else {
+  // Provide a default value for lat if it's empty
+  formDataToSend.append('lat', '');
+}
+
+if (formData.long.trim() !== '') {
   formDataToSend.append('long', formData.long);
+} else {
+  // Provide a default value for long if it's empty
+  formDataToSend.append('long', '');
+}
   formDataToSend.append('species', formData.species);
   formDataToSend.append('description', formData.description);
-  formDataToSend.append('image', formData.image);
+  if (formData.image) {
+    formDataToSend.append('image', formData.image);
+  }
 
   axios.post('http://localhost:3000/posts', formDataToSend)
     .then(response => {
@@ -56,10 +70,12 @@ const handleSubmit = (e) => {
         image: null
       });
       // Refresh the page
+      toast.success("Post created successful! See post in account");
       navigate('/account');
     })
     .catch(error => {
       console.error('Error creating Post:', error);
+      toast.error('Error creating post');
     });
 };
 
@@ -80,7 +96,7 @@ const handleCancel = () => {
           <input
             className="title bg-gray-100 border border-gray-300 p-2 mb-4 outline-none"
             spellCheck="false"
-            placeholder="Latitude"
+            placeholder="Latitude (optional)"
             type="text"
             name="lat"
             value={formData.lat}
@@ -89,7 +105,7 @@ const handleCancel = () => {
           <input
             className="title bg-gray-100 border border-gray-300 p-2 mb-4 outline-none"
             spellCheck="false"
-            placeholder="Longitude"
+            placeholder="Longitude (optional)"
             type="text"
             name="long"
             value={formData.long}
@@ -98,7 +114,7 @@ const handleCancel = () => {
           <input
             className="title bg-gray-100 border border-gray-300 p-2 mb-4 outline-none"
             spellCheck="false"
-            placeholder="Species"
+            placeholder="Species (optional)"
             type="text"
             name="species"
             value={formData.species}
@@ -107,7 +123,7 @@ const handleCancel = () => {
           <textarea
             className="description bg-gray-100 sec p-3 h-60 border border-gray-300 outline-none"
             spellCheck="false"
-            placeholder="Description"
+            placeholder="Description (required)"
             name="description"
             value={formData.description}
             onChange={handleChange}
@@ -117,6 +133,7 @@ const handleCancel = () => {
           type="file" name="image"
           onChange={handleChange}
         />
+        <p>Image not required*</p>
 
           <div className="buttons flex">
             <button
