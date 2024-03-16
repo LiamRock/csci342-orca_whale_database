@@ -70,13 +70,14 @@ if (formData.long.trim() !== '') {
         image: null
       });
       // Refresh the page
-      toast.success("Post created successful! See post in account");
       navigate('/account');
     })
     .catch(error => {
       console.error('Error creating Post:', error);
       toast.error('Error creating post');
     });
+    
+    toast.success("Post created successful! See post in account");
 };
 
 const handleCancel = () => {
@@ -121,7 +122,7 @@ const handleCancel = () => {
             onChange={handleChange}
           />
           <textarea
-            className="description bg-gray-100 sec p-3 h-60 border border-gray-300 outline-none"
+            className="description bg-gray-100 sec p-2 h-60 w-full border border-gray-300 outline-none"
             spellCheck="false"
             placeholder="Description (required)"
             name="description"

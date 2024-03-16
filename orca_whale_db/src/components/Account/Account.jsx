@@ -112,6 +112,7 @@ const Account = () => {
                 lat={post.lat}
                 long={post.long}
                 time={post.time}
+                date={post.date}
                 description={post.description}
                 image={post.image}
             />
