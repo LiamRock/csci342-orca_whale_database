@@ -1,5 +1,22 @@
 {
-
+    "slides": [
+        {
+            "src": "https://cloudfront-us-east-1.images.arcpublishing.com/opb/T25DGNIQ3NEUBDGP4NLLUOLLH4.jpg",
+            "alt": "gray1"
+        },
+        {
+            "src": "https://bajaex.com/wp-content/uploads/2021/11/gray-whale-skin-1-1200x800.jpg",
+            "alt": "gray2"
+        },
+        {
+            "src": "https://bajaex.com/wp-content/uploads/2020/12/Monika-wieland-1800x1000-1-1024x569.jpg",
+            "alt": "gray3"
+        },
+        {
+            "src": "https://i.natgeofe.com/n/9703df2c-e98e-487a-884e-fc3a52b00c9d/W7RX5G.jpg",
+            "alt": "gray4"
+        }
+    ],
     "facts": [
         {
             "fact": "Gray whales are baleen whales and are known for their distinctive heart-shaped blow, which can reach up to 12 feet high.",

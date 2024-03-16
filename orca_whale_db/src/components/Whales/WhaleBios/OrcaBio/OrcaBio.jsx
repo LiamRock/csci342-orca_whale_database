@@ -2,11 +2,14 @@ import "../WhaleBio.css";
 import "./OrcaBio.css"
 import SpeciesProfile from "../../WhaleGroup/SpeciesProfile";
 import "../../WhaleGroup/SpeciesProfile.css"
-//import DidYouKnow from "../../DidYouKnow/DidYouKnow"
 import DidYouKnowCarousel from "../../DidYouKnow/DidYouKnowCarousel.jsx"
+import BioDescription from '../BioDescription/BioDescription.jsx'
+
+/* Dynamic img rendering*/
+import { useState, useEffect } from 'react';
+import UnsplashCarousel from "../../Carousel/UnsplashCarousel.jsx"
 import Carousel from "../../Carousel/Carousel.jsx"
 import { slides, facts } from "./orcaSlidesData.json"
-import BioDescription from '../BioDescription/BioDescription.jsx'
 
 const ecotypeDataAPI = [
   {
@@ -36,6 +39,53 @@ const ecotypeDataAPI = [
 ];
 
 function OrcaBio() {
+  const [imageUrls, setImageUrls] = useState([]);
+
+  useEffect(() => {
+    const fetchOrcaImages = async () => {
+      try {
+        const response = await fetch(
+          'https://api.unsplash.com/photos/random?query=orca,killer-whale&count=10&orientation=landscape&client_id=i4lZFrSlHGs23XNqRhHNIyg1A2Dzysi-v78ESKvWGPI'
+        );
+        if (!response.ok) {
+          throw new Error('Failed to fetch images');
+        }
+        const data = await response.json();
+        console.log('Fetched images:', data);
+        
+        // Filter images to only include those containing orcas
+        const orcaImages = data.filter(photo => {
+          // Check if description or alt contains "orca"
+          return photo.alt_description && photo.alt_description.toLowerCase().includes("orca") ||
+                 photo.description && photo.description.toLowerCase().includes("orca") || 
+                 photo.alt_description && photo.alt_description.toLowerCase().includes("killer whale") || 
+                 photo.description && photo.description.toLowerCase().includes("killer whale");
+        });
+        
+        // Check if any images containing orcas are found
+        if (orcaImages.length === 0) {
+          throw new Error('No images of orcas found in the response');
+        }
+        
+        // Map filtered images to URLs
+        const urls = orcaImages.map(photo => photo.urls.regular);
+        
+        setImageUrls(urls);
+  
+        // Print name and description of filtered photos
+        orcaImages.forEach(photo => {
+          console.log('Name:', photo.alt_description || photo.description);
+          console.log('Description:', photo.description || photo.alt_description);
+        });
+      } catch (error) {
+        console.error('Error fetching images:', error);
+      }
+    };
+    
+    fetchOrcaImages(); // Call the fetchOrcaImages function here
+  }, []);
+  
+
   return (
     <div className="bio-page-container">
       <BioDescription 
@@ -76,9 +126,16 @@ function OrcaBio() {
         <DidYouKnowCarousel data={facts}/>
       </div>
 
-      <div className="carousel-container">
-        <Carousel data={slides}/>
-      </div>
+      {imageUrls.length > 0 ? (
+        <div className="carousel-container">
+          <UnsplashCarousel data={imageUrls}/>
+        </div>
+      ) : (
+        <div className="carousel-container">
+          <Carousel data={slides}/>
+        </div>
+      )}
+
     </div>
   );
 }

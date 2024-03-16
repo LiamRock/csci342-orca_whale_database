@@ -7,7 +7,7 @@ import { login, loader} from '../../store/slices/authSlices';
 //import AppLoader from '../../util/loaders/AppLoader';
 
 import '../../input.css'
-import './App.css'
+
 
 function App() {
   const { loaded } = useSelector((state) => state.auth);

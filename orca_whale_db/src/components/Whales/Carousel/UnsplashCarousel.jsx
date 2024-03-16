@@ -3,7 +3,7 @@ import "./Carousel.css"
 import {BsArrowLeftCircleFill, BsArrowRightCircleFill} from 'react-icons/bs';
 import { useState } from "react";
 
-function Carousel ({ data }) {
+function UnsplashCarousel ({ data }) {
     const [slide, setSlide] = useState(0);
     const [direction, setDirection] = useState(true); 
 
@@ -21,7 +21,7 @@ function Carousel ({ data }) {
         <div className="carousel">
             <BsArrowLeftCircleFill className="arrow arrow-left z-[2]" onClick={prevSlide} />
             {data.map((item, idx) => {
-                    return <img src={item.src} alt={item.alt} key={idx} className={slide === idx ? ( direction===true ? "slide-right": "slide-left") : "slide-hidden"}/>
+                    return <img src={item} alt="img not found" key={idx} className={slide === idx ? ( direction===true ? "slide-right": "slide-left") : "slide-hidden"}/>
             })}
             <BsArrowRightCircleFill className="arrow arrow-right z-[2]" onClick={nextSlide} />
             <span className="indicators">
@@ -33,4 +33,4 @@ function Carousel ({ data }) {
     );
 }
 
-export default Carousel
+export default UnsplashCarousel

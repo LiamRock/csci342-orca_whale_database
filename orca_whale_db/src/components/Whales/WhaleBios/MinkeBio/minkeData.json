@@ -1,4 +1,22 @@
 {
+    "slides": [
+        {
+            "src": "https://storage.googleapis.com/oceanwide_web/media-dynamic/cache/widen_1600/media/default/0001/05/ade1f6dba9d3c77ca0fe7922ec9ad2bbd69c2834.jpeg",
+            "alt": "minke1"
+        },
+        {
+            "src": "https://baleinesendirect.org/wp-content/uploads/2019/05/RPI_3976_BAC_petit_rorqual.jpg",
+            "alt": "minke2"
+        },
+        {
+            "src": "https://www.7seaswhalewatch.com/wp-content/uploads/whale-watch-boston-00005.jpg",
+            "alt": "minke3"
+        },
+        {
+            "src": "https://fh-sites.imgix.net/sites/5297/2023/09/11165147/Minke-Whale.webp?auto=compress%2Cformat&w=1000&h=1000&fit=max",
+            "alt": "minke4"
+        }
+    ],
     "facts": [
         {
             "fact": "Minke whales are the smallest of the baleen whale species.",
