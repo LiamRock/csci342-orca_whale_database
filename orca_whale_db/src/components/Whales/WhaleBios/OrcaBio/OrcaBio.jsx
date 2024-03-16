@@ -2,13 +2,14 @@ import "../WhaleBio.css";
 import "./OrcaBio.css"
 import SpeciesProfile from "../../WhaleGroup/SpeciesProfile";
 import "../../WhaleGroup/SpeciesProfile.css"
-//import DidYouKnow from "../../DidYouKnow/DidYouKnow"
 import DidYouKnowCarousel from "../../DidYouKnow/DidYouKnowCarousel.jsx"
+import BioDescription from '../BioDescription/BioDescription.jsx'
+
+/* Dynamic img rendering*/
+import { useState, useEffect } from 'react';
 import UnsplashCarousel from "../../Carousel/UnsplashCarousel.jsx"
 import Carousel from "../../Carousel/Carousel.jsx"
 import { slides, facts } from "./orcaSlidesData.json"
-import BioDescription from '../BioDescription/BioDescription.jsx'
-import React, { useState, useEffect } from 'react';
 
 const ecotypeDataAPI = [
   {
