@@ -5,18 +5,25 @@
     height: 220px;
     background-color: #F6F9FF;
     color: black;
+    width: 100vw;
+    text-align: center;
+    padding-top: 20px;
 }
 .footer-content{
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
     margin-left: 20px;
     margin-right: 20px;
     padding-bottom: 20px;
     border-bottom: 1px solid black;
+    align-items: center;
+    justify-content: center;
 }
 .footer-content img{
     display: flex;
     width: 50px;
     height: auto;  
+    margin-right: 30px;
 }
 .footer-content p{
     margin-top: 10px;

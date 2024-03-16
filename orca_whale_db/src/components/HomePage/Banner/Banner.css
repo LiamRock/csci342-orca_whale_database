@@ -30,6 +30,8 @@
   font-size: 32px;
   margin-bottom: 20px;
   text-shadow: rgba(0,0,0,0.9) 0px 0px 10px;
+  max-width: 50rem;
+  line-height: normal;
 }
 
 .banner-button {

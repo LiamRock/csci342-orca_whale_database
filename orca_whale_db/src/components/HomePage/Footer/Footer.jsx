@@ -11,6 +11,7 @@ function Footer() {
             majestic marine creatures. Join our community of enthusiasts and conservationists as we 
             celebrate the beauty and wonder of whales together. 
             </p>
+            <img src=''/>
         </div>
         <div className='links'>
             <Link to="/">Home</Link>
