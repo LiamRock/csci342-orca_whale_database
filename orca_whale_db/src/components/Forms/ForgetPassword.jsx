@@ -41,9 +41,9 @@ function ForgetPassword() {
         });
       }, [errors]);
     return (
-        <div className='text-black w-[100vw]'>
-        <h2 className='text-4xl text-center py-5'>Forget your password</h2>
-        <p className='text-center pb-5'>Please enter the email address you'd like your password reset information sent to</p>
+        <div className='text-black w-[100vw] h-[80vh] '>
+        <h2 className='text-6xl text-center pt-[7rem]'>Forget your password</h2>
+        <p className='text-xl text-center py-10'>Please enter the email address you'd like your password reset information sent to</p>
         <form onSubmit={handleSubmit(onSubmit)}>
             <div className="flex flex-col items-center">
                 <input className='box-border rounded-lg border-2 border-black text-black bg-white pt-2 pr-40 pl-2 pb-2 mt-0 mb-3.5  ' type="text" placeholder="Email" name="email" {...register("email")}/>

@@ -14,26 +14,6 @@
     --textColor: #202020;
 }
 
-header{
-    position: absolute; /* Make the header fixed */
-    top: 30px; /* Position it at the top of the page */
-    left: 15%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 80px;
-    padding: 0 2rem;
-    background-color: rgba(255, 255, 255, 0.2);
-    color: var(--textColor);
-    width: 70%; /* Ensure the header spans the whole width */
-    gap: 141px;
-    border-radius: 100px;
-    z-index: 2;
-}
-.logo-image{
-    width: 60px;
-    height: 60px;
-}
 
 nav a:hover{
     content: none;

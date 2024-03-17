@@ -66,9 +66,9 @@ function Signup() {
       };
   
     return (
-        <div className='text-black w-[100vw]'>
+        <div className='text-black w-[100vw] h-[90vh]'>
             <br />
-            <h2 className='text-7xl text-center pt-20'>PNW TRACKER</h2>
+            <h2 className='text-7xl text-center pt-[7rem]'>PNW TRACKER</h2>
             <h2 className='text-5xl text-center py-10'>Sign up</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="flex flex-col items-center">
