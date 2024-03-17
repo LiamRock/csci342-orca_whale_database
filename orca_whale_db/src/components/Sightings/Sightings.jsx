@@ -19,7 +19,7 @@ const Sightings = () => {
   }, []);
 
   return (
-    <div className="Sightings p-[20px] content-center items-center justify-center text-center">
+    <div className=" p-[20px] content-center items-center justify-center text-center">
       <h1 className="font-bold mb-5">Reported Sightings!</h1>
       <MapComponent sightings={sightings} />
       <br />
