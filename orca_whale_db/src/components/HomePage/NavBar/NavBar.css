@@ -34,18 +34,7 @@ header{
     width: 60px;
     height: 60px;
 }
-nav{
-    display: flex;
-    align-items: center;
-}
-nav a{
-    margin: 30px;
-    color: var(--textColor);
-    text-decoration: none;
-    position: relative;
-    text-shadow: rgba(255, 255, 255, 0.8) 0px 0px 10px;
-    text-align: center;
-}
+
 nav a:hover{
     content: none;
     color:var(--secondaryColor);

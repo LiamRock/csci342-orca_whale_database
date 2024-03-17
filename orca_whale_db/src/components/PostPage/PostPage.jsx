@@ -46,12 +46,12 @@ function PostPage() {
         <Sightings/>
         <form>
           <label htmlFor="filterDate" className="text-gray-700 ml-2 md:ml-[345px]">Filter up to a Date: </label>
-          <input className="text-gray-700" type="date" id="filterDate" name="filterDate" value={filterDate} onChange={handleFilterChange} />
+          <input className="text-gray-700 bg-[#e2e0df]" type="date" id="filterDate" name="filterDate" value={filterDate} onChange={handleFilterChange} />
         </form>
         <div className="mt-6"></div>
         <button
         onClick={handleReverseOrder}
-        className="block w-36 h-10 text-black text-sm bg-white p-12px rounded-2rem font-bold text-lg text-decoration-none border border-gray-700 ml-2 md:ml-[345px]
+        className="block w-36 h-10 text-black text-sm bg-white p-12px rounded-2rem font-bold text-decoration-none border border-gray-700 ml-2 md:ml-[345px]
         active:bg-gray-100"
         >
           Reverse Order
