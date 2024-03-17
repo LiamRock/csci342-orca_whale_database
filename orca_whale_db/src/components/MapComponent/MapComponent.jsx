@@ -1,13 +1,21 @@
 import { Fragment, useEffect, useState } from "react";
 import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
+import orcaIcon from "../../assets/orcaIcon.png";
+import grayIcon from "../../assets/grayIcon.png";
+import humbackIcon from "../../assets/humpbackIcon.png";
+import blueIcon from "../../assets/blueIcon.jpg";
+import finIcon from "../../assets/finIcon.png";
+import minkeIcon from "../../assets/minkeIcon.png";
+import uncertainIcon from "../../assets/uncertainIcon.png";
 
 const speciesIcons = {
-  orca: "../assets/orcaIcon.png",
-  gray: "../assets/grayIcon.png",
-  humpback: "../assets/humpbackIcon.png",
-  blue: "../assets/blueIcon.jpg",
-  fin: "../assets/finIcon.png",
-  minke: "../assets/minkeIcon.png",
+  orca: orcaIcon,
+  gray: grayIcon,
+  humpback: humbackIcon,
+  blue: blueIcon,
+  fin: finIcon,
+  minke: minkeIcon,
+  uncertain: uncertainIcon,
 };
 
 const containerStyle = {
@@ -29,11 +37,17 @@ function MapComponent() {
 
   useEffect(() => {
     const getSightings = async () => {
-      await fetch(`http://localhost:3000/sightings`)
-        .then(async (response) => await response.json())
-        .then((response) => {
-          setMarkers(response);
-        });
+      try {
+        const response = await fetch(`http://localhost:3000/sightings`);
+        if (!response.ok) {
+          throw new Error(`Error fetching sightings: ${response.statusText}`);
+        }
+        const responseJson = await response.json();
+        setMarkers(responseJson);
+      } catch (error) {
+        console.error("Error fetching sightings:", error);
+        // Handle errors here, like displaying an error message to the user
+      }
     };
     getSightings();
   }, []);
@@ -41,6 +55,12 @@ function MapComponent() {
   return (
     <Fragment>
       <div className="flex justify-center items-center max-w-[95vw]">
+        {/* Test rendering of uncertainIcon */}
+        <img
+          src={speciesIcons["uncertain"]}
+          alt="Uncertain sighting icon"
+          style={{ width: 30, height: 30 }}
+        />
         {isLoaded ? (
           <GoogleMap
             center={center}
@@ -49,17 +69,27 @@ function MapComponent() {
             mapId={"3878aad1a59aef57"}
           >
             {markers &&
-              markers.map(({ _id, lat, long, species, date, time }) => (
-                <Marker
-                  key={_id}
-                  position={{ lat: parseFloat(lat), lng: parseFloat(long) }}
-                  icon={{
-                    url: speciesIcons[species],
-                    scaledSize: new window.google.maps.Size(30, 30),
-                  }}
-                  title={`Spotted on ${date} at ${time}`}
-                />
-              ))}
+              markers.map(({ _id, lat, long, species, date, time }) => {
+                // Check if species exists in speciesIcons
+                const iconUrl = Object.prototype.hasOwnProperty.call(
+                  speciesIcons,
+                  species
+                )
+                  ? speciesIcons[species]
+                  : uncertainIcon;
+
+                return (
+                  <Marker
+                    key={_id}
+                    position={{ lat: parseFloat(lat), lng: parseFloat(long) }}
+                    icon={{
+                      url: iconUrl,
+                      scaledSize: new window.google.maps.Size(30, 30),
+                    }}
+                    title={`Spotted on ${date} at ${time}`}
+                  />
+                );
+              })}
           </GoogleMap>
         ) : null}
       </div>
