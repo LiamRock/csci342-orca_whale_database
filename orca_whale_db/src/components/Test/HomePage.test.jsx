@@ -19,7 +19,34 @@ describe('SpeciesProfile Component', () => {
             </Provider>
         );
     });
-    test('renders the registration form and allows typing', async () => {
-        // Test content...
+    test('renders the home page checks headings', async () => {
+        const bannerHeading = screen.getByRole('heading', {name: 'Dive into the diverse world of whales with us! Explore a mesmerizing array of magnificent species including Orca, Grey Whale, and more!' });
+        
+        
+        expect(bannerHeading.textContent).toBe('Dive into the diverse world of whales with us! Explore a mesmerizing array of magnificent species including Orca, Grey Whale, and more!')
+        
     });
+
+    test('see posts button is rendered and clickable', () => {
+        const button = screen.getByRole('button', { name: "See Posts" });
+        
+        // Assert button is in the document and not disabled
+        expect(button).toBeInTheDocument();
+        expect(button).not.toBeDisabled();
+    
+        // Mock click event
+        fireEvent.click(button);
+    });
+
+    test('footer links are rendered and clickable', () => {
+        const Links = screen.getAllByRole('link');
+        
+        // Assert button is in the document and not disabled
+        Links.forEach(link => {
+            expect(link).toBeInTheDocument();
+            expect(link).not.toBeDisabled();
+            fireEvent.click(link);
+        })
+        
+      });
 })

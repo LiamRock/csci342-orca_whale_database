@@ -19,7 +19,11 @@ describe('SpeciesProfile Component', () => {
             </Provider>
         );
     });
-    test('renders the registration form and allows typing', async () => {
-        // Test content...
+    test('renders the page and checks the heading', async () => {
+        const aboutHeading = screen.getByRole('heading', {name: 'About Us' });
+        const heading = screen.getByRole('heading', {name: 'Who are we? What is our mission?' });
+        
+        expect(aboutHeading.textContent).toBe('About Us')
+        expect(heading.textContent).toBe('Who are we? What is our mission?')
     });
 })
