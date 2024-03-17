@@ -19,7 +19,7 @@ function Navbar(){
     return(
         <header className="absolute top-[30px] left-[15%] flex items-center justify-between h-[80px] py-0 px-[2rem] bg-black bg-opacity-20 text-[#202020] w-[70%] gap-[141px] rounded-[100px] z-[2]  ">
             <Link to="/">
-                <img src="../src/assets/orcaLogo.png" className="w-[60px] h-[60px] "></img>
+                <img src="../src/assets/orcaLogo.png" className="w-[60px] h-[60px] min-w-[60px] min-h-[60px] "></img>
             </Link>
                 <nav className="flex items-center" ref={navRef}>
                     {user.email ? (
