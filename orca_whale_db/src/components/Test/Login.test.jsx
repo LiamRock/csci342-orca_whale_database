@@ -19,6 +19,10 @@ describe('Login Component', () => {
         );
     });
 
+    test('renders the registration form and allows typing', async () => {
+        // Test content...
+    });
+
     test('input fields are initially empty', ()=> {
         const emailInput = screen.getByPlaceholderText('Email');
         const passwordInput = screen.getByPlaceholderText('Password');
