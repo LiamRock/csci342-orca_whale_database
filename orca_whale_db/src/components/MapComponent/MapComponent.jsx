@@ -55,12 +55,6 @@ function MapComponent() {
   return (
     <Fragment>
       <div className="flex justify-center items-center max-w-[95vw]">
-        {/* Test rendering of uncertainIcon */}
-        <img
-          src={speciesIcons["uncertain"]}
-          alt="Uncertain sighting icon"
-          style={{ width: 30, height: 30 }}
-        />
         {isLoaded ? (
           <GoogleMap
             center={center}
