@@ -1,6 +1,15 @@
 import { Fragment, useEffect, useState } from "react";
 import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
 
+const speciesIcons = {
+  orca: "../assets/orcaIcon.png",
+  gray: "../assets/grayIcon.png",
+  humpback: "../assets/humpbackIcon.png",
+  blue: "../assets/blueIcon.jpg",
+  fin: "../assets/finIcon.png",
+  minke: "../assets/minkeIcon.png",
+};
+
 const containerStyle = {
   width: "80rem",
   height: "40rem",
@@ -40,10 +49,15 @@ function MapComponent() {
             mapId={"3878aad1a59aef57"}
           >
             {markers &&
-              markers.map(({ lat, long }, index) => (
+              markers.map(({ _id, lat, long, species, date, time }) => (
                 <Marker
-                  key={index}
+                  key={_id}
                   position={{ lat: parseFloat(lat), lng: parseFloat(long) }}
+                  icon={{
+                    url: speciesIcons[species],
+                    scaledSize: new window.google.maps.Size(30, 30),
+                  }}
+                  title={`Spotted on ${date} at ${time}`}
                 />
               ))}
           </GoogleMap>
