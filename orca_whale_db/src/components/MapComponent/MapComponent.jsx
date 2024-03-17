@@ -1,5 +1,10 @@
 import { Fragment, useEffect, useState } from "react";
-import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
+import {
+  GoogleMap,
+  useJsApiLoader,
+  Marker,
+  InfoWindow,
+} from "@react-google-maps/api";
 import orcaIcon from "../../assets/orcaIcon.png";
 import grayIcon from "../../assets/grayIcon.png";
 import humbackIcon from "../../assets/humpbackIcon.png";
@@ -30,7 +35,8 @@ const center = {
 
 function MapComponent() {
   const [markers, setMarkers] = useState(null);
-  const { isLoaded } = useJsApiLoader({
+  const [selectedMarker, setSelectedMarker] = useState(null);
+  const { isLoaded, map } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAP_API_KEY,
   });
@@ -46,11 +52,19 @@ function MapComponent() {
         setMarkers(responseJson);
       } catch (error) {
         console.error("Error fetching sightings:", error);
-        // Handle errors here, like displaying an error message to the user
       }
     };
     getSightings();
   }, []);
+
+  const handleMarkerClick = (marker) => {
+    setSelectedMarker(marker);
+    console.log(marker.description);
+  };
+
+  const handleCloseInfoWindow = () => {
+    setSelectedMarker(null);
+  };
 
   return (
     <Fragment>
@@ -63,27 +77,59 @@ function MapComponent() {
             mapId={"3878aad1a59aef57"}
           >
             {markers &&
-              markers.map(({ _id, lat, long, species, date, time }) => {
-                // Check if species exists in speciesIcons
-                const iconUrl = Object.prototype.hasOwnProperty.call(
-                  speciesIcons,
-                  species
-                )
-                  ? speciesIcons[species]
-                  : uncertainIcon;
+              markers.map(
+                ({ _id, lat, long, species, date, time, description }) => {
+                  // Check if species exists in speciesIcons
+                  const iconUrl = Object.prototype.hasOwnProperty.call(
+                    speciesIcons,
+                    species
+                  )
+                    ? speciesIcons[species]
+                    : uncertainIcon;
 
-                return (
-                  <Marker
-                    key={_id}
-                    position={{ lat: parseFloat(lat), lng: parseFloat(long) }}
-                    icon={{
-                      url: iconUrl,
-                      scaledSize: new window.google.maps.Size(30, 30),
-                    }}
-                    title={`Spotted on ${date} at ${time}`}
-                  />
-                );
-              })}
+                  return (
+                    <Marker
+                      key={_id}
+                      position={{ lat: parseFloat(lat), lng: parseFloat(long) }}
+                      icon={{
+                        url: iconUrl,
+                        scaledSize: new window.google.maps.Size(30, 30),
+                      }}
+                      onClick={() =>
+                        handleMarkerClick({
+                          _id,
+                          lat,
+                          long,
+                          species,
+                          date,
+                          time,
+                          description,
+                        })
+                      }
+                      title={`Spotted ${species} on ${date} at ${time}`}
+                    />
+                  );
+                }
+              )}
+
+            {selectedMarker && (
+              <InfoWindow
+                map={map}
+                position={{
+                  lat: parseFloat(selectedMarker.lat),
+                  lng: parseFloat(selectedMarker.long),
+                }}
+                onCloseClick={handleCloseInfoWindow}
+              >
+                <div className="info-window px-4 py-3 rounded-lg bg-white shadow-md flex flex-col text-start">
+                  <h1 className="text-xl font-bold text-gray-800">{`Spotted on ${selectedMarker.date} at ${selectedMarker.time}`}</h1>
+                  <h2 className="text-base font-medium text-gray-600">
+                    Species: {selectedMarker.species}
+                  </h2>
+                  <p className="text-sm text-gray-500">{`Description: ${selectedMarker.description}`}</p>
+                </div>
+              </InfoWindow>
+            )}
           </GoogleMap>
         ) : null}
       </div>
