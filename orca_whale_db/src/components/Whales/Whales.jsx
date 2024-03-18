@@ -58,7 +58,7 @@ function Whales() {
     <div className="pt-[9rem] flex flex-col text-center bg-[url('../src/assets/speciesBackground.jpg')]
     bg-cover bg-no-repeat bg-center top-0 items-center w-[100vw] min-h-[100vh]">
       <div className="drop-shadow-[0_35px_35px_rgba(0,0,0,1)] text-white rounded-[10px] p-[12px]">
-        <h1 className="text-white">Whales of the Pacific Northwest!</h1>
+        <h1 className="text-white drop-shadow-[0_0_12px_black]">Whales of the Pacific Northwest!</h1>
       </div>
 
       <div className='mt-[30px]'>
