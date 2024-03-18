@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>25/25</span>
+                <span class='fraction'>24/24</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>25/25</span>
+                <span class='fraction'>24/24</span>
             </div>
         
             
@@ -86,50 +86,47 @@
 <a name='L21'></a><a href='#L21'>21</a>
 <a name='L22'></a><a href='#L22'>22</a>
 <a name='L23'></a><a href='#L23'>23</a>
-<a name='L24'></a><a href='#L24'>24</a>
-<a name='L25'></a><a href='#L25'>25</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<a name='L24'></a><a href='#L24'>24</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import { Link } from 'react-router-dom'
 function Card() {
   
     return (
-        &lt;div className="v-screen h-[800px] p-0"&gt;
-            &lt;img className='w-screen h-full ' src="./src/assets/coast-background.jpg" /&gt;
-            &lt;div className='relative top-[-50%] left-2/4 flex flex-row translate-x-[-50%] translate-y-[-50%] justify-normal items-center w-full h-full p-5'&gt;
-                &lt;div className='text-white'&gt;
-                    &lt;h1 className='mb-5 ml-[100px]' &gt;See what people have posted!&lt;/h1&gt;
-                    &lt;p className='drop-shadow-sm mr-[100px] ml-[100px]'&gt;
+        &lt;div className="flex flex-col h-[800px] p-0 bg-[url(./src/assets/coast-background.jpg)] bg-cover bg-bottom bg-no-repeat]"&gt;
+            &lt;div className='flex justify-normal items-center h-[800px] p-2'&gt;
+                &lt;div&gt;
+                    &lt;h1 className='drop-shadow-[0_0_6px_white] mb-5 ml-[100px] text-black' &gt;See what people have posted!&lt;/h1&gt;
+                    &lt;p className='drop-shadow-[0_0_6px_black] mr-[100px] ml-[100px]'&gt;
                     Explore the wonders of the ocean with us! Share your extraordinary whale sightings 
                     and dive into a world of marine marvels. Click below to share your experiences and 
                     discover breathtaking encounters with our community!
                     &lt;/p&gt;
-                    &lt;button className="relative top-[30px] left-[10%] text-[16px] bg-white text-black border-0 rounded-[25px] cursor-pointer "&gt;
-                        &lt;Link to="/posts" className="text-black"&gt;See Posts&lt;/Link&gt;
-                    &lt;/button&gt;
+                    &lt;Link to="/posts" className="relative top-[30px] left-[10%] text-[16px]"&gt;
+                        &lt;button className="text-black bg-white border-0 rounded-[25px] cursor-pointer"&gt;See Posts&lt;/button&gt;
+                    &lt;/Link&gt;
                 &lt;/div&gt;
-                &lt;img className='w-[500px] h-[500px] mr-[50px]' src="./src/assets/card.jpg"/&gt;
+                &lt;img className='w-[500px] h-[500px] mr-[50px] rounded-md drop-shadow-2xl' src="./src/assets/card.jpg"/&gt;
             &lt;/div&gt;
         &lt;/div&gt;
     )
@@ -142,7 +139,7 @@ function Card() {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-03-17T23:43:09.290Z
+                at 2024-03-18T23:54:54.467Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

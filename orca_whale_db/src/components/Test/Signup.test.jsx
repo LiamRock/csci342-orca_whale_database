@@ -31,7 +31,7 @@ describe('Signup Component', () => {
         expect(confirmPasswordInput.value).toBe('');
     });
 
-    test('registration button is rendered and clickable', () => {
+    test('sign up button is rendered and clickable', () => {
         const button = screen.getByRole('button', { name: "Sign up" });
         
         // Assert button is in the document and not disabled

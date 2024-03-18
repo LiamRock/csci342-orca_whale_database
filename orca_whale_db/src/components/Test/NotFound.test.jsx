@@ -1,39 +1,44 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import ForgetPassword from '../Forms/ForgetPassword';
+import PageNotFound from '../NotFound/NotFoundPage';
 import { Provider } from 'react-redux';
 import store from '../../store/store'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { expect } from 'vitest';
 
-describe('ForgetPassword Component', () => {
+describe('Page not found component', () => {
     beforeEach(() => {
         render(
             <Provider store={store}>
                 <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<ForgetPassword />} />
+                    <Route path="/" element={<PageNotFound />} />
                 </Routes>
                 </BrowserRouter>
             </Provider>
         );
     });
 
-    test('input field is initially empty', ()=> {
-        const emailInput = screen.getByPlaceholderText('Email');
+    test('heading text is rendered', ()=> {
+        const header = screen.getByRole('heading');
 
-        expect(emailInput.value).toBe('');
-    
+        expect(header.textContent).toBe('Page Not Found');
+        
     });
 
-    test('submit button is rendered and clickable', () => {
-        const button = screen.getByRole('button', { name: "Submit" });
+    test('cancel and post buttons are rendered and clickable', () => {
+        const home = screen.getByRole('link');
+
+        
         
         // Assert button is in the document and not disabled
-        expect(button).toBeInTheDocument();
-        expect(button).not.toBeDisabled();
+        
+        expect(home).toBeInTheDocument();
+        expect(home).not.toBeDisabled();
+    
     
         // Mock click event
-        fireEvent.click(button);
-      });
+        fireEvent.click(home);
+    
+    });
 });

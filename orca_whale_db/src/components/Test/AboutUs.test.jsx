@@ -7,7 +7,7 @@ import { expect } from 'vitest';
 import AboutUs from '../AboutUs/AboutUs'
 
 
-describe('SpeciesProfile Component', () => {
+describe('About us Component', () => {
     beforeEach(() => {
         render(
             <Provider store={store}>
@@ -22,7 +22,7 @@ describe('SpeciesProfile Component', () => {
     test('renders the page and checks the heading', async () => {
         const aboutHeading = screen.getByRole('heading', {name: 'About Us' });
         const heading = screen.getByRole('heading', {name: 'Who are we? What is our mission?' });
-        
+
         expect(aboutHeading.textContent).toBe('About Us')
         expect(heading.textContent).toBe('Who are we? What is our mission?')
     });

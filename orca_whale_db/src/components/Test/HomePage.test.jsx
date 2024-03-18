@@ -7,7 +7,8 @@ import { expect } from 'vitest';
 import HomePage from '../HomePage/main/HomePage';
 
 
-describe('SpeciesProfile Component', () => {
+
+describe('Home page Component', () => {
     beforeEach(() => {
         render(
             <Provider store={store}>
@@ -19,7 +20,7 @@ describe('SpeciesProfile Component', () => {
             </Provider>
         );
     });
-    test('renders the home page checks headings', async () => {
+    test('renders the home page and checks heading', async () => {
         const bannerHeading = screen.getByRole('heading', {name: 'Dive into the diverse world of whales with us! Explore a mesmerizing array of magnificent species including Orca, Grey Whale, and more!' });
         
         
@@ -38,15 +39,4 @@ describe('SpeciesProfile Component', () => {
         fireEvent.click(button);
     });
 
-    test('footer links are rendered and clickable', () => {
-        const Links = screen.getAllByRole('link');
-        
-        // Assert button is in the document and not disabled
-        Links.forEach(link => {
-            expect(link).toBeInTheDocument();
-            expect(link).not.toBeDisabled();
-            fireEvent.click(link);
-        })
-        
-      });
 })

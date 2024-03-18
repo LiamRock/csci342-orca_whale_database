@@ -1,34 +1,36 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import Login from '../Forms/Login';
 import { Provider } from 'react-redux';
 import store from '../../store/store'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { expect } from 'vitest';
+import PostPage from '../PostPage/PostPage';
 
-describe('Login Component', () => {
+
+
+describe('PostPage Component', () => {
     beforeEach(() => {
         render(
             <Provider store={store}>
                 <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<Login />} />
+                    <Route path="/" element={<PostPage />} />
                 </Routes>
                 </BrowserRouter>
             </Provider>
         );
     });
-
-    test('input fields are initially empty', ()=> {
-        const emailInput = screen.getByPlaceholderText('Email');
-        const passwordInput = screen.getByPlaceholderText('Password');
-
-        expect(emailInput.value).toBe('');
-        expect(passwordInput.value).toBe('');
+    test('renders the post page and checks heading', async () => {
+        const bannerHeading = screen.getByRole('heading', {name: 'See what people have been posting!' });
+        const sightings = screen.getByRole('heading', {name: 'Reported Sightings!'});
+        
+        expect(bannerHeading.textContent).toBe('See what people have been posting!');
+        expect(sightings.textContent).toBe('Reported Sightings!');
+        
     });
 
-    test('Login button is rendered and clickable', () => {
-        const button = screen.getByRole('button', { name: "Login" });
+    test('reverse order button is rendered and clickable', () => {
+        const button = screen.getByRole('button', { name: "Reverse Order" });
         
         // Assert button is in the document and not disabled
         expect(button).toBeInTheDocument();
@@ -36,5 +38,6 @@ describe('Login Component', () => {
     
         // Mock click event
         fireEvent.click(button);
-      });
-});
+    });
+
+})

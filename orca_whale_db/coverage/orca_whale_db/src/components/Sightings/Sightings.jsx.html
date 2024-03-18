@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">23.33% </span>
+                <span class="strong">90% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/30</span>
+                <span class='fraction'>27/30</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">75% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>3/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
-                <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">23.33% </span>
+                <span class="strong">90% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/30</span>
+                <span class='fraction'>27/30</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -98,59 +98,59 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useState, useEffect } from "react";
 // import OrcaInfo from "../OrcaInfo/OrcaInfo";
 import MapComponent from "../MapComponent/MapComponent";
 &nbsp;
-const Sightings = <span class="fstat-no" title="function not covered" >() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  const [sightings, setSightings] = useState([]);</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  useEffect(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    const fetchSightings = async () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      const res = await fetch(</span>
-<span class="cstat-no" title="statement not covered" >        import.meta.env.VITE_SERVER_URL + "/sightings"</span>
-<span class="cstat-no" title="statement not covered" >      ).catch((err) =&gt; {</span>
+const Sightings = () =&gt; {
+  const [sightings, setSightings] = useState([]);
+&nbsp;
+  useEffect(() =&gt; {
+    const fetchSightings = async () =&gt; {
+      const res = await fetch(
+        import.meta.env.VITE_SERVER_URL + "/sightings"
+      ).catch((err) =&gt; {
 <span class="cstat-no" title="statement not covered" >        console.log("Error: " + err);</span>
-<span class="cstat-no" title="statement not covered" >      });</span>
+      }<span class="branch-0 cbranch-no" title="branch not covered" >);</span>
 <span class="cstat-no" title="statement not covered" >      const data = await res.json();</span>
 <span class="cstat-no" title="statement not covered" >      setSightings(data);</span>
-<span class="cstat-no" title="statement not covered" >    };</span>
-<span class="cstat-no" title="statement not covered" >    fetchSightings();</span>
-<span class="cstat-no" title="statement not covered" >  }, []);</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  return (</span>
-<span class="cstat-no" title="statement not covered" >    &lt;div className=" p-[20px] content-center items-center justify-center text-center"&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;h1 className="font-bold mb-5"&gt;Reported Sightings!&lt;/h1&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;MapComponent sightings={sightings} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;br /&gt;</span>
-<span class="cstat-no" title="statement not covered" >    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >  );</span>
-<span class="cstat-no" title="statement not covered" >};</span>
+    };
+    fetchSightings();
+  }, []);
+&nbsp;
+  return (
+    &lt;div className=" p-[20px] content-center items-center justify-center text-center"&gt;
+      &lt;h1 className="font-bold mb-5"&gt;Reported Sightings!&lt;/h1&gt;
+      &lt;MapComponent sightings={sightings} /&gt;
+      &lt;br /&gt;
+    &lt;/div&gt;
+  );
+};
 &nbsp;
 export default Sightings;
 &nbsp;</pre></td></tr></table></pre>
@@ -160,7 +160,7 @@ export default Sightings;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-03-17T23:43:09.290Z
+                at 2024-03-18T23:54:54.467Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

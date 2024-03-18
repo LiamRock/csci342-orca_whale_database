@@ -7,7 +7,7 @@ import { expect } from 'vitest';
 import Footer from '../HomePage/Footer/Footer';
 
 
-describe('SpeciesProfile Component', () => {
+describe('Footer Component', () => {
     beforeEach(() => {
         render(
             <Provider store={store}>

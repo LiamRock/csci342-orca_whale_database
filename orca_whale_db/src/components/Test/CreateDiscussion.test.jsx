@@ -31,7 +31,7 @@ describe('Create Discussions Component', () => {
         expect(confirmPasswordInput.value).toBe('');
     });
 
-    test('registration button is rendered and clickable', () => {
+    test('cancel and post buttons are rendered and clickable', () => {
         const cancelButton = screen.getByRole('button', {name: 'Cancel'});
         const postButton = screen.getByRole('button', {name: 'Post'});
         
