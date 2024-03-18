@@ -4,18 +4,17 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-function CreateDiscussion() {
+function CreateDiscussion({setState}) {
   const [formData, setFormData] = useState({
     lat: "",
     long: "",
     species: "",
     description: "",
     user: "",
-    image: "",
+    image: ""
   });
 
   const user = useSelector((state) => state.auth.user);
-  const navigate = useNavigate();
 
   const handleChange = (e) => {
     if (e.target.name === "image") {
@@ -46,6 +45,7 @@ function CreateDiscussion() {
 
     const formDataToSend = new FormData();
     formDataToSend.append("user", user.userName);
+    formDataToSend.append("email", user.email);
     // If lat and long are not empty, append them to formDataToSend
     if (formData.lat.trim() !== "") {
       formDataToSend.append("lat", formData.lat);
@@ -78,8 +78,8 @@ function CreateDiscussion() {
           description: "",
           image: null,
         });
-        // Refresh the page
-        navigate("/posts");
+        // Rerender the posts
+        setState(formData);
       })
       .catch((error) => {
         console.error("Error creating Post:", error);

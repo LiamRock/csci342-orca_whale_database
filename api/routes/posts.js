@@ -43,7 +43,7 @@ router.put("/", upload.single("image"), async (req, res) => {
     }
     // Update all posts associated with original username.
     try {
-      const posts = await Post.updateMany({ email, email },
+      const posts = await Post.updateMany({ email: email },
         {
           user: newUsername,
         }
@@ -56,6 +56,7 @@ router.put("/", upload.single("image"), async (req, res) => {
     }
   }
 
+  // Handles changes made to a post besides username change.
   let { image } = req.body;
 
   if (!id) {

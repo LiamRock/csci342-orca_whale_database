@@ -97,6 +97,14 @@ const Account = () => {
     console.log("Changing profile picture...");
   };
 
+  const handleStorage = (username) => {
+    const newLogin = {
+      "userName": username,
+      "email": user.email
+    }
+    localStorage.setItem("user", JSON.stringify(newLogin));
+  }
+
   const handleSubmit = (data) => {
     data.preventDefault();
     const newUsername = data.target.username.value;
@@ -121,6 +129,7 @@ const Account = () => {
     })
     .then(() => {
       toast.success("Username successfully changed.");
+      handleStorage(newUsername);
       dispatch(login({
         userName: newUsername,
         email: user.email

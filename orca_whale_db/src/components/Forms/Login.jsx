@@ -41,12 +41,15 @@ function Login() {
       })
       .then((data) => {
         localStorage.setItem("token", data.token);
-        localStorage.setItem("user", JSON.stringify(data.user));
+        const user = {
+          "userName": data.user.userName,
+          "email": data.user.email
+        }
+        localStorage.setItem("user", JSON.stringify(user));
         toast.success("Login successful!");
         dispatch(login({
           userName: data?.user?.userName || "",
           email: data?.user?.email || "",
-          
         }));
         navigate("/account");
       })

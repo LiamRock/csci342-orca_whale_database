@@ -117,7 +117,7 @@ function PostPage() {
                 setState={setState}
               />
             ))}
-      <CreateDiscussion />
+      <CreateDiscussion setState={setState}/>
       <div className="mb-8"></div>
     </>
   );
