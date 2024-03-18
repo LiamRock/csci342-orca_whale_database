@@ -33,7 +33,7 @@ function Navbar(){
                         <Link to="/account">Account</Link>
                         <div className="border h-8 border-black border-l-0"></div>
                         <button className="bg-inherit hover:text-[var(--secondaryColor)]
-                        border-none m-[30px] p-0" onClick={logoutHandler}>Log out</button>
+                        border-none m-[30px] p-0 drop-shadow-[0_0_8px_white]" onClick={logoutHandler}>Log out</button>
 
                         <button className="nav-btn nav-close-btn" onClick={showNavbar}>
                             <FaTimes>

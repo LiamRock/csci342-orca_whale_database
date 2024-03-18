@@ -62,7 +62,7 @@ function Whales() {
       </div>
 
       <div className='mt-[30px]'>
-        <div style={cardStyle}>
+        <div className='flex flex-wrap justify-center max-w-[80vw]'>
           {whaleDataAPI.map((whale) => (
             <SpeciesProfile key={whale.id} img={whale.img} name={whale.name} description={whale.description} bioLink={whale.bioLink} />
           ))}
