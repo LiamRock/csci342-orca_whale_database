@@ -65,7 +65,7 @@ function PostPage() {
           Filter through Date:{" "}
         </label>
         <input
-          className="text-gray-700 dark:bg-white"
+          className="text-gray-700 bg-[#e2e0df]"
           type="date"
           id="displayDate"
           name="displayDate"

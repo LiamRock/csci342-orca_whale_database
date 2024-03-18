@@ -66,9 +66,9 @@ function Login() {
       }, [errors]);
 
     return (
-        <div className='text-black'>
+        <div className='text-black h-[80vh]'>
             <br />
-            <h2 className='text-7xl text-center pt-20'>PNW TRACKER</h2>
+            <h2 className='text-7xl text-center pt-[7rem]'>PNW TRACKER</h2>
             <h2 className='text-5xl text-center py-10'>Welcome Back!</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="flex flex-col items-center w-[100vw]">

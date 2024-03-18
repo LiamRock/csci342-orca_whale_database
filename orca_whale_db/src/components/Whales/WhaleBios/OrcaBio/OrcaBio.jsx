@@ -56,10 +56,16 @@ function OrcaBio() {
         // Filter images to only include those containing orcas
         const orcaImages = data.filter(photo => {
           // Check if description or alt contains "orca"
-          return photo.alt_description && photo.alt_description.toLowerCase().includes("orca") ||
+          return (photo.alt_description && photo.alt_description.toLowerCase().includes("orca") ||
                  photo.description && photo.description.toLowerCase().includes("orca") || 
                  photo.alt_description && photo.alt_description.toLowerCase().includes("killer whale") || 
-                 photo.description && photo.description.toLowerCase().includes("killer whale");
+                 photo.description && photo.description.toLowerCase().includes("killer whale")) &&
+                 (!(photo.alt_description && photo.alt_description.toLowerCase().includes("zoo")) &&
+                 !(photo.description && photo.description.toLowerCase().includes("zoo")) &&
+                 !(photo.alt_description && photo.alt_description.toLowerCase().includes("seaworld")) &&
+                 !(photo.description && photo.description.toLowerCase().includes("seaworld")) &&
+                 !(photo.alt_description && photo.alt_description.toLowerCase().includes("aquarium")) &&
+                 !(photo.description && photo.description.toLowerCase().includes("aquarium")));
         });
         
         // Check if any images containing orcas are found

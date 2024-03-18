@@ -17,20 +17,20 @@ function Navbar(){
         localStorage.removeItem('user');
     }
     return(
-        <header>
+        <header className="absolute top-[30px] left-[15%] flex items-center justify-between h-[80px] py-0 px-[2rem] bg-black bg-opacity-20 text-[#202020] w-[70%] gap-[141px] rounded-[100px] z-[2]  ">
             <Link to="/">
-                <img src="../src/assets/orcaLogo.png" className="logo-image"></img>
+                <img src="../src/assets/orcaLogo.png" className="w-[60px] h-[60px] min-w-[60px] min-h-[60px] "></img>
             </Link>
-                <nav ref={navRef}>
+                <nav className="flex items-center" ref={navRef}>
                     {user.email ? (
                     <>
-                        <Link to="/whales">Species</Link>
+                        <Link className="m-[30px] text-[#202020] no-underline relative text-center" to="/whales">Species</Link>
                         <div className="border h-8 border-black border-l-0"></div>
-                        <Link to="/posts">Posts</Link>
+                        <Link className="m-[30px] text-[#202020] no-underline relative text-center" to="/posts">Posts</Link>
                         <div className="border h-8 border-black border-l-0"></div>
-                        <Link to="/aboutus">About Us</Link>
+                        <Link className="m-[30px] text-[#202020] no-underline relative text-center" to="/aboutus">About Us</Link>
                         <div className="border h-8 border-black border-l-0"></div>
-                        <Link to="/account">Account</Link>
+                        <Link className="m-[30px] text-[#202020] no-underline relative text-center" to="/account">Account</Link>
                         <div className="border h-8 border-black border-l-0"></div>
                         <button className="bg-inherit hover:text-[var(--secondaryColor)]
                         border-none m-[30px] p-0 drop-shadow-[0_0_8px_white]" onClick={logoutHandler}>Log out</button>
@@ -43,13 +43,13 @@ function Navbar(){
                     </>
                     ) : (
                         <>
-                            <Link to="/whales">Species</Link>
+                            <Link className="m-[30px] text-[#202020] no-underline relative text-center" to="/whales">Species</Link>
                             <div className="border h-8 border-black border-l-0"></div>
-                            <Link to="/posts">Posts</Link>
+                            <Link className="m-[30px] text-[#202020] no-underline relative text-center" to="/posts">Posts</Link>
                             <div className="border h-8 border-black border-l-0"></div>
-                            <Link to="/aboutus">About Us</Link>
+                            <Link className="m-[30px] text-[#202020] no-underline relative text-center" to="/aboutus">About Us</Link>
                             <div className="border h-8 border-black border-l-0"></div>
-                            <Link to="/login">Sign in</Link>
+                            <Link className="m-[30px] text-[#202020] no-underline relative text-center" to="/login">Sign in</Link>
                             <button className="nav-btn nav-close-btn" onClick={showNavbar}>
                                 <FaTimes>
 
