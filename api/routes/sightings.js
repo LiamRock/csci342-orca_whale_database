@@ -3,19 +3,19 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 const Sighting = require("../models/sightings.model");
 
-// Create an Express app
-const app = express();
-
 // Parse URL-encoded bodies
-app.use(bodyParser.urlencoded({ extended: true }));
+router.use(bodyParser.urlencoded({ extended: true }));
 
+// Define routes
 router
   .route("/")
+  // Get all sightings
   .get((req, res) => {
     Sighting.find()
-      .then((sightings) => res.json(sightings))
+      .then((sightings) => res.json({ result: sightings }))
       .catch((err) => res.status(400).json("Error: " + err));
   })
+  // Create a new sighting
   .post((req, res) => {
     // Format Date
     const currentDate = new Date();
@@ -56,7 +56,7 @@ router
 
     newSighting
       .save()
-      .then(() => res.json(newSighting))
+      .then(() => res.json({ result: newSighting }))
       .catch((err) => res.status(400).json("Error: " + err));
   });
 

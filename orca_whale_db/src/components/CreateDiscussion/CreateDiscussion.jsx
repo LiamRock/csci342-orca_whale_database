@@ -47,24 +47,31 @@ const handleSubmit = (e) => {
   }
 
   console.log('formDataToSend:', formDataToSend);
+  console.log('before post creation', formData.lat.trim(), formData.long.trim());
 
   axios.post('http://localhost:3000/posts', formDataToSend)
     .then(response => {
-      console.log('Post created successfully:', response.data.result);
+      console.log('Post created successfully:', response.data);
       toast.success('Post created successfully! See post in account');
 
       // Check if both latitude and longitude are provided
       const lat = formData.lat.trim();
       const long = formData.long.trim();
+      console.log('before if statement', lat, long);
       if (lat !== '' && long !== '') {
         // If both latitude and longitude are provided, create a sighting
         const formSighting = new FormData();
-        formSighting.append('user', user.userName);
+        formSighting.append('user', user.userName); // Add user information here
+        console.log('user:', user.userName); // Log user information
         formSighting.append('lat', lat);
+        console.log('lat:', lat); // Log latitude
         formSighting.append('long', long);
+        console.log('long:', long); // Log longitude
         formSighting.append('species', formData.species);
+        console.log('species:', formData.species); // Log species
         formSighting.append('description', formData.description);
-
+        console.log('description:', formData.description); // Log description
+        // Log formSighting to verify its content
         console.log('formSighting:', formSighting);
 
         axios.post('http://localhost:3000/sightings', formSighting)
