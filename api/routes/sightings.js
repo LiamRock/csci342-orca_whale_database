@@ -1,14 +1,21 @@
-const router = require("express").Router();
-let Sighting = require("../models/sightings.model");
+const express = require("express");
+const router = express.Router();
+const bodyParser = require('body-parser');
+const Sighting = require("../models/sightings.model");
+
+// Create an Express app
+const app = express();
+
+// Parse URL-encoded bodies
+app.use(bodyParser.urlencoded({ extended: true }));
 
 router
   .route("/")
   .get((req, res) => {
     Sighting.find()
       .then((sightings) => res.json(sightings))
-      .catch((err) => req.status(400).json("Error: " + err));
+      .catch((err) => res.status(400).json("Error: " + err));
   })
-
   .post((req, res) => {
     // Format Date
     const currentDate = new Date();
@@ -28,8 +35,6 @@ router
     const formattedTime = `${hours.toString().padStart(2, "0")}:${minutes
       .toString()
       .padStart(2, "0")} ${ampm}`;
-
-    console.log(req.body);
 
     const lat = req.body.lat;
     const long = req.body.long;

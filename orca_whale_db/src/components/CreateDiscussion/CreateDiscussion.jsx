@@ -38,30 +38,47 @@ const handleSubmit = (e) => {
 
   const formDataToSend = new FormData();
   formDataToSend.append('user', user.userName);
- // If lat and long are not empty, append them to formDataToSend
- if (formData.lat.trim() !== '') {
-  formDataToSend.append('lat', formData.lat);
-} else {
-  // Provide a default value for lat if it's empty
-  formDataToSend.append('lat', '');
-}
-
-if (formData.long.trim() !== '') {
-  formDataToSend.append('long', formData.long);
-} else {
-  // Provide a default value for long if it's empty
-  formDataToSend.append('long', '');
-}
+  formDataToSend.append('lat', formData.lat.trim());
+  formDataToSend.append('long', formData.long.trim());
   formDataToSend.append('species', formData.species);
   formDataToSend.append('description', formData.description);
   if (formData.image) {
     formDataToSend.append('image', formData.image);
   }
 
+  console.log('formDataToSend:', formDataToSend);
+
   axios.post('http://localhost:3000/posts', formDataToSend)
     .then(response => {
       console.log('Post created successfully:', response.data.result);
-      // Optionally, you can reset the form fields after successful submission
+      toast.success('Post created successfully! See post in account');
+
+      // Check if both latitude and longitude are provided
+      const lat = formData.lat.trim();
+      const long = formData.long.trim();
+      if (lat !== '' && long !== '') {
+        // If both latitude and longitude are provided, create a sighting
+        const formSighting = new FormData();
+        formSighting.append('user', user.userName);
+        formSighting.append('lat', lat);
+        formSighting.append('long', long);
+        formSighting.append('species', formData.species);
+        formSighting.append('description', formData.description);
+
+        console.log('formSighting:', formSighting);
+
+        axios.post('http://localhost:3000/sightings', formSighting)
+          .then(response => {
+            console.log('Sighting created successfully:', response.data);
+            toast.success('Sighting was successfully created!');
+          })
+          .catch(error => {
+            console.error('Error creating Sighting:', error);
+            toast.error('Error creating sighting');
+          });
+      }
+
+      // Reset form fields after successful submission
       setFormData({
         lat: '',
         long: '',
@@ -69,15 +86,11 @@ if (formData.long.trim() !== '') {
         description: '',
         image: null
       });
-      // Refresh the page
-      navigate('/account');
     })
     .catch(error => {
       console.error('Error creating Post:', error);
       toast.error('Error creating post');
     });
-    
-    toast.success("Post created successful! See post in account");
 };
 
 const handleCancel = () => {
