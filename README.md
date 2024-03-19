@@ -64,8 +64,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](http://ec2-54-89-145-45.compute-1.amazonaws.com/)
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
