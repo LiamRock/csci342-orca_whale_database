@@ -111,19 +111,31 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    git clone https://github.com/github_username/repo_name.git
    ```
-3. Install NPM packages
+3. Install NPM packages in root directory
    ```sh
-   npm install
+   npm run dep
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+4. Start server in root directory
+  ```sh
+   npm start
    ```
-
+5. Start client in root directory (in another terminal)
+  ```sh
+   npm run client
+   ```
+6. Open application in browser
+  ```sh
+   http://localhost:5173/
+   ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
+<!-- How to run the application locally:
+  1. Clone the repository into a local directory
+  2. Run 'npm run dep' in the directort's command line to install all of the dependencies required to run the application
+  3. Run 'npm start' in the root directory to start the server
+  4. Run 'npm run client' in the root directory in a separate terminal to start the client
+  5. Open http://localhost:5173/ in your browser to run the application>
 <!-- USAGE EXAMPLES -->
 ## Usage
 
