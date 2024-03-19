@@ -26,7 +26,7 @@ const upload = multer({ storage: storage });
 router.route("/").get((req, res) => {
   Post.find()
     .then((posts) => res.json({ result: posts }))
-    .catch((err) => req.status(400).json("Error: " + err));
+    .catch((err) => res.status(400).json("Error: " + err));
 });
 
 router.put("/", upload.single("image"), async (req, res) => {
@@ -64,12 +64,17 @@ router.put("/", upload.single("image"), async (req, res) => {
   }
 
   if (req.file && req.file.filename) {
+    const filePath = path.join(__dirname, "..", "uploads", req.file.filename);
     image = {
       data: fs.readFileSync(
-        path.join(__dirname, "..", "uploads", req.file.filename)
+        filePath
       ),
       contentType: "image/jpg",
     };
+    fs.unlink(filePath, (err => {
+      if (err) console.log(err);
+      else console.log(`Deleted ${req.file.filename} successfully.`);
+    }));
   }
 
   try {
@@ -121,13 +126,18 @@ router.post("/", upload.single("image"), async (req, res) => {
 
   // Check if req.file.filename is null
   if (req.file && req.file.filename) {
+    const filePath = path.join(__dirname, "..", "uploads", req.file.filename);
     image = {
       data: fs.readFileSync(
-        path.join(__dirname, "..", "uploads", req.file.filename)
+        filePath
       ),
       contentType: "image/jpg",
     };
-  }
+    fs.unlink(filePath, (err => {
+      if (err) console.log(err);
+      else console.log(`Deleted ${req.file.filename} successfully.`);
+    }));
+  };
 
   const lat = req.body.lat;
   const long = req.body.long;
@@ -163,16 +173,16 @@ router.delete("/", async (req, res) => {
   }
 
   try {
-    post = await Post.findByIdAndDelete(id);
+   const post = await Post.findByIdAndDelete(id);
     res.status(200).json({
       message: `Successfully deleted post.`,
-      id: `${post.id}`,
-      lat: `${post.lat}`,
-      long: `${post.long}`,
-      species: `${post.species}`,
-      user: `${post.user}`,
-      description: `${post.description}`,
-      image: `${post.image}`,
+      id: post.id,
+      lat: post.lat,
+      long: post.long,
+      species: post.species,
+      user: post.user,
+      description: post.description,
+      image: post.image,
     });
   } catch (err) {
     return res

@@ -21,7 +21,7 @@ function Navbar(){
             <Link to="/">
                 <img src="../src/assets/orcaLogo.png" className="w-[60px] h-[60px] min-w-[60px] min-h-[60px] "></img>
             </Link>
-                <nav className="flex items-center" ref={navRef}>
+                <nav className="flex items-center " ref={navRef}>
                     {user.email ? (
                     <>
                         <Link className="m-[30px] text-[#202020] no-underline relative text-center" to="/whales">Species</Link>

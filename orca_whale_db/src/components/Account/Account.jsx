@@ -3,10 +3,15 @@ import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-hot-toast";
 import axios from "axios";
 import { IconContext } from "react-icons";
-import { IoIosCheckmarkCircle, IoIosCloseCircle, IoIosCreate } from "react-icons/io";
+import {
+  IoIosCheckmarkCircle,
+  IoIosCloseCircle,
+  IoIosCreate,
+} from "react-icons/io";
 
 import DiscussionPost from "../DiscussionPost/DiscussionPost";
-import { login } from '../../store/slices/authSlices';
+import { login } from "../../store/slices/authSlices";
+import Avatar from "./Avatar";
 
 import profile from "../../assets/profile-circle.svg";
 
@@ -27,6 +32,8 @@ const Account = () => {
   const [disabled, setDisabled] = useState(true);
   const [showEdit, setShowEdit] = useState(true);
   const [showConfirmation, setShowConfirmation] = useState(false);
+  const [avatar, setAvatar] = useState("");
+  const [formData, setFormData] = useState({ avatar: null });
 
   // Dispatch for updating the redux store state for username changes.
   const dispatch = useDispatch();
@@ -60,24 +67,23 @@ const Account = () => {
     fetch("http://localhost:3000/posts", {
       method: "PUT",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      body: reqBody
+      body: reqBody,
     })
-    .then((res) => {
-      if (!res.ok) {
-        throw new Error("An error occurred updating the posts.");
-      }
-      return res.json();
-    })
-    .then(() => {
-      console.log("Sucessfully updated username on posts.");
-      setState(reqBody);
-    })
-    .catch((err) => {
-      toast.error(err.message);
-    }); 
-  }
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("An error occurred updating the posts.");
+        }
+        return res.json();
+      })
+      .then(() => {
+        setState(reqBody);
+      })
+      .catch((err) => {
+        toast.error(err.message);
+      });
+  };
 
   // Handles the date filter for post data.
   const handleFilterChange = (e) => {
@@ -93,63 +99,106 @@ const Account = () => {
     setReverseOrder(!reverseOrder); // Toggle the state to reverse the order
   };
 
-  const handleAvatar = () => {
-    console.log("Changing profile picture...");
+  const handleAvatar = (e) => {
+    e.preventDefault();
+    if (e.target.name === "avatar") {
+      setFormData({ ...formData, [e.target.name]: e.target.files[0] });
+    }
+  };
+
+  const handleUpload = (e) => {
+    e.preventDefault();
+    if (!formData.avatar) {
+      toast.error("Error uploading image.");
+      return;
+    }
+
+    const formDataToSend = new FormData();
+    formDataToSend.append("avatar", formData.avatar);
+    formDataToSend.append("email", user.email);
+
+    fetch("http://localhost:3000/signup", {
+      method: "PUT",
+      body: formDataToSend,
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("An error occurred updating the user's avatar.");
+        }
+        return res.json();
+      })
+      .then(() => {
+        toast.success(
+          "Profile picture successfully changed! Please refresh the page."
+        );
+      })
+      .catch((err) => {
+        toast.error(err.message);
+      })
+      .finally(() => {
+        setFormData({ avatar: null });
+        setAvatar(false);
+      });
   };
 
   const handleStorage = (username) => {
     const newLogin = {
-      "userName": username,
-      "email": user.email
-    }
+      userName: username,
+      email: user.email,
+    };
     localStorage.setItem("user", JSON.stringify(newLogin));
-  }
+  };
 
   const handleSubmit = (data) => {
     data.preventDefault();
     const newUsername = data.target.username.value;
     const userReq = JSON.stringify({
-      "email": user.email,
-      "username": initial,
-      "newUsername": newUsername
+      email: user.email,
+      username: initial,
+      newUsername: newUsername,
     });
 
     fetch("http://localhost:3000/signup", {
       method: "PUT",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      body: userReq
+      body: userReq,
     })
-    .then((res) => {
-      if (!res.ok) {
-        throw new Error("An error occurred while updating username.");
-      }
-      return res.json();
-    })
-    .then(() => {
-      toast.success("Username successfully changed.");
-      handleStorage(newUsername);
-      dispatch(login({
-        userName: newUsername,
-        email: user.email
-      }));
-      updatePosts(JSON.stringify({
-        "email": user.email,
-        "newUsername": newUsername
-      }));
-    })
-    .catch((err) => {
-      toast.error(err.message);
-    })
-    .finally(() => {
-      endEdit();
-    });
-  }
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("An error occurred while updating username.");
+        }
+        return res.json();
+      })
+      .then(() => {
+        toast.success("Username successfully changed.");
+        handleStorage(newUsername);
+        dispatch(
+          login({
+            userName: newUsername,
+            email: user.email,
+          })
+        );
+        updatePosts(
+          JSON.stringify({
+            email: user.email,
+            newUsername: newUsername,
+          })
+        );
+      })
+      .catch((err) => {
+        toast.error(err.message);
+      })
+      .finally(() => {
+        endEdit();
+      });
+  };
 
   const handleEscape = (e) => {
     if (e.key === "Escape") {
       setShowConfirmation(false);
+      setAvatar(false);
     }
   };
 
@@ -174,73 +223,94 @@ const Account = () => {
 
   return (
     <div onKeyDown={handleEscape}>
+      {avatar ? (
+        <form
+          className="fixed w-screen h-screen z-10 flex flex-col items-center"
+          onSubmit={handleUpload}
+        >
+          <div
+            onClick={() => {
+              setAvatar(false);
+            }}
+            className="fixed top-0 h-[100vh] w-[100vw] bg-black opacity-[75%] z-10"
+          />
+          <div className="fixed flex flex-col items-center top-[35%] z-20 bg-gray-50 p-0 rounded-[5%] shadow-2xl">
+            <p className="text-black mt-4 border-b-2 pl-10 pr-10 pb-3 mb-4">
+              Upload an image to set your new profile picture.
+            </p>
+            <input
+              id="avatar"
+              name="avatar"
+              type="file"
+              accept="image/png, image/jpeg"
+              hidden
+              onChange={handleAvatar}
+            />
+            <label
+              htmlFor="avatar"
+              className="transition duration-150 hover:scale-[1.1] hover:text-blue-200 bg-teal-600 p-3 rounded-3xl cursor-pointer
+              "
+            >
+              Select file...
+            </label>
+            {formData.avatar ? (
+              <p className="text-black">{formData.avatar.name}</p>
+            ) : null}
+            <div className="flex space-x-6 m-5">
+              <button
+                className="transition duration-150 hover:scale-[1.1] bg-blue-500 border-0"
+                type="submit"
+              >
+                Confirm
+              </button>
+              <button
+                className="transition duration-150 hover:scale-[1.1] bg-gray-50 text-gray-500 border-black border-[1px]"
+                type="button"
+                onClick={() => {
+                  setAvatar(false);
+                }}
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </form>
+      ) : null}
       {/* Background image for the page. */}
       <div
         className='absolute w-screen h-[30rem] bg-black opacity-[85%] bg-no-repeat 
           bg-cover bg-center z-0 bg-[url("https://www.celebritycruises.com/blog/content/uploads/2020/05/best-place-to-see-orcas-vancouver-canada.jpg")]'
       />
-      <form onSubmit={handleSubmit}>
-        {showConfirmation == true ? (
-          <div className="flex flex-col items-center">
-            <div className="fixed top-0 h-[100vh] w-[100vw] bg-black opacity-[75%] z-10" />
-            <div className="fixed flex flex-col items-center top-[35%] z-20 bg-gray-50 p-0 rounded-[5%] shadow-2xl">
-              <p className="text-black mt-7 border-t-2 pl-10 pr-10 pt-2">
-                Are you sure you want to change your username to {username}?
-              </p>
-              <div className="flex space-x-6 m-5">
-                <button
-                  className="transition duration-150 hover:scale-[1.1] bg-blue-500 border-0"
-                  type="submit"
-                >
-                  Yes
-                </button>
-                <button
-                  className="transition duration-150 hover:scale-[1.1] bg-gray-50 text-gray-500 border-black border-[1px]"
-                  type="button" onClick={() => {
-                    setShowConfirmation(false);
-                  }}
-                >
-                  Cancel
-                </button>
-              </div>
+      {/* Container for page header, avatar */}
+      <div className="flex flex-col mb-[30px] w-[90vw] mx-auto">
+        {/* Container for avatar and page header */}
+        <div className="m-0 mt-[150px] h-[250px] font-bold flex flex-row z-[1] ">
+          <div className=" flex-1" /> {/* Flex item for spacing */}
+          {/* User's avatar */}
+          <div className="flex-1">
+            <div className="bg-black rounded-[100%] w-[256px]" onClick={() => {
+              setAvatar(true);
+            }}>
+              <Avatar email={user.email} page={"account"} />
             </div>
           </div>
-        ) : null}
-        {/* Container for page header, avatar, and username form. */}
-        <div className="flex flex-col pb-[30px] mb-[30px]">
-          {/* Container for avatar and page header */}
-          <div className="m-0 mt-[150px] h-[250px] font-bold flex flex-row z-[1] ">
-            <div className=" flex-1 self-center " />{" "}
-            {/* Flex item for spacing */}
-            {/* User's avatar */}
-            <div className="flex-1 self-center">
-              {/* Flex item for spacing */}
-              {" "}
-              <img
-                className="w-[256px] min-w-0 rounded-[100%] p-0 cursor-pointer"
-                src={profile}
-                onClick={handleAvatar}
-              />
-            </div>
-            {/* Page Header */}
-            <p
-              className='text-[#0F1035] font-["Lato","sans-serif"] text-[42px] 
-                      text-center font-bold self-end mb-[25px] flex-1 drop-shadow-[0_0_8px_white]'
-            >
-              Account
-            </p>
-            <div className="flex-1 self-center" /> {/* Flex item for spacing */}
-            <div className="flex-1 self-center" /> {/* Flex item for spacing */}
-          </div>
-          {/* Following form contains elements to edit the user's username using states. */}
-          <div
-            className='flex flex-row justify-center font-["Inter"] not-italic font-[500] 
-                  text-[30px] leading-[150%] tracking-[-0.011em] z-[1] text-black '
+          {/* Page Header */}
+          <h1
+            className='text-[#0F1035] font-["Lato","sans-serif"] text-[42px] 
+              text-center font-bold self-end mb-[25px] flex-1 drop-shadow-[0_0_8px_white]'
           >
-            Username:&nbsp;
+            Account
+          </h1>
+          <div className="flex-1 self-center" /> {/* Flex item for spacing */}
+          <div className="flex-1 self-center" /> {/* Flex item for spacing */}
+        </div>
+        {/* Following form contains elements to edit the user's username using states. */}
+        <form className="z-[2]" onSubmit={handleSubmit}>
+          <div className="flex justify-center text-black text-[20px]">
+            <h2 className="pt-[8px] pr-3">Username:</h2>
             <input
               className='bg-[#f2f6fa] w-[30rem] h-[3rem] font-["Inter"] 
-                      not-italic font-[500] text-center text-[#292929]'
+              not-italic font-[500] text-center text-[#292929]'
               value={username}
               type="text"
               placeholder={initial}
@@ -252,56 +322,82 @@ const Account = () => {
             {showEdit ? (
               <>
                 <button
-                  className="py-0 px-2.5 m-2 mr-0 rounded-[100%] border-0
-                          bg-transparent drop-shadow-[0_0_4px_white]"
-                  onClick={editUsername}
+                  className="border-0 px-0 py-0 ml-4 mr-[3.3rem] align-middle
+                bg-transparent drop-shadow-[0_0_4px_white]"
+                  type="button"
                 >
-                  <IconContext.Provider value={{ color: "black" }}>
-                    <IoIosCreate />
+                  <IconContext.Provider value={{ color: "black", size: 30 }}>
+                    <IoIosCreate onClick={editUsername} />
                   </IconContext.Provider>
                 </button>
-                <div className="w-[50px] h-7 m-2 mr-0" />
               </>
-            ) : null}
-            {/* Shows the "Confirm" and "Cancel" buttons to set or cancel changes */}
-            {!showEdit ? (
+            ) : (
               <>
                 <button
                   type="button"
-                  className="py-0 px-2.5 m-2 mr-0 border-0 
-                          drop-shadow-[0_0_4px_white]"
+                  className="border-0 px-0 py-0 ml-4 mr-4 align-middle 
+                drop-shadow-[0_0_4px_white]"
                   onClick={() => {
-                    username === "" ? (
-                      toast.error("Username cannot be blank.")
-                    ) : (
-                      setShowConfirmation(true)
-                    )
+                    username === ""
+                      ? toast.error("Username cannot be blank.")
+                      : setShowConfirmation(true);
                   }}
                 >
-                  <IconContext.Provider value={{ color: "green" }}>
+                  <IconContext.Provider value={{ color: "green", size: 30 }}>
                     <IoIosCheckmarkCircle />
                   </IconContext.Provider>
                 </button>
                 <button
                   type="button"
-                  className="py-0 px-2.5 m-2 mr-0 border-0 
-                          drop-shadow-[0_0_4px_white]"
+                  className="border-0 px-0 py-0 ml-2 align-middle 
+                  drop-shadow-[0_0_4px_white]"
                   onClick={endEdit}
                 >
-                  <IconContext.Provider value={{ color: "red" }}>
+                  <IconContext.Provider value={{ color: "red", size: 30 }}>
                     <IoIosCloseCircle />
                   </IconContext.Provider>
                 </button>
               </>
+            )}
+            {showConfirmation == true ? (
+              <div className="fixed flex flex-col items-center screen">
+                <div
+                  onClick={() => {
+                    setShowConfirmation(false);
+                  }}
+                  className="fixed top-0 h-[100vh] w-[100vw] bg-black opacity-[75%] z-10"
+                />
+                <div className="fixed flex flex-col items-center top-[35%] z-20 bg-gray-50 p-0 rounded-[5%] shadow-2xl">
+                  <p className="text-black mt-7 border-t-2 pl-10 pr-10 pt-2">
+                    Are you sure you want to change your username to {username}?
+                  </p>
+                  <div className="flex space-x-6 m-5">
+                    <button
+                      className="transition duration-150 hover:scale-[1.1] bg-blue-500 border-0"
+                      type="submit"
+                    >
+                      Yes
+                    </button>
+                    <button
+                      className="transition duration-150 hover:scale-[1.1] bg-gray-50 text-gray-500 border-black border-[1px]"
+                      type="button"
+                      onClick={() => {
+                        setShowConfirmation(false);
+                      }}
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </div>
+              </div>
             ) : null}
           </div>
-          <br /> {/* Flex item for spacing */}
-          <br /> {/* Flex item for spacing */}
-        </div>
-      </form>
+        </form>
+      </div>
+      <br />
       <h1
         className='text-[#0F1035] text-[38px] 
-        text-center font-bold self-end mb-[25px] flex-1"'
+        text-center font-bold self-end mb-[25px]"'
       >
         Your Posts
       </h1>

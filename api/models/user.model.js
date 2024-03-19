@@ -17,6 +17,10 @@ const userSchema = new Schema(
             type: String, 
             required: true,
         }, 
+        avatar: {
+            data: Buffer,
+            contentType: String
+        }
     }
 );
 
