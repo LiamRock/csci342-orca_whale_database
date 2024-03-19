@@ -131,7 +131,7 @@ This is an example of how to list things you need to use the software and how to
   4. Run 'npm run client' in the root directory in a separate terminal to start the client
   5. Open http://localhost:5173/ in your browser to run the application>
 -->
-## Acknowledgments
+## Contributors
 
 * Jed Pagcaliwagan
 * Liam Rock
