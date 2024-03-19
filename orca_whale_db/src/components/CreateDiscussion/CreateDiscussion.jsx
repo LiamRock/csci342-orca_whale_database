@@ -70,6 +70,7 @@ function CreateDiscussion({setState}) {
       .post("http://localhost:3000/posts", formDataToSend)
       .then((response) => {
         console.log("Post created successfully:", response.data.result);
+        toast.success("Post created successful! See post in posts page or account.");
         // Optionally, you can reset the form fields after successful submission
         setFormData({
           lat: "",
@@ -86,7 +87,28 @@ function CreateDiscussion({setState}) {
         toast.error("Error creating post");
       });
 
-    toast.success("Post created successful! See post in posts page or account.");
+      // Check if both latitude and longitude are provided
+      const lat = formData.lat.trim();
+      const long = formData.long.trim();
+      if (lat && long) {
+        const reqBody = {
+          lat: formData.lat,
+          long: formData.long,
+          user: user.userName,
+          species: formData.species,
+          description: formData.description,
+        };
+        axios
+          .post("http://localhost:3000/sightings", reqBody)
+          .then((response) => {
+            console.log("Sighting created successfully:", response.data);
+            toast.success("Sighting was successfully created!");
+          })
+          .catch((error) => {
+            console.error("Error creating Sighting:", error);
+            toast.error("Error creating sighting");
+          });
+      }
   };
 
   const handleCancel = () => {
@@ -126,23 +148,30 @@ function CreateDiscussion({setState}) {
           value={formData.long}
           onChange={handleChange}
         />
-        <input
+        <select
           className="title bg-gray-100 border border-gray-300 p-2 mb-4 outline-none"
-          spellCheck="false"
-          placeholder="Species (optional)"
-          type="text"
           name="species"
           value={formData.species}
           onChange={handleChange}
-        />
+        >
+          <option value="">Select Species</option>
+          <option value="orca">Orca</option>
+          <option value="gray">Gray Whale</option>
+          <option value="humpback">Humpback Whale</option>
+          <option value="blue">Blue Whale</option>
+          <option value="fin">Fin Whale</option>
+          <option value="minke">Minke Whale</option>
+          <option value="uncertain">Other/Uncertain</option>
+        </select>
         <textarea
-          className="description bg-gray-100 sec p-2 h-60 w-full border border-gray-300 outline-none mb-4"
+          className="description bg-gray-100 sec p-2 h-60 w-full border border-gray-300 outline-none"
           spellCheck="false"
           placeholder="Description (required)"
           name="description"
           value={formData.description}
           onChange={handleChange}
-        />
+        ></textarea>
+
         <input type="file" name="image" onChange={handleChange} />
         <p>Image not required*</p>
 

@@ -102,6 +102,10 @@ function PostPage() {
             .slice()
             .reverse()
             .map((post) => (
+        : filteredPosts
+            .slice()
+            .reverse()
+            .map((post) => (
               <DiscussionPost
                 key={post._id} // Assuming sighting objects have a unique identifier like _id
                 id={post._id}

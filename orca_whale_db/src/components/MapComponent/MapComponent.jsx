@@ -1,4 +1,5 @@
 import { Fragment, useEffect, useState } from "react";
+import axios from 'axios';
 import {
   GoogleMap,
   useJsApiLoader,
@@ -42,19 +43,15 @@ function MapComponent() {
   });
 
   useEffect(() => {
-    const getSightings = async () => {
-      try {
-        const response = await fetch(`http://localhost:3000/sightings`);
-        if (!response.ok) {
-          throw new Error(`Error fetching sightings: ${response.statusText}`);
-        }
-        const responseJson = await response.json();
-        setMarkers(responseJson);
-      } catch (error) {
-        console.error("Error fetching sightings:", error);
-      }
-    };
-    getSightings();
+    // Fetch sightings data from backend when component mounts
+    axios.get('http://localhost:3000/sightings') // Assuming your backend route for sightings is '/sightings'
+      .then(response => {
+        console.log(response.data.result);
+        setMarkers(response.data.result); // Assuming sightings data is stored in response.data.result
+      })
+      .catch(error => {
+        console.error('Error fetching sightings:', error);
+      });
   }, []);
 
   const handleMarkerClick = (marker) => {

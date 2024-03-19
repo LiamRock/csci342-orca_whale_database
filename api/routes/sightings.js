@@ -1,14 +1,21 @@
-const router = require("express").Router();
-let Sighting = require("../models/sightings.model");
+const express = require("express");
+const router = express.Router();
+const bodyParser = require('body-parser');
+const Sighting = require("../models/sightings.model");
 
+// Parse URL-encoded bodies
+router.use(bodyParser.urlencoded({ extended: true }));
+
+// Define routes
 router
   .route("/")
+  // Get all sightings
   .get((req, res) => {
     Sighting.find()
-      .then((sightings) => res.json(sightings))
-      .catch((err) => req.status(400).json("Error: " + err));
+      .then((sightings) => res.json({ result: sightings }))
+      .catch((err) => res.status(400).json("Error: " + err));
   })
-
+  // Create a new sighting
   .post((req, res) => {
     // Format Date
     const currentDate = new Date();
@@ -28,8 +35,6 @@ router
     const formattedTime = `${hours.toString().padStart(2, "0")}:${minutes
       .toString()
       .padStart(2, "0")} ${ampm}`;
-
-    console.log(req.body);
 
     const lat = req.body.lat;
     const long = req.body.long;
@@ -51,7 +56,7 @@ router
 
     newSighting
       .save()
-      .then(() => res.json(newSighting))
+      .then(() => res.json({ result: newSighting }))
       .catch((err) => res.status(400).json("Error: " + err));
   });
 
