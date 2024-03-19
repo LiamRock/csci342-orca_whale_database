@@ -20,6 +20,7 @@ function DiscussionPost({
   image,
   species,
   setState,
+  avatarData
 }) {
   const [edit, setEdit] = useState(false);
   const [deletion, setDeletion] = useState(false);
@@ -196,7 +197,7 @@ function DiscussionPost({
           >
             <div className="flex">
               {/* Renders avatar of user. */}
-              <Avatar email={email} page={"post"}/>
+              <Avatar avatarData={avatarData} email={email} page={"post"}/>
               <div className="flex flex-col">
                 {/* Flex container for username, location, and time. */}
                 <div className="flex">
@@ -299,7 +300,7 @@ function DiscussionPost({
           <>
             {/* Renders the avatar of the user. */}
             <div className="flex mb-2.5">
-              <Avatar email={email} page={"post"}/>
+              <Avatar avatarData={avatarData} email={email} page={"post"}/>
               {/* Renders the user's name and adds (you) if the post belongs to current user. */}
               <div className="flex flex-col">
                 {email === user.email ? (

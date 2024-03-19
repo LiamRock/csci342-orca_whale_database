@@ -141,4 +141,32 @@ router
     }
   });
 
+  router.put("/updateUserName", async (req, res) => {
+    const email = req.body.email;
+    const username = req.body.username;
+  
+    if (!email || !username) {
+      return res.status(400).json({ message: "No email or username provided." });
+    }
+  
+    try {
+      const user = await User.findOne({ email: email });
+      if (!user) {
+        return res.status(401).json({ message: "No email or username provided" });
+      }
+  
+      await User.findOneAndUpdate({ email: email }, { userName: username });
+  
+      return res.status(200).json({
+        message: "Successfully changed username.",
+        email: email,
+        userName: username,
+      });
+    } catch (error) {
+      return res.status(404).json({
+        message: error.message || "Couldn't find user with email",
+      });
+    }
+  });
+
 module.exports = router;

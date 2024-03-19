@@ -4,13 +4,17 @@ import CreateDiscussion from "../CreateDiscussion/CreateDiscussion";
 import DiscussionPost from "../DiscussionPost/DiscussionPost";
 import Banner from "../HomePage/Banner/Banner";
 import Sightings from "../Sightings/Sightings";
+import { useSelector } from "react-redux";
 
 function PostPage() {
   const [posts, setPosts] = useState([]);
   const [filterDate, setFilterDate] = useState("");
   const [displayDate, setDisplayDate] = useState("");
   const [reverseOrder, setReverseOrder] = useState(false);
+  const [users, setUsers] = useState(null)
   const [state, setState] = useState("");
+
+  const { user } = useSelector((state) => state.auth)
 
   useEffect(() => {
     // Fetch sightings data from backend when component mounts
@@ -18,6 +22,15 @@ function PostPage() {
       .get("http://localhost:3000/posts") // Assuming your backend is running on port 5001
       .then((response) => {
         setPosts(response.data.result); // Assuming sightings data is stored in response.data.result
+      })
+      .catch((error) => {
+        console.error("Error fetching posts:", error);
+      });
+
+      axios
+      .get("http://localhost:3000/login")
+      .then((response) => {
+        setUsers(response.data.result);
       })
       .catch((error) => {
         console.error("Error fetching posts:", error);
@@ -96,6 +109,7 @@ function PostPage() {
               description={post.description}
               image={post.image}
               species={post.species}
+              avatarData={users}
             />
           )))
         : (filteredPosts
@@ -111,10 +125,11 @@ function PostPage() {
                 long={post.long}
                 time={post.time}
                 date={post.date}
-                description={post.description}
+                description={post.description}  
                 image={post.image}
                 species={post.species}
                 setState={setState}
+                avatarData={users}
               />
             )))}
       <CreateDiscussion setState={setState}/>

@@ -13,8 +13,6 @@ import DiscussionPost from "../DiscussionPost/DiscussionPost";
 import { login } from "../../store/slices/authSlices";
 import Avatar from "./Avatar";
 
-import profile from "../../assets/profile-circle.svg";
-
 const Account = () => {
   // Access redux store state.
   const { user } = useSelector((state) => state.auth);
@@ -24,7 +22,8 @@ const Account = () => {
   const [filterDate, setFilterDate] = useState("");
   const [displayDate, setDisplayDate] = useState("");
   const [reverseOrder, setReverseOrder] = useState(false);
-  const [state, setState] = useState();
+  const [state, setState] = useState("");
+  const [currUser, setCurrUser] = useState("");
 
   // States to render account details and editing forms.
   const [initial, setInitial] = useState(user.userName);
@@ -49,6 +48,17 @@ const Account = () => {
         const allPosts = response.data.result;
         const userPosts = allPosts.filter((post) => post.email === user.email);
         setPosts(userPosts); // Set only user's posts
+      })
+      .catch((error) => {
+        console.error("Error fetching posts:", error);
+      });
+
+      axios
+      .get("http://localhost:3000/login")
+      .then((response) => {
+        const allUsers = response.data.result;
+        const specificUser = allUsers.filter((data) => data.email === user.email);
+        setCurrUser(specificUser);
       })
       .catch((error) => {
         console.error("Error fetching posts:", error);
@@ -82,7 +92,7 @@ const Account = () => {
       })
       .catch((err) => {
         toast.error(err.message);
-      });
+      })
   };
 
   // Handles the date filter for post data.
@@ -154,11 +164,10 @@ const Account = () => {
     const newUsername = data.target.username.value;
     const userReq = JSON.stringify({
       email: user.email,
-      username: initial,
-      newUsername: newUsername,
+      username: newUsername,
     });
 
-    fetch("http://localhost:3000/signup", {
+    fetch("http://localhost:3000/signup/updateUserName", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -173,17 +182,21 @@ const Account = () => {
       })
       .then(() => {
         toast.success("Username successfully changed.");
+      })
+      .then(() => {
+        updatePosts(
+          JSON.stringify({
+            email: user.email,
+            newUsername: newUsername,
+          })
+        );
+      })
+      .then(() => {
         handleStorage(newUsername);
         dispatch(
           login({
             userName: newUsername,
             email: user.email,
-          })
-        );
-        updatePosts(
-          JSON.stringify({
-            email: user.email,
-            newUsername: newUsername,
           })
         );
       })
@@ -288,10 +301,13 @@ const Account = () => {
           <div className=" flex-1" /> {/* Flex item for spacing */}
           {/* User's avatar */}
           <div className="flex-1">
-            <div className="rounded-[100%] w-[230px] h-[230px]" onClick={() => {
-              setAvatar(true);
-            }}>
-              <Avatar email={user.email} page={"account"} />
+            <div
+              className="rounded-[100%] w-[230px] h-[230px]"
+              onClick={() => {
+                setAvatar(true);
+              }}
+            >
+              <Avatar avatarData={currUser} email={user.email} page={"account"} />
             </div>
           </div>
           {/* Page Header */}
@@ -441,6 +457,7 @@ const Account = () => {
               description={post.description}
               image={post.image}
               setState={setState}
+              avatarData={currUser}
             />
           ))
         : filteredPosts
@@ -459,6 +476,7 @@ const Account = () => {
                 description={post.description}
                 image={post.image}
                 setState={setState}
+                avatarData={currUser}
               />
             ))}
     </div>
