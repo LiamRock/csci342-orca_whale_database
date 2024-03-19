@@ -83,7 +83,7 @@ function PostPage() {
       </button>
       <div className="mt-6"></div>
       {reverseOrder
-        ? filteredPosts.map((post) => (
+        ? (filteredPosts.map((post) => (
             <DiscussionPost
               key={post._id} // Assuming sighting objects have a unique identifier like _id
               id={post._id}
@@ -97,12 +97,8 @@ function PostPage() {
               image={post.image}
               species={post.species}
             />
-          ))
-        : filteredPosts
-            .slice()
-            .reverse()
-            .map((post) => (
-        : filteredPosts
+          )))
+        : (filteredPosts
             .slice()
             .reverse()
             .map((post) => (
@@ -120,7 +116,7 @@ function PostPage() {
                 species={post.species}
                 setState={setState}
               />
-            ))}
+            )))}
       <CreateDiscussion setState={setState}/>
       <div className="mb-8"></div>
     </>

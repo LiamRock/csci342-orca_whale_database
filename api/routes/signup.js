@@ -53,7 +53,7 @@ router
           userName,
           email,
           password: hashedPassword,
-          avatar,
+          avatar: null
         });
 
         try {
