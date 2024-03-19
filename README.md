@@ -54,8 +54,8 @@
       </ul>
     </li>
     <li><a href="#Preview">Preview</a></li>
+    <li><a href="#Mongodb">Mongodb</a></li>
     <li><a href="#contributors">contributors</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -136,6 +136,13 @@ This is an example of how to list things you need to use the software and how to
 <img src="./orca_whale_db/src/assets/Screenshot_2.png" alt="Logo" width="auto" height="300">
 <img src="./orca_whale_db/src/assets/Screenshot_3.png" alt="Logo" width="auto" height="300">
 <img src="./orca_whale_db/src/assets/Screenshot_4.png" alt="Logo" width="auto" height="300">
+
+## Mongodb
+
+<img src="./orca_whale_db/src/assets/UserDB.png" alt="Logo" width="auto" height="300">
+<img src="./orca_whale_db/src/assets/PostDB.png" alt="Logo" width="auto" height="300">
+<img src="./orca_whale_db/src/assets/SightingsDB.png" alt="Logo" width="auto" height="300">
+
 
 ## Contributors
 
