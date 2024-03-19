@@ -18,8 +18,6 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors]][contributors-url]
-
 
 <!-- PROJECT LOGO -->
 <br />
@@ -55,11 +53,8 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#Preview">Preview</a></li>
+    <li><a href="#contributors">contributors</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
@@ -80,6 +75,12 @@
 
 * [![React][React.js]][React-url]
 * [![Mongodb][Mongodb.com]][Mongodb-url]
+* [![JavaScript][JavaScript.com]][JavaScript-url]
+* [![Node][Node.js]][Node-url]
+* [![Express][Express.com]][Express-url]
+* [![Tailwind][Tailwind CSS]][Tailwind-url]
+* [![AWS][AWS.com]][AWS-url]
+* [![Vitest][Vitest.com]][Vitest-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -151,32 +152,19 @@ This is an example of how to list things you need to use the software and how to
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-url]: https://github.com/fiko-dev/csci342-orca_whale_database/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
-[forks-url]: https://github.com/github_username/repo_name/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
-[stars-url]: https://github.com/github_username/repo_name/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
-[issues-url]: https://github.com/github_username/repo_name/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
-[license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
-[product-screenshot]: images/screenshot.png
-[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
-[Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
-[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
-[Vue-url]: https://vuejs.org/
-[Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
-[Angular-url]: https://angular.io/
-[Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
-[Svelte-url]: https://svelte.dev/
-[Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
-[Laravel-url]: https://laravel.com
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-[Bootstrap-url]: https://getbootstrap.com
-[JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com 
 [Mongodb.com]: https://img.shields.io/badge/MongoDB-green
 [Mongodb-url]: https://www.mongodb.com/
+[Javascript.com]: https://img.shields.io/badge/JavaScript-yellow
+[JavaScript-url]: https://www.javascript.com/
+[Node.js]:https://img.shields.io/badge/Node.js-lime
+[Node-url]: https://nodejs.org/en
+[Express.com]: https://img.shields.io/badge/Express.js-white
+[Express-url]: https://expressjs.com/
+[Tailwind CSS]: https://img.shields.io/badge/Tailwind%20CSS-cyan
+[Tailwind-url]: https://tailwindcomponents.com/
+[AWS.com]: https://img.shields.io/badge/AWS-orange
+[AWS-url]: https://aws.amazon.com/free/?gclid=CjwKCAjwzN-vBhAkEiwAYiO7oHkgFolt9Ek0XecZL4n_gfpQWahuzzo8ve1RvBkpokOAcXgPjl7GCxoCHpAQAvD_BwE&trk=6a4c3e9d-cdc9-4e25-8dd9-2bd8d15afbca&sc_channel=ps&ef_id=CjwKCAjwzN-vBhAkEiwAYiO7oHkgFolt9Ek0XecZL4n_gfpQWahuzzo8ve1RvBkpokOAcXgPjl7GCxoCHpAQAvD_BwE:G:s&s_kwcid=AL!4422!3!651751059783!e!!g!!aws!19852662197!145019195897&all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all
+[Vitest.com]: https://img.shields.io/badge/Vitest-Yellow
+[Vitest-url]: https://vitest.dev/
