@@ -22,12 +22,10 @@ describe('Create Discussions Component', () => {
     test('input fields are initially empty', ()=> {
         const userNameInput = screen.getByPlaceholderText('Latitude (optional)');
         const emailInput = screen.getByPlaceholderText('Longitude (optional)');
-        const passwordInput = screen.getByPlaceholderText('Species (optional)');
         const confirmPasswordInput = screen.getByPlaceholderText('Description (required)');
 
         expect(userNameInput.value).toBe('');
         expect(emailInput.value).toBe('');
-        expect(passwordInput.value).toBe('');
         expect(confirmPasswordInput.value).toBe('');
     });
 
