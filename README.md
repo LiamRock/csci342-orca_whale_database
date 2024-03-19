@@ -131,6 +131,10 @@ This is an example of how to list things you need to use the software and how to
   4. Run 'npm run client' in the root directory in a separate terminal to start the client
   5. Open http://localhost:5173/ in your browser to run the application>
 -->
+## Preview
+
+<img src="./orca_whale_db/src/assets/Screenshot_1.png" alt="Logo" width="80" height="80">
+
 ## Contributors
 
 * Jed Pagcaliwagan
