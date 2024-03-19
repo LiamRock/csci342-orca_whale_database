@@ -71,10 +71,6 @@ router.put("/", upload.single("image"), async (req, res) => {
       ),
       contentType: "image/jpg",
     };
-    fs.unlink(filePath, (err => {
-      if (err) console.log(err);
-      else console.log(`Deleted ${req.file.filename} successfully.`);
-    }));
   }
 
   try {
