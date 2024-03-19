@@ -111,7 +111,7 @@ This is an example of how to list things you need to use the software and how to
    ```
 3. Start server in root directory
   ```sh
-   npm start
+   npm run server
    ```
 4. Start client in root directory (in another terminal)
   ```sh
