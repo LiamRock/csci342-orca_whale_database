@@ -288,7 +288,7 @@ const Account = () => {
           <div className=" flex-1" /> {/* Flex item for spacing */}
           {/* User's avatar */}
           <div className="flex-1">
-            <div className="bg-black rounded-[100%] w-[256px]" onClick={() => {
+            <div className="bg-black rounded-[100%] w-[230px] h-[230px]" onClick={() => {
               setAvatar(true);
             }}>
               <Avatar email={user.email} page={"account"} />

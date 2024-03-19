@@ -16,10 +16,14 @@ const Avatar = ({ email, page }) => {
     .then((response) => {
       const allUsers = response.data.result;
       const specificUser = allUsers.filter((user) => email === user.email);
-      setAvatar(specificUser[0].avatar);
-      setPictureData(
-        avatar && avatar.data ? Buffer.from(avatar.data).toString("base64") : ""
-      );
+      if (specificUser[0]) {
+        setAvatar(specificUser[0].avatar);
+        setPictureData(
+          avatar && avatar.data
+            ? Buffer.from(avatar.data).toString("base64")
+            : ""
+        );
+      }
     })
     .catch((error) => {
       console.error("Error fetching users:", error);
@@ -37,7 +41,7 @@ const Avatar = ({ email, page }) => {
         <img
           src={`data:${avatar.contentType};base64,${pictureData}`}
           alt="User avatar"
-          className="transition duration-150 hover:scale-[1.1] w-[256px] min-w-[180px] mr-[100px] rounded-[100%] p-0 cursor-pointer"
+          className="transition duration-150 hover:scale-[1.1] w-[230px] h-[230px] min-w-[180px] mr-[100px] rounded-[100%] p-0 cursor-pointer"
         />
       ) : page === "post" ? (
         <img
@@ -49,7 +53,7 @@ const Avatar = ({ email, page }) => {
         <img
           src={profile}
           alt="User avatar"
-          className="transition duration-150 hover:scale-[1.1] w-[256px] min-w-[180px] mr-[100px] rounded-[100%] p-0 cursor-pointer"
+          className="transition duration-150 hover:scale-[1.1] w-[230px] h-[230px] min-w-[180px] mr-[100px] rounded-[100%] p-0 cursor-pointer"
         />
       )}
     </div>

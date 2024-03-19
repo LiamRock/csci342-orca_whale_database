@@ -196,11 +196,7 @@ function DiscussionPost({
           >
             <div className="flex">
               {/* Renders avatar of user. */}
-              <img
-                src={profile}
-                alt="Profile"
-                className="w-[50px] h-[50px] rounded-[50%] mr-2.5"
-              />
+              <Avatar email={email} page={"post"}/>
               <div className="flex flex-col">
                 {/* Flex container for username, location, and time. */}
                 <div className="flex">
