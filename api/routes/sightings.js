@@ -58,6 +58,27 @@ router
       .save()
       .then(() => res.json({ result: newSighting }))
       .catch((err) => res.status(400).json("Error: " + err));
+  })
+  .delete(async (req, res) => {
+    try {
+      const sightingId = req.body._id;
+      if (!sightingId) {
+        return res.status(400).json({ message: "Sighting ID is required." });
+      }
+      const deletedSighting = await Sighting.findByIdAndDelete(sightingId);
+
+      if (!deletedSighting) {
+        return res.status(404).json({ message: "Sighting not found." });
+      }
+
+      return res
+        .status(200)
+        .json({ message: "Sighting deleted successfully.", deletedSighting });
+    } catch (error) {
+      return res
+        .status(500)
+        .json({ message: error.message || "Internal Server Error." });
+    }
   });
 
 module.exports = router;
