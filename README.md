@@ -101,24 +101,23 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/github_username/repo_name.git
    ```
-3. Install NPM packages in root directory
+2. Install NPM packages in root directory
    ```sh
    npm run dep
    ```
-4. Start server in root directory
+3. Start server in root directory
   ```sh
    npm start
    ```
-5. Start client in root directory (in another terminal)
+4. Start client in root directory (in another terminal)
   ```sh
    npm run client
    ```
-6. Open application in browser
+5. Open application in browser
   ```sh
    http://localhost:5173/
    ```
