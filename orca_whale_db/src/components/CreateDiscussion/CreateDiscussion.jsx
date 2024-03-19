@@ -85,6 +85,7 @@ function CreateDiscussion({setState}) {
       .catch((error) => {
         console.error("Error creating Post:", error);
         toast.error("Error creating post");
+        return;
       });
 
       // Check if both latitude and longitude are provided
@@ -107,6 +108,7 @@ function CreateDiscussion({setState}) {
           .catch((error) => {
             console.error("Error creating Sighting:", error);
             toast.error("Error creating sighting");
+            return;
           });
       }
   };
