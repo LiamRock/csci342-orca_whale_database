@@ -133,7 +133,8 @@ This is an example of how to list things you need to use the software and how to
 -->
 ## Preview
 
-<img src="./orca_whale_db/src/assets/Screenshot_1.png" alt="Logo" width="auto" height="200">
+<img src="./orca_whale_db/src/assets/Screenshot_1.png" alt="Logo" width="auto" height="300">
+<img src="./orca_whale_db/src/assets/Screenshot_2.png" alt="Logo" width="auto" height="300">
 
 ## Contributors
 
