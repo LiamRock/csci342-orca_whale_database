@@ -134,15 +134,21 @@ function CreateDiscussion() {
           value={formData.long}
           onChange={handleChange}
         />
-        <input
+        <select
           className="title bg-gray-100 border border-gray-300 p-2 mb-4 outline-none"
-          spellCheck="false"
-          placeholder="Species (optional)"
-          type="text"
           name="species"
           value={formData.species}
           onChange={handleChange}
-        />
+        >
+          <option value="">Select Species</option>
+          <option value="orca">Orca</option>
+          <option value="gray">Gray Whale</option>
+          <option value="humpback">Humpback Whale</option>
+          <option value="blue">Blue Whale</option>
+          <option value="fin">Fin Whale</option>
+          <option value="minke">Minke Whale</option>
+          <option value="uncertain">Other/Uncertain</option>
+        </select>
         <textarea
           className="description bg-gray-100 sec p-2 h-60 w-full border border-gray-300 outline-none"
           spellCheck="false"
