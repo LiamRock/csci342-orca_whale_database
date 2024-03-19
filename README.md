@@ -137,6 +137,11 @@ This is an example of how to list things you need to use the software and how to
 <img src="./orca_whale_db/src/assets/Screenshot_3.png" alt="Logo" width="auto" height="300">
 <img src="./orca_whale_db/src/assets/Screenshot_4.png" alt="Logo" width="auto" height="300">
 
+## Cloud Hosting Site
+```
+http://ec2-54-89-145-45.compute-1.amazonaws.com
+```
+
 ## Contributors
 
 * Jed Pagcaliwagan
