@@ -24,6 +24,8 @@ function Navbar(){
                 <nav className="flex items-center " ref={navRef}>
                     {user.email ? (
                     <>
+                        <Link className="m-[30px] text-[#202020] no-underline relative text-center" to="/trends">Trends</Link>
+                        <div className="border h-8 border-black border-l-0"></div>
                         <Link className="m-[30px] text-[#202020] no-underline relative text-center" to="/whales">Species</Link>
                         <div className="border h-8 border-black border-l-0"></div>
                         <Link className="m-[30px] text-[#202020] no-underline relative text-center" to="/posts">Posts</Link>
@@ -43,6 +45,8 @@ function Navbar(){
                     </>
                     ) : (
                         <>
+                            <Link className="m-[30px] text-[#202020] no-underline relative text-center" to="/trends">Trends</Link>
+                            <div className="border h-8 border-black border-l-0"></div>
                             <Link className="m-[30px] text-[#202020] no-underline relative text-center" to="/whales">Species</Link>
                             <div className="border h-8 border-black border-l-0"></div>
                             <Link className="m-[30px] text-[#202020] no-underline relative text-center" to="/posts">Posts</Link>

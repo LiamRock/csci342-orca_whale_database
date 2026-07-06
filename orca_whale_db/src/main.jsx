@@ -23,6 +23,7 @@ import NotFoundPage from './components/NotFound/NotFoundPage'
 import PostPage from './components/PostPage/PostPage.jsx';import ResidentBio from './components/Whales/WhaleBios/OrcaBio/ResidentBio/ResidentBio.jsx'
 import TransientBio from './components/Whales/WhaleBios/OrcaBio/TransientBio/TransientBio.jsx'
 import OffshoreBio from './components/Whales/WhaleBios/OrcaBio/OffshoreBio/OffshoreBio.jsx'
+import Trends from './components/Trends/Trends.jsx'
 // import ProtectedRoute from './util/ProtectedRoute.jsx'
 
 import './index.css'
@@ -50,7 +51,8 @@ const router = createBrowserRouter([
     {path:"/posts", element: <PostPage/>},
     {path:"", element: <ProtectedRoute/>, children: [
       {path:"/account", element: <Account/>}
-    ]}
+    ]},
+    {path:"/trends", element: <Trends/>},
   ]}
 ]);
 
