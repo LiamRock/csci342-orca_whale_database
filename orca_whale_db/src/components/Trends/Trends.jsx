@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import Banner from '../HomePage/Banner/Banner';
+import SightingCard from './SightingCard/SightingCard'
+import TrendsMap from './TrendsMap/TrendsMap'
 
 const Trends = () => {
     const [sightings, setSightings] = useState([]);
@@ -22,30 +24,53 @@ const Trends = () => {
     }, []);
 
     return (
-        <div>
-            <Banner title={"Daily Trends"} backgroundImage={"./src/assets/day-tours-banner.jpg"}/>
+        <div className="mt-36">
+            {/* <Banner title={"Daily Trends"} backgroundImage={"./src/assets/day-tours-banner.jpg"}/> */}
             <div className='relative flex flex-col items-center justify-center p-[20px] bg-slate-100'>
-                <h1 className='font-bold mb-5'>Recent Orca Sightings - WA Waters</h1>
+                <div className="text-center mb-10">
+                    <h1 className="text-4xl font-bold text-slate-900">
+                        Recent Orca Sightings
+                    </h1>
 
-                {sightings.length === 0 && <p>No recent orca sightings reported.</p>}
+                    <p className="mt-2 text-slate-500">
+                        Washington State Waters • Updated Daily
+                    </p>
+                </div>
+
+
+                <div className="w-full max-w-6xl">
+                    <TrendsMap sightings={sightings}/>
+                </div>
+
+                {sightings.length === 0 && <p className="text-black">No recent orca sightings reported.</p>}
 
                 {summary && (
-                    <div className="max-w-2xl text-center mb-6">
-                        <p className="text-sm text-slate-500 mb-1">Report: {summary.date}</p>
-                        <p className="text-black">{summary.report}</p>
+                    <div className="w-full max-w-4xl mb-8 mt-10">
+                        <div className="bg-white rounded-xl shadow-sm p-6">
+                            <h1 className="text-2xl font-semibold mb-4">
+                                Daily Summary
+                            </h1>
+
+                            <p className="text-sm text-slate-500 mb-1">
+                                Report: {summary.date}
+                            </p>
+                            
+                            <div className="space-y-4 text-left text-slate-700 leading-7">
+                                {summary.report.split("\n\n").map((paragraph, index) => (
+                                    <p key={index}>{paragraph}</p>
+                                ))}
+                            </div>
+                        </div>
                     </div>
                 )}
 
-                <ul className="w-full max-w-2xl">
+
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
                     {sightings.map((s) => (
-                        <li key={s.entry_id} className="border-b border-slate-300 py-3 text-left">
-                            <p className="font-semibold text-black">{s.no_sighted} orcas sighted</p>
-                            <p className="font-thin text-gray-800">{s.ssemmi_date_added}</p>
-                            <p className="font-thin text-gray-800">{s.latitude}, {s.longitude}</p>
-                            <p className="font-normal text-black">{s.data_source_comments}</p>
-                        </li>
+                        <SightingCard key={s.entry_id} sighting={s} />
                     ))}
-                </ul>
+                </div>
             </div>
         </div>
     )
